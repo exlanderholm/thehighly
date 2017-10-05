@@ -1,0 +1,16 @@
+default: &default
+  space: <%= ENV["THEHIGHLY_CONTENTFUL_SPACE"] %>
+  access_token: <%= ENV["THEHIGHLY_CONTENTFUL_ACCESS_TOKEN"] %>
+  api_url: <%= ENV["THEHIGHLY_CONTENTFUL_API_URL"] %>
+
+development:
+  <<: *default
+
+test:
+  <<: *default
+
+staging:
+  <<: *default
+
+production:
+  <<: *default
