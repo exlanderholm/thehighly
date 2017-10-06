@@ -3,7 +3,7 @@ Rails.application.routes.draw do
   root "application#index"
 
   scope '/api' do
-    get '/posts' => 'application#posts'
+    resources :posts, only: [:index, :show]
   end
 
   get "*path", to: "application#index"
