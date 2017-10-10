@@ -1,7 +1,7 @@
 class PostsController < ApplicationController
 
   def index
-    posts = contentful.entries(content_type: "2wKn6yEnZewu2SCCkus4as").map do |post|
+    posts = contentful.entries(content_type: "2wKn6yEnZewu2SCCkus4as", order: '-fields.date').map do |post|
       tidy_post(post)
     end
 
@@ -22,12 +22,13 @@ class PostsController < ApplicationController
 
   def tidy_post(post)
     {
-      body: post.body ? markdown.render(post.body) : "",
-      excerpt: post.fields["excerpt"] ? markdown.render(post.excerpt) : "",
       id: post.id,
+      title: post.title,
+      date: post.date,
+      excerpt: post.excerpt ? markdown.render(post.excerpt) : "",
+      body: post.body ? markdown.render(post.body) : "",
       featuredImage: post.featured_image ? parse_image(post.featured_image) : {},
       slug: post.slug,
-      title: post.title,
     }
   end
 

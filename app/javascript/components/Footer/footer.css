@@ -1,0 +1,58 @@
+@import '../../styles/variables';
+
+.footer {
+  background: var(--brown);
+  border-top: 2px solid black;
+}
+
+.main-menu {
+  align-items: center;
+  display: flex;
+  font: 500 23px/1.22 var(--font-family-sans-serif);
+  justify-content: space-between;
+  letter-spacing: 3px;
+  margin: auto;
+  max-width: var(--site-width);
+  padding: 0 var(--gutter);
+  text-transform: uppercase;
+
+  @media (--tablet-portrait) {
+    height: 80px;
+    padding: 0 var(--gracious-gutter);
+  }
+
+  a {
+    color: inherit;
+    display: inline-block;
+    padding: 0.5em;
+    text-decoration: none;
+
+    &:hover {
+      text-decoration: underline;
+    }
+  }
+}
+
+.bottom {
+  align-items: center;
+  display: flex;
+  font: 500 14px var(--font-family-sans-serif);
+  justify-content: space-around;
+  margin: auto;
+  max-width: var(--site-width);
+  padding: 0 var(--gutter);
+
+  @media (--tablet-portrait) {
+    height: 80px;
+    padding: 0 var(--gracious-gutter);
+  }
+
+  a {
+    color: inherit;
+    text-decoration: none;
+
+    &:hover {
+      text-decoration: underline;
+    }
+  }
+}

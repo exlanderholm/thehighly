@@ -1,5 +1,11 @@
+@import '../../styles/variables';
+
 .header {
-  background: red;
+  align-items: center;
   display: flex;
   justify-content: center;
+  position: absolute;
+  left: 0;
+  right: 0;
+  height: var(--header-height);
 }

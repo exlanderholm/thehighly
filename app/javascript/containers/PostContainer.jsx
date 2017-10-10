@@ -14,14 +14,11 @@ class PostContainer extends Component {
       'Content-Type': 'application/json'
     }
 
-    fetch('/api/posts', { credentials }).then(response => response.json()).then(json => {
+    fetch('/api/posts/seven-tips-from-ernest-hemingway-on-how-to-write-fiction', { credentials }).then(response => response.json()).then(json => {
       // dispatch(receivedCart(json))
       console.log(json);
-      const post = json.posts[0]
-      this.setState({
-        id: post.id,
-        ...post.fields
-      })
+      const post = json.post
+      this.setState({...post})
     }).catch(error => {
       console.error(error);
     })

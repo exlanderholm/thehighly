@@ -1,0 +1,47 @@
+@custom-media --small-viewport (max-width: 767px);
+@custom-media --mobile-landscape (min-width: 480px);
+@custom-media --tablet-portrait (min-width: 768px);
+@custom-media --tablet-landscape (min-width: 1024px);
+@custom-media --desktop-large (min-width: 1440px);
+
+:root {
+  --color-blue: #4A90E2;
+  --color-blue-hover: darken(#4A90E2, 5);
+  --color-red: #FE5454;
+  --brown: #f8f4eb;
+
+  --color-white: #FFFFFF;
+  --color-offwhite: #F9F9F9;
+  --color-light-gray: #D4D4D4;
+  --color-med-gray: #AEAEAE;
+  --color-gray: #9B9B9B;
+  --color-dark-gray: #494949;
+  --font-color: #111111;
+
+  --gray-85: #858585;
+  --gray-cf: #CFCFCF;
+  --gray-ef: #EFEFEF;
+
+  --border-color: var(--color-light-gray);
+  --border-color-dark: #6A6A6A;
+
+  --gutter: 24px;
+  --gutter-lg: 45px;
+  --gracious-gutter: 160px;
+
+  --header-height: 140px;
+  --footer-height: 100px;
+
+  --site-width: 796px;
+
+  --font-family-heading: HarrietDisplay, Impact, serif;
+  --font-family-sans-serif: AlrightSans, Impact, serif;
+  --font-family-serif: HarrietText, Impact, sans-serif;
+
+  --fast: 400ms;
+  --slow: 800ms;
+
+  --box-shadow: 0 2px 10px hsla(0, 0%, 0%, .2);
+
+  --background-image-down-arrow: url("data:image/svg+xml,<svg width='10' height='5' viewBox='0 0 10 5' xmlns='http://www.w3.org/2000/svg'><path d='M9.243 0L5 4.243.757 0' stroke='#4990E2' fill='none' /></svg>")
+}

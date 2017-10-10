@@ -1,10 +1,51 @@
-h1::before {
-  content:"「「";
-}
-h1::after {
-  content: "」";
-}
+@import './variables';
 
 body {
+  font-family: Impact, HarrietText;
   margin: 0;
+}
+
+
+
+
+
+
+/* harriettext-lightitalic.woff */
+@font-face{
+  font-family: HarrietText;
+  font-style: italic;
+  font-weight: 300;
+  src: url('../fonts/harriettext-lightitalic.woff') format("woff");
+}
+
+/* harriettext-regular.woff */
+@font-face{
+  font-family: HarrietText;
+  font-weight: normal;
+  src: url('../fonts/harriettext-regular.woff') format("woff");
+}
+
+/* harriettext-bold.woff */
+@font-face{
+  font-family: HarrietText;
+  font-weight: bold;
+  src: url('../fonts/harriettext-bold.woff') format("woff");
+}
+
+/* harriettext-bolditalic.woff */
+@font-face{
+  font-family: HarrietText;
+  font-style: italic;
+  font-weight: bold;
+  src: url('../fonts/harriettext-bolditalic.woff') format("woff");
+}
+
+@font-face {
+  font-family: AlrightSans;
+  font-weight: 500;
+  src: url('../fonts/alrightsans-medium.woff') format("woff");
+}
+
+h1 {
+  font-family: var(--font-family-heading);
 }
