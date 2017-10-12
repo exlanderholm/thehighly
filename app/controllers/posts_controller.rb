@@ -1,7 +1,9 @@
 class PostsController < ApplicationController
 
   def index
-    posts = contentful.entries(content_type: "2wKn6yEnZewu2SCCkus4as", order: '-fields.date').map do |post|
+    posts = contentful
+    .entries(content_type: "2wKn6yEnZewu2SCCkus4as", order: '-fields.date')
+    .map do |post|
       tidy_post(post)
     end
 
@@ -11,7 +13,8 @@ class PostsController < ApplicationController
 
   def show
     post = contentful
-              .entries(content_type: "2wKn6yEnZewu2SCCkus4as", "fields.slug": params[:id], include: 2).first
+    .entries(content_type: "2wKn6yEnZewu2SCCkus4as", "fields.slug": params[:id], include: 2)
+    .first
 
     if post.fields.keys
       render json: {post: tidy_post(post)}
@@ -23,12 +26,13 @@ class PostsController < ApplicationController
   def tidy_post(post)
     {
       id: post.id,
-      title: post.title,
-      date: post.date,
-      excerpt: post.excerpt ? markdown.render(post.excerpt) : "",
-      body: post.body ? markdown.render(post.body) : "",
-      featuredImage: post.featured_image ? parse_image(post.featured_image) : {},
+      title: post.fields[:title],
+      date: post.fields[:date],
+      excerpt: post.fields[:excerpt] ? markdown.render(post.excerpt) : "",
+      body: post.fields[:body] ? markdown.render(post.body) : "",
+      featuredImage: post.fields[:featured_image] ? parse_image(post.featured_image) : {},
       slug: post.slug,
+      category: post.fields[:category] ? post.category : {}
     }
   end
 

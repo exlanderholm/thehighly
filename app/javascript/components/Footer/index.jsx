@@ -1,12 +1,13 @@
 import React from 'react'
 import styles from './footer.css'
+import { Link } from 'react-router-dom'
 
 const Footer = () =>
   <footer className="footer">
     <nav className="main-menu">
-      <a href="/list">List</a>
-      <a href="/about">About</a>
-      <a href="/contact">Contact</a>
+      <Link to="/list">List</Link>
+      <Link to="/about">About</Link>
+      <Link to="/contact">Contact</Link>
     </nav>
 
     <div className="bottom">

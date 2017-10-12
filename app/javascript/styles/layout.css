@@ -1,7 +1,7 @@
 @import './variables';
 
 body {
-  font-family: Impact, HarrietText;
+  font-family: HarrietText, Impact;
   margin: 0;
 }
 

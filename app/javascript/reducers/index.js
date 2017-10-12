@@ -1,12 +1,16 @@
-import { combineReducers } from "redux";
-import { routerReducer } from "react-router-redux";
+import { combineReducers } from 'redux';
 
-import posts from "./posts";
+import highlyRecommended from './highly-recommended';
+import highlyConversations from './highly-conversations';
+
+import { routerReducer as router } from 'react-router-redux'
+
 
 // Combine reducers from adjacent files here
 const rootReducer = combineReducers({
-  router: routerReducer,
-  posts
+  highlyRecommended,
+  highlyConversations,
+  router
 });
 
 export default rootReducer;
