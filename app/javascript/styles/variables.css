@@ -5,22 +5,7 @@
 @custom-media --desktop-large (min-width: 1440px);
 
 :root {
-  --color-blue: #4A90E2;
-  --color-blue-hover: darken(#4A90E2, 5);
-  --color-red: #FE5454;
-  --brown: #f8f4eb;
-
-  --color-white: #FFFFFF;
-  --color-offwhite: #F9F9F9;
-  --color-light-gray: #D4D4D4;
-  --color-med-gray: #AEAEAE;
-  --color-gray: #9B9B9B;
-  --color-dark-gray: #494949;
-  --font-color: #111111;
-
-  --gray-85: #858585;
-  --gray-cf: #CFCFCF;
-  --gray-ef: #EFEFEF;
+  --light-grayish-orange: #f8f4eb;
 
   --border-color: var(--color-light-gray);
   --border-color-dark: #6A6A6A;

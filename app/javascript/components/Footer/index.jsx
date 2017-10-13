@@ -1,6 +1,6 @@
 import React from 'react'
-import styles from './footer.css'
 import { Link } from 'react-router-dom'
+import styles from './footer.css'
 
 const Footer = () =>
   <footer className="footer">

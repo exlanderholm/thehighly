@@ -2,7 +2,7 @@ class PostsController < ApplicationController
 
   def index
     posts = contentful
-    .entries(content_type: "2wKn6yEnZewu2SCCkus4as", order: '-fields.date')
+    .entries(content_type: "post", order: '-fields.date')
     .map do |post|
       tidy_post(post)
     end
@@ -13,7 +13,7 @@ class PostsController < ApplicationController
 
   def show
     post = contentful
-    .entries(content_type: "2wKn6yEnZewu2SCCkus4as", "fields.slug": params[:id], include: 2)
+    .entries(content_type: "post", "fields.slug": params[:id], include: 2)
     .first
 
     if post.fields.keys

@@ -1,7 +1,6 @@
 @import '../../styles/variables';
 
 .footer {
-  background: var(--brown);
   border-top: 2px solid black;
 }
 

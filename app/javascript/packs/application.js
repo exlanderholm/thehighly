@@ -7,16 +7,19 @@ import { Provider } from 'react-redux'
 import createHistory from 'history/createBrowserHistory'
 import { Route } from 'react-router'
 
+import { Switch } from 'react-router-dom'
 import { ConnectedRouter, routerMiddleware, push } from 'react-router-redux'
 
 import reducers from '../reducers'
 
 import services from '../services'
 
-import Header from '../components/Header'
+import HeaderContainer from '../containers/HeaderContainer'
+import NavigationContainer from '../containers/NavigationContainer'
 import Footer from '../components/Footer'
 import HomeContainer from '../containers/HomeContainer'
-
+import PostContainer from '../containers/PostContainer'
+import My404Component from '../components/My404Component'
 import styles from '../styles/layout'
 // Create a history of your choosing (we're using a browser history in this case)
 const history = createHistory()
@@ -36,8 +39,13 @@ document.addEventListener('DOMContentLoaded', () => {
     <Provider store={store}>
       <ConnectedRouter history={history}>
         <div>
-          <Header />
-          <Route exact path="/" component={HomeContainer}/>
+          <HeaderContainer />
+          <NavigationContainer />
+          <Switch>
+            <Route path="/" exact component={HomeContainer}/>
+            <Route path="/highly-conversations/:id" component={PostContainer} />
+            <Route component={My404Component} />
+          </Switch>
           <Footer />
         </div>
       </ConnectedRouter>

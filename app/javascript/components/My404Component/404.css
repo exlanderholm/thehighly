@@ -1,0 +1,17 @@
+@import '../../styles/variables';
+
+.not-found {
+  margin: var(--header-height) auto 0;
+  max-width: var(--site-width);
+  min-height: calc(100vh - var(--header-height) - var(--footer-height));
+  overflow: hidden;
+  padding: 0 var(--gutter);
+
+  @media (--mobile-landscape) {
+    padding: 0 var(--gutter-lg);
+  }
+
+  @media (--tablet-portrait) {
+    padding: 0 var(--gracious-gutter);
+  }
+}

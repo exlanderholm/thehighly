@@ -5,11 +5,6 @@ body {
   margin: 0;
 }
 
-
-
-
-
-
 /* harriettext-lightitalic.woff */
 @font-face{
   font-family: HarrietText;
@@ -40,6 +35,13 @@ body {
   src: url('../fonts/harriettext-bolditalic.woff') format("woff");
 }
 
+@font-face{
+  font-family: HarrietDisplay;
+  font-weight: 500;
+  src: url('../fonts/harrietdisplay-medium.woff') format("woff");
+}
+
+
 @font-face {
   font-family: AlrightSans;
   font-weight: 500;
@@ -48,4 +50,5 @@ body {
 
 h1 {
   font-family: var(--font-family-heading);
+  font-weight: 500;
 }
