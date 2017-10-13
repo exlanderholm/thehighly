@@ -19,6 +19,7 @@ import NavigationContainer from '../containers/NavigationContainer'
 import Footer from '../components/Footer'
 import HomeContainer from '../containers/HomeContainer'
 import PostContainer from '../containers/PostContainer'
+import ConversationsDetailContainer from '../containers/ConversationsDetailContainer'
 import My404Component from '../components/My404Component'
 import styles from '../styles/layout'
 // Create a history of your choosing (we're using a browser history in this case)
@@ -43,7 +44,8 @@ document.addEventListener('DOMContentLoaded', () => {
           <NavigationContainer />
           <Switch>
             <Route path="/" exact component={HomeContainer}/>
-            <Route path="/highly-conversations/:id" component={PostContainer} />
+            <Route path="/post" component={PostContainer} />
+            <Route path="/highly-conversations/:id" component={ConversationsDetailContainer} />
             <Route component={My404Component} />
           </Switch>
           <Footer />

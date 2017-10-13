@@ -1,6 +1,6 @@
 import { OPEN_NAVIGATION, CLOSE_NAVIGATION } from "../actions";
 
-const initialState = { isOpen: true }
+const initialState = { isOpen: false }
 
 const navigation = (state = initialState, action) => {
   const { type, payload } = action

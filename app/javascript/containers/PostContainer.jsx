@@ -14,7 +14,7 @@ class PostContainer extends Component {
       'Content-Type': 'application/json'
     }
 
-    fetch('/api/posts/seven-tips-from-ernest-hemingway-on-how-to-write-fiction', { credentials }).then(response => response.json()).then(json => {
+    fetch('/api/posts/steve-deangelo', { credentials }).then(response => response.json()).then(json => {
       // dispatch(receivedCart(json))
       console.log(json);
       const post = json.post
