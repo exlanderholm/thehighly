@@ -43,7 +43,7 @@
   font: 16px/1.5 var(--font-family-serif);
   margin: 3em auto;
   max-width: var(--site-width);
-  padding: 0 var(-gutter);
+  padding: 0 var(--gutter);
 
   @media (--tablet-portrait) {
     padding: 0 var(--gracious-gutter);
