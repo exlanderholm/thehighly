@@ -5,6 +5,11 @@ export const GET_HIGHLY_RECOMMENDED = 'GET_HIGHLY_RECOMMENDED'
 export const GET_HIGHLY_RECOMMENDED_RECEIVED = 'GET_HIGHLY_RECOMMENDED_RECEIVED'
 export const GET_HIGHLY_CONVERSATIONS = 'GET_HIGHLY_CONVERSATIONS'
 export const GET_HIGHLY_CONVERSATIONS_RECEIVED = 'GET_HIGHLY_CONVERSATIONS_RECEIVED'
+
+export const GET_HIGHLY_CONVERSATIONS_DETAIL = 'GET_HIGHLY_CONVERSATIONS_DETAIL'
+export const GET_HIGHLY_CONVERSATIONS_DETAIL_RECEIVED = 'GET_HIGHLY_CONVERSATIONS_DETAIL_RECEIVED'
+
+
 export const GET_HIGHLY_REPORTS = 'GET_HIGHLY_REPORTS'
 export const GET_HIGHLY_REPORTS_RECEIVED = 'GET_HIGHLY_REPORTS_RECEIVED'
 
@@ -50,6 +55,25 @@ export const getHighlyConversationsReceived = ({posts}) => {
     }
   }
 }
+
+export const getHighlyConversationsDetail = ({id}) => {
+  return {
+    type: GET_HIGHLY_CONVERSATIONS_DETAIL,
+    payload: {
+      id
+    }
+  }
+}
+
+export const getHighlyConversationsDetailReceived = ({post}) => {
+  return {
+    type: GET_HIGHLY_CONVERSATIONS_DETAIL_RECEIVED,
+    payload: {
+      post
+    }
+  }
+}
+
 
 export const getHighlyReports = () => {
   return {

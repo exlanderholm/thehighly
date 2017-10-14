@@ -6,14 +6,12 @@ import { openNavigation } from '../actions'
 
 const HeaderContainer = (props) => <Header {...props} />
 
-const mapStateToProps = (state) => {
-  console.log(state)
-  const { navigation } = state
+const mapStateToProps = ({navigation}) => {
   const { isOpen } = navigation
   return {
     isOpen
   }
-};
+}
 
 const mapDispatchToProps = (dispatch) => {
   return {
@@ -21,4 +19,4 @@ const mapDispatchToProps = (dispatch) => {
   }
 }
 
-export default connect(mapStateToProps, mapDispatchToProps)(HeaderContainer);
+export default connect(mapStateToProps, mapDispatchToProps)(HeaderContainer)

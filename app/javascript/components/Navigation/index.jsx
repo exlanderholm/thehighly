@@ -8,7 +8,6 @@ const Navigation = ({closeNavigation, isOpen}) => (
       <button className="close-button" onClick={closeNavigation}>Close</button>
     </div>
     <nav className="main-navigation">
-      <Link to="/post">Post page mockup</Link>
       <Link to="/recommended">The Highly Recommended</Link>
       <Link to="/conversations">Conversations</Link>
       <Link to="/about">About</Link>

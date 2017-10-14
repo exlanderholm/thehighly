@@ -8,29 +8,8 @@ import {
 
 class ConversationsDetailContainer extends React.Component {
   componentDidMount() {
-
-    this.props.getHighlyConversationsDetail({slug: this.props.slug});
-
-    console.log('time for ajax!')
-
-
-
-    const credentials = 'same-origin'
-    const headers = {
-      'Accept': 'application/json',
-      'Content-Type': 'application/json'
-    }
-
-    fetch('/api/posts/steve-deangelo', { credentials }).then(response => response.json()).then(json => {
-      // dispatch(receivedCart(json))
-      console.log(json);
-      const post = json.post
-      this.setState({...post})
-    }).catch(error => {
-      console.error(error);
-    })
-
-
+    const { id } = this.props.match.params
+    this.props.getHighlyConversationsDetail({id})
   }
 
   render() {
@@ -38,16 +17,17 @@ class ConversationsDetailContainer extends React.Component {
   }
 }
 
-const mapStateToProps = (state) => {
-  console.log({state})
-
-  return { slug: 'steve-deangelo' }
+const mapStateToProps = ({highlyConversations}) => {
+  const { post } = highlyConversations
+  return post
 }
 
 const mapDispatchToProps = (dispatch) => {
   return {
-    getHighlyConversationsDetail: ({slug}) => { dispatch(getHighlyConversationsDetail({slug})) }
+    getHighlyConversationsDetail: ({id}) => {
+      dispatch(getHighlyConversationsDetail({id}))
+    }
   }
 }
 
-export default connect(mapStateToProps, mapDispatchToProps)(ConversationsDetailContainer);
+export default connect(mapStateToProps, mapDispatchToProps)(ConversationsDetailContainer)

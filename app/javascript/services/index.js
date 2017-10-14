@@ -1,16 +1,18 @@
 import {
   GET_HIGHLY_RECOMMENDED,
   GET_HIGHLY_CONVERSATIONS,
+  GET_HIGHLY_CONVERSATIONS_DETAIL,
   GET_HIGHLY_REPORTS,
   getHighlyRecommendedReceived,
   getHighlyConversationsReceived,
+  getHighlyConversationsDetailReceived,
   getHighlyReportsReceived
 } from '../actions'
 
 export default ({ dispatch, getState }) => {
   return next => action => {
-
-    const { type } = action
+    const { type, payload } = action
+    const state = getState();
 
     switch (type) {
       case GET_HIGHLY_RECOMMENDED: {
@@ -36,6 +38,21 @@ export default ({ dispatch, getState }) => {
         })
         break;
       }
+
+      case GET_HIGHLY_CONVERSATIONS_DETAIL: {
+        const { id } = payload;
+
+        const credentials = 'same-origin'
+        fetch(`/api/posts/${id}`, { credentials })
+        .then(response => response.json())
+        .then(json => {
+          dispatch(getHighlyConversationsDetailReceived(json))
+        }).catch(error => {
+          console.error(error);
+        })
+        break;
+      }
+
 
       case GET_HIGHLY_REPORTS: {
         const credentials = 'same-origin'

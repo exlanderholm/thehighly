@@ -6,14 +6,12 @@ import { openNavigation, closeNavigation } from '../actions'
 
 const NavigationContainer = (props) => <Navigation {...props} />
 
-const mapStateToProps = (state) => {
-  console.log(state)
-  const { navigation } = state
+const mapStateToProps = ({navigation}) => {
   const { isOpen } = navigation
   return {
     isOpen
   }
-};
+}
 
 const mapDispatchToProps = (dispatch) => {
   return {

@@ -52,3 +52,13 @@ h1 {
   font-family: var(--font-family-heading);
   font-weight: 500;
 }
+
+h2 {
+  font-family: var(--font-family-heading);
+  font-weight: 500;
+}
+
+h4 {
+  font: normal 1em/1 var(--font-family-sans-serif);
+  text-transform: uppercase;
+}

@@ -4,4 +4,10 @@
   margin-top: var(--header-height);
   min-height: calc(100vh - var(--header-height) - var(--footer-height));
   overflow: hidden;
+  text-align: center;
+}
+
+.conversation-link a {
+  color: inherit;
+  text-decoration: none;
 }

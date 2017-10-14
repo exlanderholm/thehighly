@@ -29,6 +29,7 @@
     justify-content: center;
     width: var(--gracious-gutter);
   }
+
   .close-button {
     appearance: none;
     background: transparent;
@@ -37,18 +38,21 @@
     height: 21px;
     width: 55px;
   }
+
   .main-navigation {
     align-items: center;
     display: flex;
     flex-direction: column;
     flex-grow: 1;
+    font: 500 23px/1.22 var(--font-family-sans-serif);
     justify-content: center;
+    letter-spacing: 2px;
+    text-transform: uppercase;
 
     a {
       color: inherit;
+      margin: 2em 0;
       text-decoration: none;
     }
   }
-
-
 }

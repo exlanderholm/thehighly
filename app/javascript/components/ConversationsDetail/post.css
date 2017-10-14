@@ -50,10 +50,23 @@
   }
 }
 
-blockquote {
-  font: bold italic 26px/34px var(--font-family-serif);
+.body img {
+  width: 100%;
+}
+
+.body blockquote {
+  font: bold italic 26px var(--font-family-serif);
+  line-height: normal;
 
   @media (--tablet-portrait) {
     margin: 3em -80px;
+  }
+
+  & > :first-child::before {
+    content: "“"
+  }
+
+  & > :last-child::after {
+    content: "”"
   }
 }
