@@ -1,7 +1,11 @@
 @import './variables';
 
-body {
+:root {
   font-family: HarrietText, Impact;
+  text-size-adjust: none;
+}
+
+body {
   margin: 0;
 }
 

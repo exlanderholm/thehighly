@@ -1,5 +1,5 @@
 @custom-media --small-viewport (max-width: 767px);
-@custom-media --mobile-landscape (min-width: 480px);
+@custom-media --mobile-landscape (min-width: 568px);
 @custom-media --tablet-portrait (min-width: 768px);
 @custom-media --tablet-landscape (min-width: 1024px);
 @custom-media --desktop-large (min-width: 1440px);
@@ -14,8 +14,12 @@
   --gutter-lg: 45px;
   --gracious-gutter: 160px;
 
-  --header-height: 140px;
-  --footer-height: 162px;
+  --header-height: 40px;
+  --header-height-desktop: 140px;
+
+  --footer-height: 80px;
+  --footer-height-desktop: 162px;
+
 
   --site-width: 796px;
 

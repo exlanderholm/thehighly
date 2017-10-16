@@ -4,17 +4,29 @@
   align-items: center;
   display: flex;
   justify-content: center;
-  position: fixed;
+  position: absolute;
   top: 0;
   left: 0;
   right: 0;
   height: var(--header-height);
+
+  @media (orientation: portrait), (--tablet-portrait) {
+    position: fixed;
+  }
+
+  @media (--tablet-portrait) {
+    height: var(--header-height-desktop);
+  }
 }
 
 .logo-area {
   flex-grow: 1;
-  margin-left: var(--gracious-gutter);
+  margin-left: var(--gutter-lg);
   text-align: center;
+
+  @media (--tablet-portrait) {
+    margin-left: var(--gracious-gutter);
+  }
 
   a {
     display: inline-block;
@@ -23,18 +35,34 @@
 
 .menu-button-area {
   text-align: center;
-  width: var(--gracious-gutter);
+  width: var(--gutter-lg);
+  @media (--tablet-portrait) {
+    width: var(--gracious-gutter);
+  }
 }
 
 .menu-button {
   appearance: none;
   background: transparent;
   border: solid black;
-  border-width: 4px 0;
+  border-width: 2px 0;
   color: transparent;
   cursor: pointer;
-  font-size: 7px;
+  display: block;
+  font-size: 2px;
+  height: 3em;
+  margin: auto;
   text-align: center;
-  height: 21px;
-  width: 55px;
+  width: 8em;
+
+  @media (--tablet-portrait) {
+    border-width: 4px 0;
+    font-size: 7px;
+  }
+
+  &:focus,
+  &:active {
+    border-color: red;
+    outline: none;
+  }
 }
