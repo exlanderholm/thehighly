@@ -25,7 +25,12 @@
     display: flex;
     height: var(--header-height);
     justify-content: center;
-    width: var(--gracious-gutter);
+    width: var(--gutter-lg);
+
+    @media (--tablet-portrait) {
+      height: var(--header-height-desktop);
+      width: var(--gracious-gutter);
+    }
   }
 
   .close-button {

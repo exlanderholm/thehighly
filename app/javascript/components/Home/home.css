@@ -5,6 +5,11 @@
   min-height: calc(100vh - var(--header-height) - var(--footer-height));
   overflow: hidden;
   text-align: center;
+
+  @media (--tablet-portrait) {
+    margin-top: var(--header-height-desktop);
+    min-height: calc(100vh - var(--header-height-desktop) - var(--footer-height-desktop));
+  }
 }
 
 .conversation-link a {

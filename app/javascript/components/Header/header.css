@@ -3,7 +3,7 @@
 .header {
   align-items: center;
   display: flex;
-  justify-content: center;
+  justify-content: space-between;
   position: absolute;
   top: 0;
   left: 0;
@@ -16,27 +16,37 @@
 
   @media (--tablet-portrait) {
     height: var(--header-height-desktop);
+    padding: 0 75px;
   }
+
 }
 
 .logo-area {
+  flex-basis: 25%;
   flex-grow: 1;
-  margin-left: var(--gutter-lg);
   text-align: center;
-
-  @media (--tablet-portrait) {
-    margin-left: var(--gracious-gutter);
-  }
 
   a {
     display: inline-block;
   }
 }
 
-.menu-button-area {
+.mainLink {
+  color: inherit;
+  flex-basis: 13em;
+  font: 500 21px/32px AlrightSans;
   text-align: center;
-  width: var(--gutter-lg);
+  text-decoration: none;
+
+  &.about-link {
+    text-align: right;
+  }
+}
+
+.menu-button-area {
   @media (--tablet-portrait) {
+    display: none;
+    text-align: center;
     width: var(--gracious-gutter);
   }
 }

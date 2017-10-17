@@ -5,20 +5,18 @@
 @custom-media --desktop-large (min-width: 1440px);
 
 :root {
-  --light-grayish-orange: #f8f4eb;
-
   --border-color: var(--color-light-gray);
   --border-color-dark: #6A6A6A;
 
   --gutter: 24px;
   --gutter-lg: 45px;
-  --gracious-gutter: 160px;
+  --gracious-gutter: 80px;
 
   --header-height: 40px;
   --header-height-desktop: 140px;
 
   --footer-height: 80px;
-  --footer-height-desktop: 162px;
+  --footer-height-desktop: 114px;
 
 
   --site-width: 796px;

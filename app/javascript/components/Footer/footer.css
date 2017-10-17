@@ -2,61 +2,66 @@
 
 .footer {
   border-top: 2px solid black;
-}
-
-.main-menu {
-  align-items: center;
   display: flex;
-  flex-direction: column;
-  font: 500 23px/1.22 var(--font-family-sans-serif);
-  justify-content: space-between;
-  letter-spacing: 3px;
-  margin: auto;
-  max-width: var(--site-width);
-  padding: 0 var(--gutter);
-  text-transform: uppercase;
-
-  @media (--mobile-landscape) {
-    flex-direction: row;
-  }
-
-  @media (--tablet-portrait) {
-    height: 80px;
-    padding: 0 var(--gracious-gutter);
-  }
-
-  a {
-    color: inherit;
-    display: inline-block;
-    padding: 0.5em;
-    text-decoration: none;
-
-    &:hover {
-      text-decoration: underline;
-    }
-  }
-}
-
-.bottom {
-  align-items: center;
-  display: flex;
-  font: 500 14px var(--font-family-sans-serif);
+  font: 500 12px/2.33 var(--font-family-sans-serif);
   justify-content: space-around;
-  margin: auto;
-  max-width: var(--site-width);
-  padding: 0 var(--gutter);
-
   @media (--tablet-portrait) {
-    height: 80px;
-    padding: 0 var(--gracious-gutter);
+    padding: 2em var(--gracious-gutter);
   }
+}
 
+.copyright {
+  span {
+    display: block;
+  }
+}
+
+.footer {
   a {
     color: inherit;
     text-decoration: none;
+    text-transform: uppercase;
+  }
+}
 
-    &:hover {
-      text-decoration: underline;
-    }
+.subscribe-form {
+  display: flex;
+  flex-flow: row wrap;
+  flex-basis: 277px;
+  line-height: normal;
+
+  input[type="email"] {
+    background: transparent;
+    border: transparent;
+    border-left: none;
+    flex-grow: 1;
+    font: inherit;
+    padding-left: 0;
+  }
+
+  input[type="email"]::placeholder {
+    color: black;
+    text-transform: uppercase;
+  }
+
+  input[type="email"]:focus {
+    outline-style: none;
+  }
+
+  button {
+    background: transparent;
+    border-color: transparent;
+    border-right: none;
+    cursor: pointer;
+    font: inherit;
+    padding-left: 0;
+    padding-right: 0;
+  }
+
+  p {
+    border-top: 1px solid black;
+    flex-grow: 1;
+    margin: 0;
+    padding-top: 0.5em;
   }
 }

@@ -1,0 +1,7 @@
+@import '../../styles/variables';
+
+.about {
+  margin-top: var(--header-height-desktop);
+  min-height: 100vh;
+  overflow: hidden;
+}
