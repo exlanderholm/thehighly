@@ -2,9 +2,13 @@
 
 .logo {
   display: block;
-  height: 14px;
+  height: 32px;
 
   @media (--tablet-portrait) {
-    height: 66px;
+    height: 48px;
+  }
+
+  @media (--tablet-landscape) {
+    height: 64px;
   }
 }

@@ -3,14 +3,29 @@
 .footer {
   border-top: 2px solid black;
   display: flex;
+  flex-flow: row wrap;
   font: 500 12px/2.33 var(--font-family-sans-serif);
-  justify-content: space-around;
+  justify-content: center;
+  padding: 0 var(--gutter);
+
   @media (--tablet-portrait) {
+    flex-flow: row no-wrap;
+    justify-content: space-between;
     padding: 2em var(--gracious-gutter);
   }
 }
 
 .copyright {
+  margin: 1em 0;
+  text-align: center;
+  width: 100%;
+
+  @media (--tablet-portrait) {
+    margin: 0;
+    text-align: left;
+    width: auto;
+  }
+
   span {
     display: block;
   }
@@ -19,6 +34,7 @@
 .footer {
   a {
     color: inherit;
+    padding: 0.5em;
     text-decoration: none;
     text-transform: uppercase;
   }
@@ -26,9 +42,15 @@
 
 .subscribe-form {
   display: flex;
+  flex-basis: 100%;
   flex-flow: row wrap;
-  flex-basis: 277px;
   line-height: normal;
+  margin: 1em 0;
+
+  @media (--tablet-portrait) {
+    flex-basis: 277px;
+    margin: 0;
+  }
 
   input[type="email"] {
     background: transparent;
@@ -63,5 +85,6 @@
     flex-grow: 1;
     margin: 0;
     padding-top: 0.5em;
+    width: 100%;
   }
 }

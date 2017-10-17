@@ -23,7 +23,7 @@
     align-items: center;
     align-self: flex-end;
     display: flex;
-    height: var(--header-height);
+    height: var(--header-height-mobile);
     justify-content: center;
     width: var(--gutter-lg);
 

@@ -19,12 +19,21 @@
     padding: 0 75px;
   }
 
+  @media (--tablet-landscape) {
+    height: var(--header-height-desktop-lg);
+    padding: 0 75px;
+  }
 }
 
 .logo-area {
   flex-basis: 25%;
   flex-grow: 1;
+  margin-left: var(--gutter-lg);
   text-align: center;
+
+  @media (--tablet-portrait) {
+    margin-left: 0;
+  }
 
   a {
     display: inline-block;
@@ -33,6 +42,7 @@
 
 .mainLink {
   color: inherit;
+  display: none;
   flex-basis: 13em;
   font: 500 21px/32px AlrightSans;
   text-align: center;
@@ -41,9 +51,15 @@
   &.about-link {
     text-align: right;
   }
+
+  @media (--tablet-portrait) {
+    display: inline-block;
+  }
 }
 
 .menu-button-area {
+  width: var(--gutter-lg);
+
   @media (--tablet-portrait) {
     display: none;
     text-align: center;
