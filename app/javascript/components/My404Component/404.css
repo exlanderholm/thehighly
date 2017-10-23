@@ -1,14 +1,14 @@
 @import '../../styles/variables';
 
 .not-found {
-  margin: var(--header-height) auto 0;
+  margin: var(--header-height-mobile) auto 0;
   max-width: var(--site-width);
-  min-height: calc(100vh - var(--header-height) - var(--footer-height));
+  min-height: calc(100vh - var(--header-height-mobile) - var(--footer-height-mobile));
   overflow: hidden;
   padding: 0 var(--gutter);
 
   @media (--mobile-landscape) {
-    padding: 0 var(--gutter-lg);
+    padding: 0 var(--gutter-large);
   }
 
   @media (--tablet-portrait) {

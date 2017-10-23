@@ -8,7 +8,7 @@
   top: 0;
   left: 0;
   right: 0;
-  height: var(--header-height);
+  height: var(--header-height-mobile);
 
   @media (orientation: portrait), (--tablet-portrait) {
     position: fixed;
@@ -19,8 +19,8 @@
     padding: 0 75px;
   }
 
-  @media (--tablet-landscape) {
-    height: var(--header-height-desktop-lg);
+  @media (--desktop-large) {
+    height: var(--header-height-desktop-large);
     padding: 0 75px;
   }
 }
@@ -28,7 +28,7 @@
 .logo-area {
   flex-basis: 25%;
   flex-grow: 1;
-  margin-left: var(--gutter-lg);
+  margin-left: var(--gutter-large);
   text-align: center;
 
   @media (--tablet-portrait) {
@@ -58,7 +58,7 @@
 }
 
 .menu-button-area {
-  width: var(--gutter-lg);
+  width: var(--gutter-large);
 
   @media (--tablet-portrait) {
     display: none;

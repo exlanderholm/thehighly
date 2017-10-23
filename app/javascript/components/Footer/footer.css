@@ -1,17 +1,25 @@
 @import '../../styles/variables';
 
 .footer {
+  align-items: center;
   border-top: 2px solid black;
+  box-sizing: border-box;
   display: flex;
   flex-flow: row wrap;
   font: 500 12px/2.33 var(--font-family-sans-serif);
+  height: var(--footer-height-mobile);
   justify-content: center;
   padding: 0 var(--gutter);
 
   @media (--tablet-portrait) {
     flex-flow: row no-wrap;
+    height: var(--footer-height-desktop);
     justify-content: space-between;
     padding: 2em var(--gracious-gutter);
+  }
+
+  @media (--desktop-large) {
+    height: var(--footer-height-desktop-large);
   }
 }
 

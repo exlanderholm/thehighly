@@ -25,7 +25,7 @@
     display: flex;
     height: var(--header-height-mobile);
     justify-content: center;
-    width: var(--gutter-lg);
+    width: var(--gutter-large);
 
     @media (--tablet-portrait) {
       height: var(--header-height-desktop);

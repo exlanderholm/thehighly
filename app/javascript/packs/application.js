@@ -20,6 +20,8 @@ import Footer from '../components/Footer'
 import HomeContainer from '../containers/HomeContainer'
 import ConversationsDetailContainer from '../containers/ConversationsDetailContainer'
 import AboutContainer from '../containers/AboutContainer'
+import RecommendedDetailContainer from '../containers/RecommendedDetailContainer'
+
 import My404Component from '../components/My404Component'
 import styles from '../styles/layout'
 // Create a history of your choosing (we're using a browser history in this case)
@@ -49,14 +51,15 @@ document.addEventListener('DOMContentLoaded', () => {
       <ConnectedRouter history={history}>
         <div>
           <HeaderContainer />
-          <NavigationContainer />
           <Switch>
             <Route path="/" exact component={HomeContainer} />
             <Route path="/conversations/:id" component={ConversationsDetailContainer} />
-            <Route path="/" component={AboutContainer} />
+            <Route path="/about" component={AboutContainer} />
+            <Route path="/recommended/:id" component={RecommendedDetailContainer} />
             <Route component={My404Component} />
           </Switch>
           <Footer />
+          <NavigationContainer />
         </div>
       </ConnectedRouter>
     </Provider>,

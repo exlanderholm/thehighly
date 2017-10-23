@@ -51,7 +51,7 @@
   }
 
   @media (--tablet-landscape) {
-    padding-top: var(--header-height-desktop-lg);
+    padding-top: var(--header-height-desktop-large);
   }
 
   em strong,

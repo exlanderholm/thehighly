@@ -9,16 +9,16 @@
   --border-color-dark: #6A6A6A;
 
   --gutter: 24px;
-  --gutter-lg: 45px;
+  --gutter-large: 45px;
   --gracious-gutter: 80px;
 
   --header-height-mobile: 80px;
   --header-height-desktop: 110px;
-  --header-height-desktop-lg: 140px;
+  --header-height-desktop-large: 140px;
 
-  --footer-height: 80px;
+  --footer-height-mobile: 80px;
   --footer-height-desktop: 114px;
-
+  --footer-height-desktop-large: 228px;
 
   --site-width: 796px;
 
