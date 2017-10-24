@@ -9,26 +9,35 @@
   border-bottom: 2px solid black;
   display: flex;
 
-
   @media (orientation: portrait) {
     flex-direction: column;
-    min-height: 100vh;
+    height: 100vh;
   }
 
-  @media (orientation: landscape) {
-    min-height: calc(100vw * 812 / 1440);
+  @media (orientation: landscape), (min-width: 1024px) {
+    /* min-height: calc(100vw * 812 / 1440); */
+    flex-direction: row;
+    height: calc(50vw);
   }
 }
 
 .hero .featured-image {
   flex-basis: 50%;
+  position: relative;
 }
 
 .hero .featured-image img {
   display: block;
   object-fit: cover;
   width: 100%;
-  height: 100%;
+
+  @media (orientation: portrait) {
+    height: 100vw;
+  }
+
+  @media (orientation: landscape), (min-width: 1024px) {
+    height: 50vw;
+  }
 }
 
 .hero .intro-content {
@@ -36,22 +45,17 @@
   box-sizing: border-box;
   flex-basis: 50%;
   font: calc(2400vw/1440)/1.67 var(--font-family-sans-serif);
-  padding: var(--header-height-mobile) 5.20831em 2.45833em 3.125em;
+  margin: var(--gutter) 0;
+  padding: 0 var(--gutter);
 
-  @media (orientation: portrait) {
-    font: calc(4800vw/1440)/1.67 var(--font-family-sans-serif);
+  @media (orientation: landscape), (--tablet-landscape) {
+    margin: var(--gutter-desktop) 0;
+    padding: 0 var(--gutter-desktop);
   }
 
-  @media (orientation: landscape) {
-    font: calc(2400vw/1440)/1.67 var(--font-family-sans-serif);
-  }
-
-  @media (--tablet-portrait) {
-    padding-top: var(--header-height-desktop);
-  }
-
-  @media (--tablet-landscape) {
-    padding-top: var(--header-height-desktop-large);
+  @media (--desktop-large) {
+    margin: var(--gutter-desktop-large) 0;
+    padding: 0 var(--gutter-desktop-large);
   }
 
   em strong,
@@ -75,7 +79,9 @@
   max-width: var(--site-width);
   padding: 0 var(--gutter);
 
-  @media (--tablet-portrait) {
+  @media (orientation: landscape), (--tablet-landscape) {
+    font-size: calc(1600vw/1440);
+    max-width: 50em;
     padding: 0 var(--gracious-gutter);
   }
 }
@@ -89,7 +95,7 @@
   line-height: normal;
 
   @media (--tablet-portrait) {
-    margin: 3em -80px;
+    margin: 3em -5em;
   }
 
   & > :first-child::before {

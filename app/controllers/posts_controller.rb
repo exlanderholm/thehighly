@@ -32,7 +32,9 @@ class PostsController < ApplicationController
       body: post.fields[:body] ? markdown.render(post.body) : "",
       featuredImage: post.fields[:featured_image] ? parse_image(post.featured_image) : {},
       slug: post.slug,
-      category: post.fields[:category] ? post.category : {}
+      category: post.fields[:category] ? post.category : {},
+      excerptBackgroundColor: post.fields[:excerpt_background_color] ? post.excerpt_background_color : "transparent",
+      postBackgroundColor: post.fields[:excerpt_background_color] ? post.excerpt_background_color : "transparent"
     }
   end
 

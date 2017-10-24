@@ -15,7 +15,7 @@
     flex-flow: row no-wrap;
     height: var(--footer-height-desktop);
     justify-content: space-between;
-    padding: 2em var(--gracious-gutter);
+    padding: 2em var(--gutter-desktop-large);
   }
 
   @media (--desktop-large) {

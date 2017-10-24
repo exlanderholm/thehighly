@@ -3,7 +3,7 @@ import { connect } from 'react-redux'
 import ConversationsDetail from '../components/ConversationsDetail'
 
 import {
-  getHighlyConversationsDetail,
+  getHighlyConversationsDetail
 } from '../actions'
 
 class ConversationsDetailContainer extends React.Component {

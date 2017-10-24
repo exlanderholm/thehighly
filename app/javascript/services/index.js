@@ -53,7 +53,6 @@ export default ({ dispatch, getState }) => {
         break;
       }
 
-
       case GET_HIGHLY_REPORTS: {
         const credentials = 'same-origin'
         fetch('/api/categories/highly-reports', { credentials })

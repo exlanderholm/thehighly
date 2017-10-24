@@ -25,11 +25,11 @@
     display: flex;
     height: var(--header-height-mobile);
     justify-content: center;
-    width: var(--gutter-large);
+    width: var(--gutter-desktop);
 
     @media (--tablet-portrait) {
       height: var(--header-height-desktop);
-      width: var(--gracious-gutter);
+      width: var(--gutter-desktop-large);
     }
   }
 

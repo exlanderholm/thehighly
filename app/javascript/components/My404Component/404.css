@@ -8,10 +8,10 @@
   padding: 0 var(--gutter);
 
   @media (--mobile-landscape) {
-    padding: 0 var(--gutter-large);
+    padding: 0 var(--gutter-desktop);
   }
 
   @media (--tablet-portrait) {
-    padding: 0 var(--gracious-gutter);
+    padding: 0 var(--gutter-desktop-large);
   }
 }
