@@ -5,6 +5,7 @@ import {
   GET_HIGHLY_CONVERSATIONS_DETAIL,
   GET_HIGHLY_REPORTS,
   getHighlyRecommendedReceived,
+  getHighlyRecommendedDetailReceived,
   getHighlyConversationsReceived,
   getHighlyConversationsDetailReceived,
   getHighlyReportsReceived
@@ -17,7 +18,6 @@ export default ({ dispatch, getState }) => {
 
     switch (type) {
       case GET_HIGHLY_RECOMMENDED: {
-        console.log('GET_HIGHLY_RECOMMENDED')
         const credentials = 'same-origin'
         fetch('/api/destinations', { credentials })
         .then(response => response.json())
@@ -30,8 +30,9 @@ export default ({ dispatch, getState }) => {
       }
 
       case GET_HIGHLY_RECOMMENDED_DETAIL: {
-        console.log('GET_HIGHLY_RECOMMENDED_DETAIL')
-        const credentials = 'same-origin'
+        const { id } = payload;
+        const credentials = 'same-origin';
+
         fetch(`/api/destinations/${id}`, { credentials })
         .then(response => response.json())
         .then(json => {

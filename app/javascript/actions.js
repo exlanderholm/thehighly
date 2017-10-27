@@ -45,9 +45,12 @@ export const getHighlyRecommendedReceived = ({destinations}) => {
   }
 }
 
-export const getHighlyRecommendedDetail = () => {
+export const getHighlyRecommendedDetail = ({id}) => {
   return {
-    type: GET_HIGHLY_RECOMMENDED_DETAIL
+    type: GET_HIGHLY_RECOMMENDED_DETAIL,
+    payload: {
+      id
+    }
   }
 }
 

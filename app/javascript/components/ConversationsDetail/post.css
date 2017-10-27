@@ -93,8 +93,9 @@
 .body blockquote {
   font: bold italic 26px var(--font-family-serif);
   line-height: normal;
+  margin: 3em 0;
 
-  @media (--tablet-portrait) {
+  @media (--tablet-landscape) {
     margin: 3em -5em;
   }
 

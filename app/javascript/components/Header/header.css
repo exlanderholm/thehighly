@@ -31,14 +31,6 @@
   flex-grow: 1;
   text-align: center;
 
-  @media (--tablet-portrait) {
-    margin-left: var(--gutter-desktop);
-  }
-
-  @media (--desktop-large) {
-    margin-left: var(--gutter-desktop-large);
-  }
-
   a {
     display: inline-block;
   }
@@ -47,12 +39,11 @@
 .mainLink {
   color: inherit;
   display: none;
-  flex-basis: 13em;
+  flex-basis: 50%;
   font: 500 19px/1 AlrightSans;
   text-align: right;
   text-decoration: none;
   text-transform: uppercase;
-  width: 30em;
 
   &.about-link {
     text-align: left;
