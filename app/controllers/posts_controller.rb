@@ -34,7 +34,7 @@ class PostsController < ApplicationController
       slug: post.slug,
       category: post.fields[:category] ? post.category : {},
       excerptBackgroundColor: post.fields[:excerpt_background_color] ? post.excerpt_background_color : "transparent",
-      postBackgroundColor: post.fields[:excerpt_background_color] ? post.excerpt_background_color : "transparent"
+      postBackgroundColor: post.fields[:post_background_color] ? post.post_background_color : "transparent"
     }
   end
 

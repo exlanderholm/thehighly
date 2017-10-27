@@ -11,9 +11,6 @@ const ConversationsDetail = ({
 }) => {
   const { url } = featuredImage
   const featuredImageUrl =  `${url}?w=1200&h=1200`
-
-
-
   const stylezz = `
     .featured-image::before {
       content: "";

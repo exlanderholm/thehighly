@@ -1,6 +1,9 @@
-import { GET_HIGHLY_RECOMMENDED_RECEIVED } from "../actions";
+import {
+  GET_HIGHLY_RECOMMENDED_RECEIVED,
+  GET_HIGHLY_RECOMMENDED_DETAIL_RECEIVED
+} from "../actions";
 
-const initialState = { highlyRecommended: ['f', 'a', 'c', 'e'] }
+const initialState = { destinations: [], destination: {} }
 
 const highlyRecommended = (state = initialState, action) => {
   const { type, payload } = action
@@ -9,9 +12,17 @@ const highlyRecommended = (state = initialState, action) => {
     case GET_HIGHLY_RECOMMENDED_RECEIVED: {
       return {
         ...state,
-        highlyRecommended: payload.posts
+        destinations: payload.destinations
       }
     }
+
+    case GET_HIGHLY_RECOMMENDED_DETAIL_RECEIVED: {
+      return {
+        ...state,
+        destination: payload.destination
+      }
+    }
+
     default: {
       return state;
     }

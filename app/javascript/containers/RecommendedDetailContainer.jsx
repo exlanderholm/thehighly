@@ -7,6 +7,11 @@ import {
 } from '../actions'
 
 class RecommendedDetailContainer extends React.Component {
+  componentDidMount() {
+    const { id } = this.props.match.params
+    this.props.getHighlyRecommendedDetail({id})
+  }
+
   render() {
     return <RecommendedDetail {...this.props} />
   }
@@ -19,8 +24,8 @@ const mapStateToProps = ({highlyRecommended}) => {
 
 const mapDispatchToProps = (dispatch) => {
   return {
-    getHighlyConversationsDetail: ({id}) => {
-      dispatch(getHighlyConversationsDetail({id}))
+    getHighlyRecommendedDetail: ({id}) => {
+      dispatch(getHighlyRecommendedDetail({id}))
     }
   }
 }

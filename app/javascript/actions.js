@@ -1,14 +1,18 @@
 // Action Types
 export const OPEN_NAVIGATION = 'OPEN_NAVIGATION'
 export const CLOSE_NAVIGATION = 'CLOSE_NAVIGATION'
+
 export const GET_HIGHLY_RECOMMENDED = 'GET_HIGHLY_RECOMMENDED'
 export const GET_HIGHLY_RECOMMENDED_RECEIVED = 'GET_HIGHLY_RECOMMENDED_RECEIVED'
+
+export const GET_HIGHLY_RECOMMENDED_DETAIL = 'GET_HIGHLY_RECOMMENDED_DETAIL'
+export const GET_HIGHLY_RECOMMENDED_DETAIL_RECEIVED = 'GET_HIGHLY_RECOMMENDED_DETAIL_RECEIVED'
+
 export const GET_HIGHLY_CONVERSATIONS = 'GET_HIGHLY_CONVERSATIONS'
 export const GET_HIGHLY_CONVERSATIONS_RECEIVED = 'GET_HIGHLY_CONVERSATIONS_RECEIVED'
 
 export const GET_HIGHLY_CONVERSATIONS_DETAIL = 'GET_HIGHLY_CONVERSATIONS_DETAIL'
 export const GET_HIGHLY_CONVERSATIONS_DETAIL_RECEIVED = 'GET_HIGHLY_CONVERSATIONS_DETAIL_RECEIVED'
-
 
 export const GET_HIGHLY_REPORTS = 'GET_HIGHLY_REPORTS'
 export const GET_HIGHLY_REPORTS_RECEIVED = 'GET_HIGHLY_REPORTS_RECEIVED'
@@ -32,11 +36,26 @@ export const getHighlyRecommended = () => {
   }
 }
 
-export const getHighlyRecommendedReceived = ({posts}) => {
+export const getHighlyRecommendedReceived = ({destinations}) => {
   return {
     type: GET_HIGHLY_RECOMMENDED_RECEIVED,
     payload: {
-      posts
+      destinations
+    }
+  }
+}
+
+export const getHighlyRecommendedDetail = () => {
+  return {
+    type: GET_HIGHLY_RECOMMENDED_DETAIL
+  }
+}
+
+export const getHighlyRecommendedDetailReceived = ({destination}) => {
+  return {
+    type: GET_HIGHLY_RECOMMENDED_DETAIL_RECEIVED,
+    payload: {
+      destination
     }
   }
 }

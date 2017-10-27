@@ -38,5 +38,4 @@ class CategoriesController < ApplicationController
     def parse_image(image)
       { id: image.id, url: image.file.url, details: image.file.details }
     end
-
   end

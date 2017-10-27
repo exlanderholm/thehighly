@@ -48,9 +48,10 @@
   color: inherit;
   display: none;
   flex-basis: 13em;
-  font: 500 21px/32px AlrightSans;
+  font: 500 19px/1 AlrightSans;
   text-align: right;
   text-decoration: none;
+  text-transform: uppercase;
   width: 30em;
 
   &.about-link {

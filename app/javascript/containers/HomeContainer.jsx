@@ -4,15 +4,13 @@ import Home from '../components/Home'
 
 import {
   getHighlyRecommended,
-  getHighlyConversations,
-  getHighlyReports
+  getHighlyConversations
 } from '../actions'
 
 class HomeContainer extends React.Component {
   componentDidMount() {
     this.props.getHighlyRecommended();
     this.props.getHighlyConversations();
-    this.props.getHighlyReports();
   }
 
   render() {
@@ -31,8 +29,7 @@ const mapStateToProps = (state) => {
 
   return {
     highlyRecommended,
-    highlyConversations,
-    highlyReports
+    highlyConversations
   };
 };
 
