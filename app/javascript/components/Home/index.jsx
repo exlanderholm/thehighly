@@ -1,8 +1,11 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
 import Slider from 'react-slick'
-import styles from './home.css'
 import "../../styles/slick/slick.css"
+import styles from './home.css'
+import classNames from "classnames/bind";
+
+const cx = classNames.bind(styles);
 
 var settings = {
     lazyLoad: true,
@@ -32,7 +35,7 @@ const HighlyRecommended = ({destinations}) => (
       We've done the research for you —
       here are the finest quality
       cannabis products of the now,
-      and where to get them 
+      and where to get them
     </p>
     <p className="caps">
       { destinations.map(destination => <HighlyDestination {...destination} key={destination.id} />) }
@@ -43,9 +46,13 @@ const HighlyRecommended = ({destinations}) => (
   </div>
 )
 
-const HighlyDestination = ({title, slug}) => (
-  <Link className="destination caps comingsoon" to={`/recommended/${slug}`}>{title}</Link>
-)
+const HighlyDestination = ({title, slug, date}) => {
+  const postDate = new Date(date);
+  const today = new Date();
+  return (
+      <Link className={cx('destination', 'caps', {comingsoon: (postDate > today)})} to={`/recommended/${slug}`}>{title}</Link>
+    )
+}
 
 const HighlyConversations = () => (
   <Slider  {...settings}>
