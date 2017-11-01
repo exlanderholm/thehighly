@@ -6,10 +6,10 @@ const Footer = () =>
   <footer className="footer">
 
     <div className="footer__inner">
-      <form action="mailto:mailto:hello@thehighly.co" className="subscribe-form">
-        <input placeholder="email" type="email" /> <button className="caps">Subscribe</button>
-        <p>We won't sell you out</p>
-      </form>
+
+      <div className="tagline">
+        <p>A guide to the good good.</p>
+      </div>
 
       <ul className="nav caps">
         <li><Link to="/about">About</Link></li>
@@ -17,10 +17,16 @@ const Footer = () =>
         <li><a href="https://instagram.com/thehighly_" target="_blank">Instagram</a></li>
       </ul>
 
+      <form action="mailto:mailto:hello@thehighly.co" className="subscribe-form">
+        <input placeholder="email" type="email" /> <button className="caps">Subscribe</button>
+        <p>We won't sell you out</p>
+      </form>
+
       <div className="copyright">
         <span>&copy; 2017 The Highly</span>
         <span>Please don't steal our stuff.</span>
       </div>
+
     </div>
 
   </footer>

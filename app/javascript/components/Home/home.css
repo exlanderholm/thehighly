@@ -9,7 +9,6 @@ body {
   min-height: calc(100vh - var(--header-height-mobile) - var(--footer-height-mobile));
   overflow: hidden;
   text-align: center;
-  border-top: 1px solid #555555;
   
   @media (--tablet-portrait) {
     margin-top: var(--header-height-desktop);
@@ -39,7 +38,7 @@ body {
 .conversations {
 
   @media (--tablet-portrait) {
-    border-right: 1px solid #888888;
+    border-right: 1px solid var(--border-color);
   }
 }
 .conversation {
