@@ -37,6 +37,9 @@ const HighlyRecommended = ({destinations}) => (
     <p className="caps">
       Bay Area・Seattle・Portland・Vancouver
     </p>
+    <p className="small">
+        Don't see your city? Contact us with your Highly Recommended.
+      </p>
     {/*{ destinations.map(destination => <HighlyDestination {...destination} key={destination.id} />) } */}
   </div>
 )
