@@ -49,13 +49,12 @@ body {
   }
 }
 .conversation {
-  padding: 2em 0;
+  padding: 1.5em 0;
 
   .image {
     width: 65vw;
     height: 65vw;
     margin: 0 auto;
-    mix-blend-mode: multiply;
     
     @media (--tablet-portrait) {
       width: 30vw;
@@ -79,22 +78,23 @@ body {
     
   }
 }
-.intro {
-  font-size: 1.3em;
-  margin: 1em 5vw;
-
-  .recommended & {
-    font-size: 3.3em;
-  }
-  em {
-    font-size: 1.2em;
-    font-weight: 600;
-  }
-}
 .recommended {
 
   .content {
     width: 90%;
     margin: 2em auto;
+  }
+}
+
+.intro {
+  font-size: 1.3em;
+  margin: 1em 5vw;
+
+  .recommended & {
+    font-size: 2.6em;
+  }
+  em {
+    font-size: 1.2em;
+    font-weight: 600;
   }
 }
