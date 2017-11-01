@@ -4,12 +4,19 @@
   align-items: flex-start;
   border-top: 1px solid #888888;
   box-sizing: border-box;
+  font: 500 12px/2.33 var(--font-family-sans-serif);
+}
+
+.footer__inner {
+  align-items: center;
+  box-sizing: content-box;
   display: flex;
   flex-flow: row wrap;
-  font: 500 12px/2.33 var(--font-family-sans-serif);
   height: var(--footer-height-mobile);
   justify-content: center;
-  padding: 1em var(--gutter);
+  margin: auto;
+  max-width: var(--site-width);
+  padding: 0 var(--gutter);
 
   @media (--tablet-portrait) {
     flex-flow: row-reverse nowrap;

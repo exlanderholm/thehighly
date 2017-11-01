@@ -1,19 +1,22 @@
 @import '../../styles/variables';
 
 .header {
-  align-items: center;
-  display: flex;
-  justify-content: space-between;
+  border-bottom: 2px solid var(--border-color);
   position: absolute;
   top: 0;
   left: 0;
   right: 0;
-  height: var(--header-height-mobile);
   z-index: 2;
+}
 
-  @media (orientation: portrait), (--tablet-portrait) {
-    /* position: fixed; */
-  }
+.header__inner {
+  align-items: center;
+  display: flex;
+  justify-content: space-between;
+  height: var(--header-height-mobile);
+  margin: auto;
+  max-width: var(--site-width);
+
 
   @media (--tablet-portrait) {
     height: var(--header-height-desktop);

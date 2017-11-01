@@ -1,12 +1,11 @@
 @custom-media --small-viewport (max-width: 767px);
 @custom-media --mobile-landscape (min-width: 568px);
 @custom-media --tablet-portrait (min-width: 768px);
-@custom-media --tablet-landscape (min-width: 1024px); 
+@custom-media --tablet-landscape (min-width: 1024px);
 @custom-media --desktop-large (min-width: 1440px);
 
 :root {
-  --border-color: var(--color-light-gray);
-  --border-color-dark: #6A6A6A;
+  --border-color: #8E9093;
 
   --gutter: 24px;
   --gutter-desktop: 45px;
@@ -20,7 +19,7 @@
   --footer-height-desktop: 114px;
   --footer-height-desktop-large: 228px;
 
-  --site-width: 796px;
+  --site-width: 1440px;
 
   --font-family-heading: HarrietDisplay, Impact, serif;
   --font-family-sans-serif: AlrightSans, Impact, serif;
