@@ -40,10 +40,9 @@
   color: inherit;
   display: none;
   flex-basis: 50%;
-  font: 500 19px/1 AlrightSans;
+  font: 500 15px/1 AlrightSans;
   text-align: right;
   text-decoration: none;
-  text-transform: uppercase;
 
   &.about-link {
     text-align: left;

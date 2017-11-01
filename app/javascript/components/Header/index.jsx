@@ -5,6 +5,9 @@ import styles from './header.css'
 
 const Header = ({openNavigation}) => (
   <header className="header">
+
+    <div className="menu-button-area"></div>
+
     <Link className="mainLink about-link caps" to="/about">About</Link>
 
     <div className="logo-area">
@@ -16,6 +19,7 @@ const Header = ({openNavigation}) => (
     <div className="menu-button-area">
       <button className="menu-button"onClick={openNavigation}>Menu</button>
     </div>
+
   </header>
 )
 
