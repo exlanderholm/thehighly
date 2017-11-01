@@ -2,70 +2,84 @@
 
 .footer {
   align-items: flex-start;
-  border-top: 1px solid #888888;
+  border-top: 1px solid var(--border-color);
   box-sizing: border-box;
   font: 500 12px/2.33 var(--font-family-sans-serif);
 }
 
 .footer__inner {
-  align-items: center;
+  align-items: flex-start;
   box-sizing: content-box;
   display: flex;
   flex-flow: row wrap;
-  height: var(--footer-height-mobile);
   justify-content: center;
   margin: auto;
   max-width: var(--site-width);
-  padding: 0 var(--gutter);
+  padding: 1rem var(--gutter) 2rem;
 
   @media (--tablet-portrait) {
-    flex-flow: row-reverse nowrap;
-    height: var(--footer-height-desktop);
     justify-content: space-between;
-    padding: 2em var(--gutter-desktop-large);
+    padding: 4em var(--gutter-desktop-large);
+  }
+  
+  & > * {
+    margin: 2rem 0;
+    flex-basis: 100%;
+    flex-grow: 0;
+    flex-shrink: 0;
+    text-align: center;
+
+    @media (--tablet-portrait) {
+      flex-basis: 50%;
+      text-align: left;
+    }
   }
 
   @media (--desktop-large) {
-    height: var(--footer-height-desktop-large);
+    
   }
 
-
-  .copyright {
-    margin: 1em 0;
-    text-align: center;
-    width: 100%;
-
+  .tagline {
+    font: 500 24px/1.33 var(--font-family-serif);
+    font-style: italic;
+    
     @media (--tablet-portrait) {
-      flex-basis: 277px;
-      margin: 0;
-      text-align: left;
-      width: auto;
-    }
-
-    span {
-      display: block;
+      font-size: 34px;
+      order: 1;
+      p {
+        margin: 0;
+      }
     }
   }
 
+  ul.nav {
+    padding: 0;
+    list-style: none;
+    
+    li {
+      display: inline-block;
+      padding: 1em;
+    }
+    @media (--tablet-portrait) {
+      max-width: 400px;
+      order: 3;
 
-  /* a {
-    color: inherit;
-    padding: 0.5em;
-    text-decoration: none;
-    text-transform: uppercase;
-  } */
-
+      li {
+        padding: 0 10em 0 0;
+      }
+    }    
+  }
 
   .subscribe-form {
+    max-width: 400px;
     display: flex;
-    flex-basis: 100%;
     flex-flow: row wrap;
     line-height: normal;
-    margin: 1em 0;
-
+    margin: 2rem;
+    
     @media (--tablet-portrait) {
-      flex-basis: 277px;
-      margin: 0;
+      order: 2;
+      margin: 2rem 0;
     }
 
     input[type="email"] {
@@ -109,14 +123,22 @@
       }
     }
   }
-  ul.nav {
-    margin: 1em 0;
-    padding: 0;
-    list-style: none;
-    
-    li {
-      display: inline;
-      padding: 1em;
+
+  .copyright {
+    width: 100%;
+
+    span {
+      margin: 0 5px;
+    }
+    @media (--tablet-portrait) {
+      order: 4;
+      width: auto;
+      text-align: right;
+      
+      span {
+        display: block;
+        margin: 0;
+      }
     }
   }
 }
