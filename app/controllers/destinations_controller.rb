@@ -34,7 +34,8 @@ class DestinationsController < ApplicationController
         title: place.title,
         description: place.description,
         location: place.location,
-        website: place.website
+        website: place.website,
+        relatedPosts: tidy_related_post(place.fields[:related_posts])
       }},
       whatToGet: destination.fields[:what_to_get].map { |product| {
         id: product.id,
@@ -42,6 +43,12 @@ class DestinationsController < ApplicationController
         description: product.description,
         type: product.type
       }}
+    }
+  end
+
+  def tidy_related_post(post)
+    {
+      mike: "ray"
     }
   end
 

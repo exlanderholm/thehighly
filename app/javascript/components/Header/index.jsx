@@ -5,21 +5,21 @@ import styles from './header.css'
 
 const Header = ({openNavigation}) => (
   <header className="header">
+    <div className="header__inner">
+      <div className="menu-button-area"></div>
 
-    <div className="menu-button-area"></div>
+      <Link className="mainLink about-link caps" to="/about">About</Link>
 
-    <Link className="mainLink about-link caps" to="/about">About</Link>
+      <div className="logo-area">
+        <Logo />
+      </div>
 
-    <div className="logo-area">
-      <Logo />
+      <Link className="mainLink caps" to="/recommended">The Highly Recommended</Link>
+
+      <div className="menu-button-area">
+        <button className="menu-button"onClick={openNavigation}>Menu</button>
+      </div>
     </div>
-
-    <Link className="mainLink caps" to="/recommended">The Highly Recommended</Link>
-
-    <div className="menu-button-area">
-      <button className="menu-button"onClick={openNavigation}>Menu</button>
-    </div>
-
   </header>
 )
 
