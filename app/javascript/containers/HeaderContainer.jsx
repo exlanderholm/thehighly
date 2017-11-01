@@ -6,10 +6,12 @@ import { openNavigation } from '../actions'
 
 const HeaderContainer = (props) => <Header {...props} />
 
-const mapStateToProps = ({navigation}) => {
+const mapStateToProps = ({navigation, router}) => {
   const { isOpen } = navigation
+  const isHomePage = (router.location.pathname === "/")
   return {
-    isOpen
+    isOpen,
+    isHomePage
   }
 }
 
