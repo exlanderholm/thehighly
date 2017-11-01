@@ -29,26 +29,34 @@ class DestinationsController < ApplicationController
       slug: destination.slug,
       date: destination.fields[:date],
       excerpt: destination.fields[:excerpt] ? markdown.render(destination.excerpt) : "",
-      whereToGo: destination.fields[:where_to_go].map { |place| {
-        id: place.id,
-        title: place.title,
-        description: place.description,
-        location: place.location,
-        website: place.website,
-        relatedPosts: tidy_related_post(place.fields[:related_posts])
-      }},
-      whatToGet: destination.fields[:what_to_get].map { |product| {
-        id: product.id,
-        title: product.title,
-        description: product.description,
-        type: product.type
-      }}
+      whereToGo: Array(destination.fields[:where_to_go]).map { |wtg| tidy_where_to_go(wtg) },
+      whatToGet: Array(destination.fields[:what_to_get]).map { |wtg| tidy_what_to_get(wtg) }
     }
   end
 
   def tidy_related_post(post)
     {
       mike: "ray"
+    }
+  end
+
+  def tidy_where_to_go(where_to_go)
+    {
+      id: where_to_go.id,
+      title: where_to_go.fields[:title],
+      description: where_to_go.fields[:description],
+      location: where_to_go.fields[:location],
+      website: where_to_go.fields[:website],
+      relatedPosts: tidy_related_post(where_to_go.fields[:related_posts])
+    }
+  end
+
+  def tidy_what_to_get(what_to_get)
+    {
+      id: what_to_get.id,
+      title: what_to_get.title,
+      description: what_to_get.description,
+      type: what_to_get.type
     }
   end
 
