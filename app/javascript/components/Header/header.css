@@ -12,7 +12,7 @@
   z-index: 2;
 
   @media (orientation: portrait), (--tablet-portrait) {
-    position: fixed;
+    /* position: fixed; */
   }
 
   @media (--tablet-portrait) {

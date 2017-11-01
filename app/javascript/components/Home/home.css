@@ -22,25 +22,19 @@ body {
     min-height: calc(100vh - var(--header-height-desktop-large) - var(--footer-height-desktop-large));
   }
 }
-.home > * {
-  flex-basis: 50vw;
-  overflow: hidden;
-  padding: 2em 0;
-}
-.home h4 {
-  font-size: 1.2em;
-}
-.home > .conversations {
-  /* background-color: #f9f2dd; */
-}
-.home > .recommended {
-  /* background-color: #cedacc; */
-
-}
-.content {
-  /* display: flex;
-  flex-direction: column;
-  align-items: center; */
+/* .mainLink {
+  display: none;
+} */
+.home {
+  
+  & > * {
+    flex-basis: 50vw;
+    overflow: hidden;
+    padding: 2em 0;
+  }
+  h4 {
+    font-size: 1.2em;
+  }
 }
 .conversations {
 
