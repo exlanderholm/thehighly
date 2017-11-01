@@ -33,6 +33,23 @@ body {
   }
   h4 {
     font-size: 1.2em;
+    a {
+      position: relative;
+
+      &:before {
+        content: '';
+        position: absolute;
+        left: 0;
+        right: 4px;
+        bottom: -5px;
+        height: 1px;
+      }
+    }
+    a:hover {
+      &:before {
+        border-bottom: 2px solid black;
+      }
+    }
   }
 }
 .conversations {
