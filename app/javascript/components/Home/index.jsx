@@ -49,9 +49,23 @@ const HighlyRecommended = ({destinations}) => (
 const HighlyDestination = ({title, slug, date}) => {
   const postDate = new Date(date);
   const today = new Date();
-  return (
-      <Link className={cx('destination', 'caps', {comingsoon: (postDate > today)})} to={`/recommended/${slug}`}>{title}</Link>
-    )
+  const isComingSoon = postDate > today;
+
+  if(isComingSoon) {
+    return (
+      <span className="destination" >
+        <span className="middot">•</span>
+        <span className={cx('caps', {comingsoon: isComingSoon})} to={`/recommended/${slug}`}>{title}</span>
+      </span>
+    )  
+  } else {
+    return (
+      <span className="destination" >
+        <span className="middot">•</span>
+        <Link className={cx('caps', {comingsoon: isComingSoon})} to={`/recommended/${slug}`}>{title}</Link>
+      </span>
+    )  
+  }
 }
 
 const HighlyConversations = () => (
