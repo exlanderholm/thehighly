@@ -5,8 +5,6 @@ import styles from './home.css'
 import "../../styles/slick/slick.css"
 
 var settings = {
-    dots: true,
-    infinite: true,
     lazyLoad: true,
     speed: 500,
     slidesToShow: 1,
@@ -22,51 +20,56 @@ const Home = ({ highlyRecommended, highlyConversations }) =>
     </div>
     <div className="recommended">
       <h4 className="caps">The Highly Recommended</h4>
-      <HighlyRecommended {...highlyRecommended} />
+      {<HighlyRecommended {...highlyRecommended} />}
     </div>
   </div>
 
-// Home.defaultProps = {
-//   highlyConversations: [
-//     {
-//       id: 0,
-//       title: '',
-//       slug: ''
-//     }
-//   ],
-//   highlyRecommended: []
-// }
 
 const HighlyRecommended = ({destinations}) => (
   <div className="content">
-    { destinations.map(destination => <HighlyDestination {...destination} key={destination.id} />) }
+    <p className="intro">
+      Your giude to the good-good.
+      We've done the research for you —
+      here are the finest quality
+      cannabis products of the now,
+      and where to get them 
+    </p>
+    <p className="caps">
+      Bay Area・Seattle・Portland・Vancouver
+    </p>
+    <p className="small">
+        Don't see your city? Contact us with your Highly Recommended.
+      </p>
+    {/*{ destinations.map(destination => <HighlyDestination {...destination} key={destination.id} />) } */}
   </div>
 )
 
-const HighlyDestination = ({title, slug}) => (
-  <h2 className="blah">
-    <Link to={`/recommended/${slug}`}>{title}</Link>
-  </h2>
-)
+// const HighlyDestination = ({title, slug}) => (
+//   <h2 className="blah">
+//     <Link to={`/recommended/${slug}`}>{title}</Link>
+//   </h2>
+// )
 
 const HighlyConversations = () => (
   <Slider  {...settings}>
     <div className="conversation">
       <div className="image"><img src="//images.contentful.com/pzkgcz3qicwx/2rIcx9kpLSke0WE6WQoWEO/182303b5ecb2783ca1a563d5fc44b6ae/Steve_DeAngelo_Photo.jpg"/></div>
-      <h2 className="link"><Link to={`/conversations/steve-deangelo`}>Steve DeAngelo</Link></h2>
+      {/* <h2 className="link"><Link to={`/conversations/steve-deangelo`}>Steve DeAngelo</Link></h2> */}
       <p className="intro">
-        Steve DeAngelo is an author, activist, entrepreneur
+        <em>Steve DeAngelo</em> is an author, activist, entrepreneur
         and the owner of the world's largest dispensary.
       </p>
-      <span className="small caps">2017-10-13T00:00:00.000+00:00</span>
+      <span className="small caps">November 10, 2017</span>
     </div>
     <div className="conversation">
-      <div className="image"><img src="//images.contentful.com/pzkgcz3qicwx/67Shz4f1BYa46ikmOYok04/39f6eed2c59d730c5c54498e60d2bcdc/image1.jpeg"/>></div>
-      <h2 className="link"><Link to={`/conversations/rennee-gagnon`}>Rennee Gagnon</Link></h2>
+      <div className="image"><img src="//images.contentful.com/pzkgcz3qicwx/67Shz4f1BYa46ikmOYok04/39f6eed2c59d730c5c54498e60d2bcdc/image1.jpeg"/></div>
+      {/* <h2 className="link"><Link to={`/conversations/rennee-gagnon`}>Rennee Gagnon</Link></h2> */}
       <p className="intro">
-      What disappoints me is when I get taken aside by women who tell me that I shouldn&#39;t be so hard on men. I understand where they&#39;re coming from.
+        <em>Rennee Gagnon</em> What disappoints me is when I get taken aside by women
+          who tell me that I shouldn&#39;t be so hard on men.
+          I understand where they&#39;re coming from.
       </p>
-      <span className="small caps">2017-10-13T00:00:00.000+00:00</span>
+      <span className="small caps">November 12, 2017</span>
     </div>
   </Slider>
 )

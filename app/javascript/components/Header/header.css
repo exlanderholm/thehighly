@@ -7,10 +7,6 @@
   left: 0;
   right: 0;
   z-index: 2;
-
-  /* @media (orientation: portrait), (--tablet-portrait) {
-    position: fixed;
-  } */
 }
 
 .header__inner {
@@ -20,6 +16,7 @@
   height: var(--header-height-mobile);
   margin: auto;
   max-width: var(--site-width);
+
 
   @media (--tablet-portrait) {
     height: var(--header-height-desktop);

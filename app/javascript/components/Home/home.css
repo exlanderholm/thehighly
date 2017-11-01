@@ -9,6 +9,7 @@ body {
   min-height: calc(100vh - var(--header-height-mobile) - var(--footer-height-mobile));
   overflow: hidden;
   text-align: center;
+  border-top: 1px solid #555555;
   
   @media (--tablet-portrait) {
     margin-top: var(--header-height-desktop);
@@ -21,54 +22,73 @@ body {
     min-height: calc(100vh - var(--header-height-desktop-large) - var(--footer-height-desktop-large));
   }
 }
-.home > * {
-  flex-basis: 50vw;
-  padding: 2em;
-  overflow: hidden;
-}
-.home h4 {
-  font-size: 1.2em;
-}
-.home > .conversations {
-  background-color: #f9f2dd;
+/* .mainLink {
+  display: none;
+} */
+.home {
   
-}
-.home > .recommended {
-  background-color: #cedacc;
-
-}
-.content {
-  /* display: flex;
-  flex-direction: column;
-  align-items: center; */
+  & > * {
+    flex-basis: 50vw;
+    overflow: hidden;
+    padding: 2em 0;
+  }
+  h4 {
+    font-size: 1.2em;
+  }
 }
 .conversations {
 
-  /* width: 100%; */
+  @media (--tablet-portrait) {
+    border-right: 1px solid #888888;
+  }
 }
 .conversation {
+  padding: 1.5em 0;
+
+  .image {
+    width: 65vw;
+    height: 65vw;
+    margin: 0 auto;
+    
+    @media (--tablet-portrait) {
+      width: 30vw;
+      height: 30vw;
+    }
+    img {
+      display: block;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+  }
+  &:hover .image {
+    mix-blend-mode: multiply;
+  }
+  .title {
+    margin: .3em 0;
+  }
+
+  .date {
+    
+  }
 }
-.conversation .image {
-  background: rgb(145, 145, 145);
-  width: 30vw;
-  height: 30vw;
-  margin: 0 auto;
+.recommended {
+
+  .content {
+    width: 90%;
+    margin: 2em auto;
+  }
 }
-.image img {
-  display: block;
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-}
-.conversation:hover .image {
-  background: rgb(138, 123, 102);
-}
-.conversation .title {
-  margin: .3em 0;
-}
-.conversation .intro {
-  margin: .3em 0;
-}
-.conversation .date {
-  
+
+.intro {
+  font-size: 1.3em;
+  margin: 1em 5vw;
+
+  .recommended & {
+    font-size: 2.6em;
+  }
+  em {
+    font-size: 1.2em;
+    font-weight: 600;
+  }
 }
