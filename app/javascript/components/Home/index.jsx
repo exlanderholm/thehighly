@@ -35,20 +35,17 @@ const HighlyRecommended = ({destinations}) => (
       and where to get them 
     </p>
     <p className="caps">
-      Bay Area・Seattle・Portland・Vancouver
+      { destinations.map(destination => <HighlyDestination {...destination} key={destination.id} />) }
     </p>
     <p className="small">
         Don't see your city? Contact us with your Highly Recommended.
       </p>
-    {/*{ destinations.map(destination => <HighlyDestination {...destination} key={destination.id} />) } */}
   </div>
 )
 
-// const HighlyDestination = ({title, slug}) => (
-//   <h2 className="blah">
-//     <Link to={`/recommended/${slug}`}>{title}</Link>
-//   </h2>
-// )
+const HighlyDestination = ({title, slug}) => (
+  <Link className="destination caps comingsoon" to={`/recommended/${slug}`}>{title}</Link>
+)
 
 const HighlyConversations = () => (
   <Slider  {...settings}>

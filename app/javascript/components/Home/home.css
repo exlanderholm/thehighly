@@ -94,6 +94,13 @@ body {
     width: 90%;
     margin: 2em auto;
   }
+  .destination {
+    margin: 0 .5em;
+
+    &:before {
+      content: '+';
+    }
+  }
 }
 
 .intro {
