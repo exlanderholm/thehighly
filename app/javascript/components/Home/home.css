@@ -109,16 +109,23 @@ body {
       position: relative;
       color: #888888;
          
+      &:before {
+        content: '';
+        position: absolute;
+        width: 140%;
+        height: 250%;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        background: url('./comingsoon.gif') center no-repeat;
+        background-size: contain;
+        opacity: 0;
+        transition: opacity .2s;
+      }
       &:hover {
         &:before {
-          content: 'coming soon';
-          position: absolute;
-          top: 50%;
-          left: 50%;
-          transform: translate(-50%, -50%) rotate(-21deg);
-          color: red;
-          font-size: 12px;
-          white-space: nowrap;
+          opacity: 1;
+          transition: opacity .1s;
         }
       }
     }
