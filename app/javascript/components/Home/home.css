@@ -107,7 +107,7 @@ body {
     }
     .comingsoon {
       position: relative;
-      color: #888888;
+      color: #777777;
          
       &:before {
         content: '';

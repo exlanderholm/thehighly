@@ -18,7 +18,7 @@ const Home = ({ highlyRecommended, highlyConversations }) =>
 
   <div className="home">
     <div className="conversations">
-      <h4 className="caps"><Link to={`/conversations`}>Conversations</Link></h4>
+      <h4 className="caps"><Link to={`/conversations/steve-deangelo`}>Conversations</Link></h4>
       <HighlyConversations {...highlyConversations} />
     </div>
     <div className="recommended">
