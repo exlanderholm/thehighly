@@ -16,6 +16,11 @@
     position: absolute;
     top: 50%;
 
+    @media (--tablet-portrait) {
+      top: 17.5vw;
+    }
+
+
     display: block;
 
     width: 20px;
@@ -81,11 +86,9 @@
 .slick-prev:before
 {
     content: '<';
+    font-size: 36px;
 }
-[dir='rtl'] .slick-prev:before
-{
-    content: '>';
-}
+
 
 .slick-next
 {
@@ -99,11 +102,9 @@
 .slick-next:before
 {
     content: '>';
+    font-size: 36px;
 }
-[dir='rtl'] .slick-next:before
-{
-    content: '<';
-}
+
 
 /* Dots */
 .slick-dotted.slick-slider

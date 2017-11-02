@@ -95,10 +95,32 @@ body {
     margin: 2em auto;
   }
   .destination {
-    margin: 0 .5em;
+    margin-right: .5rem;
 
-    &:before {
-      content: '+';
+    .middot {;
+      margin-right: .5rem;
+    }
+    &:first-child {
+      .middot {
+        display: none;
+      }
+    }
+    .comingsoon {
+      position: relative;
+      color: #888888;
+         
+      &:hover {
+        &:before {
+          content: 'coming soon';
+          position: absolute;
+          top: 50%;
+          left: 50%;
+          transform: translate(-50%, -50%) rotate(-21deg);
+          color: red;
+          font-size: 12px;
+          white-space: nowrap;
+        }
+      }
     }
   }
 }
