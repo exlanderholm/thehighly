@@ -1,11 +1,15 @@
 import React from 'react'
 import styles from './about.css'
+import classNames from "classnames/bind";
+
+const cx = classNames.bind(styles);
+
 
 const About = ({ title, intro, featuredImage, content }) => (
-  <div className="about">
+  <div className={cx("about")}>
     <h1 className="caps">{title}</h1>
-    <div className="intro" dangerouslySetInnerHTML={createMarkupObject(intro)} />
-    <div className="content">
+    <div className={cx("intro")} dangerouslySetInnerHTML={createMarkupObject(intro)} />
+    <div className={cx("content")}>
       <div className="cartoon">
         <img src={feauredImageUrl(featuredImage.url)} />
       </div>

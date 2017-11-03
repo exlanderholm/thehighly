@@ -6,36 +6,37 @@
   margin: var(--page-margin-desktop) auto;
   overflow: hidden;
   text-align: center;
-}
-.intro {
-  font-size: 1.8em;
-  margin: 1em 0;
-}
-.content {
-  display: flex;
-  max-width: 1000px;
-  margin: 5em 0 0;
 
-  & > * {
-    flex-basis: 50%;
-    flex-shrink: 0;
+  .intro {
+    font-size: 1.8em;
+    margin: 1em 0;
   }
-}
-.cartoon {
-  padding: 5.2em 3em 0;
-  background-color: #e9e9df;
+  .content {
+    display: flex;
+    max-width: 1000px;
+    margin: 5em 0 0;
 
-  img {
-    mix-blend-mode: multiply;
+    & > * {
+      flex-basis: 50%;
+      flex-shrink: 0;
+    }
   }
-}
-.before-about {
-  text-align: left;
+  .cartoon {
+    padding: 5.2em 3em 0;
+    background-color: #e9e9df;
 
-  h2 {
-    font-family: AlrightSans;
-    font-weight: 500;
-    text-transform: uppercase;
-    letter-spacing: .15em;
+    img {
+      mix-blend-mode: multiply;
+    }
+  }
+  .before-about {
+    text-align: left;
+
+    h2 {
+      font-family: AlrightSans;
+      font-weight: 500;
+      text-transform: uppercase;
+      letter-spacing: .15em;
+    }
   }
 }
