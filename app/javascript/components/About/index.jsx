@@ -7,7 +7,7 @@ const cx = classNames.bind(styles);
 
 const About = ({ title, intro, featuredImage, content }) => (
   <div className={cx("about")}>
-    <h1 className="caps">{title}</h1>
+    <h2 className="caps">{title}</h2>
     <div className={cx("intro")} dangerouslySetInnerHTML={createMarkupObject(intro)} />
     <div className={cx("content")}>
       <div className="cartoon">
