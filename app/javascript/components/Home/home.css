@@ -14,6 +14,7 @@ body {
     margin-top: var(--header-height-desktop);
     min-height: calc(100vh - var(--header-height-desktop) - var(--footer-height-desktop));
     display: flex;
+    border-top: 1px solid #8E9093;
   }
   
   @media (--desktop-large) {
