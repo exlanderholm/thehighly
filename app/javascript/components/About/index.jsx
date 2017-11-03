@@ -3,10 +3,14 @@ import styles from './about.css'
 
 const About = ({ title, intro, featuredImage, content }) => (
   <div className="about">
-    <h1>{title}</h1>
+    <h1 className="caps">{title}</h1>
     <div className="intro" dangerouslySetInnerHTML={createMarkupObject(intro)} />
-    <img src={feauredImageUrl(featuredImage.url)} />
-    <div className="intro" dangerouslySetInnerHTML={createMarkupObject(content)} />
+    <div className="content">
+      <div className="cartoon">
+        <img src={feauredImageUrl(featuredImage.url)} />
+      </div>
+      <div className="before-about" dangerouslySetInnerHTML={createMarkupObject(content)} />
+    </div>
   </div>
 )
 

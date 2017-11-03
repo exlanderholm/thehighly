@@ -1,7 +1,7 @@
 @import './variables';
 
 :root {
-  font-family: HarrietText, Impact;
+  font: normal 18px/1.667 HarrietText, Impact;
   text-size-adjust: none;
 }
 
@@ -80,4 +80,10 @@ a {
 .small {
   font-family: AlrightSans;
   font-size: 11px;
+}
+img {
+  max-width: 100%;
+}
+* {
+  box-sizing: border-box;
 }

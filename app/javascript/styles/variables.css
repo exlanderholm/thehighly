@@ -15,6 +15,10 @@
   --header-height-desktop: 90px;
   --header-height-desktop-large: 120px;
 
+  --page-margin-mobile: 100px;
+  --page-margin-desktop: 200px;
+  --page-margin-desktop-large: 250px;
+
   --footer-height-mobile: 80px;
   --footer-height-desktop: 114px;
   --footer-height-desktop-large: 228px;
