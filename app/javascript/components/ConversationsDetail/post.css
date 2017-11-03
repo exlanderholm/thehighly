@@ -3,9 +3,6 @@
 .post {
   overflow: hidden;
   margin-top: var(--header-height-mobile);
-  margin-left: auto;
-  margin-right: auto;
-  max-width: var(--site-width);
 
   @media (--tablet-portrait) {
     margin-top: var(--header-height-desktop);
@@ -15,65 +12,47 @@
     margin-top: var(--header-height-desktop-large);
   }
 }
-
 .hero {
-  background-color: #f5f5f5;
-  border-bottom: 2px solid var(--border-color);
+  margin-left: auto;
+  margin-right: auto;
+  max-width: var(--site-width);
   display: flex;
-
-  @media (orientation: portrait) {
-    flex-direction: column;
-    height: 384px;
-  }
-
-  @media (orientation: landscape), (min-width: 1024px) {
-    /* min-height: calc(100vw * 812 / 1440); */
+  flex-direction: column;
+  
+  @media (--tablet-portrait) {
     flex-direction: row;
+    height: 50vw;
+  }
+  @media (--desktop-large) {
     height: 700px;
   }
 }
 
 .hero .featured-image {
-  border-right: 2px solid var(--border-color);
+  background-color: #e9e9df;  
   flex-basis: 50%;
   position: relative;
 }
 
 .hero .featured-image img {
-  border-color: transparent;
-  border-style: solid;
-  border-width: var(--gutter);
-  box-sizing: border-box;
   display: block;
-  filter: grayscale(100%);
   object-fit: cover;
   object-position: center top;
   width: 100%;
-
-  @media (orientation: portrait) {
-    border-width: var(--gutter-desktop);
-    height: 100%;
-  }
-
-  @media (orientation: landscape), (min-width: 1024px) {
-    border-width: var(--gutter-desktop-large);
-    height: 100%;
-  }
-
-  &:hover {
-    filter: none;
-  }
+  height: 100%;
+  mix-blend-mode: multiply;
 }
 
 .hero .intro-content {
   align-self: flex-end;
   box-sizing: border-box;
   flex-basis: 50%;
-  font: 24px/1.67 var(--font-family-sans-serif);
+  font: 18px/1.67 var(--font-family-sans-serif);
   margin: var(--gutter) 0;
   padding: 0 var(--gutter);
-
+  
   @media (orientation: landscape), (--tablet-landscape) {
+    font: 24px/1.67 var(--font-family-sans-serif);
     margin: var(--gutter-desktop) 0;
     padding: 0 var(--gutter-desktop);
   }
@@ -100,7 +79,7 @@
 
 .body {
   font: 16px/1.667 var(--font-family-serif);
-  margin: 3em auto;
+  margin: 3em auto 15em;
   max-width: var(--site-width);
   padding: 0 var(--gutter);
 
@@ -112,7 +91,7 @@
 }
 
 .body img {
-  width: 100%;
+  width: 400px;
 }
 
 .body strong {
