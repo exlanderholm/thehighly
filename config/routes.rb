@@ -7,6 +7,8 @@ Rails.application.routes.draw do
     resources :destinations, only: [:index, :show]
 
     resources :categories, only: [:show]
+
+    resource :about_page, only: [:show]
   end
 
   get "*path", to: "application#index"

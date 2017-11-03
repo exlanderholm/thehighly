@@ -17,6 +17,9 @@ export const GET_HIGHLY_CONVERSATIONS_DETAIL_RECEIVED = 'GET_HIGHLY_CONVERSATION
 export const GET_HIGHLY_REPORTS = 'GET_HIGHLY_REPORTS'
 export const GET_HIGHLY_REPORTS_RECEIVED = 'GET_HIGHLY_REPORTS_RECEIVED'
 
+export const GET_ABOUT_PAGE = 'GET_ABOUT_PAGE'
+export const GET_ABOUT_PAGE_RECEIVED = 'GET_ABOUT_PAGE_RECEIVED'
+
 // Action Creators
 export const openNavigation = () => {
   return {
@@ -106,5 +109,20 @@ export const getHighlyReports = () => {
 export const getHighlyReportsReceived = () => {
   return {
     type: GET_HIGHLY_REPORTS_RECEIVED
+  }
+}
+
+export const getAboutPage = () => {
+  return {
+    type: GET_ABOUT_PAGE
+  }
+}
+
+export const getAboutPageReceived = ({aboutPage}) => {
+  return {
+    type: GET_ABOUT_PAGE_RECEIVED,
+    payload: {
+      aboutPage
+    }
   }
 }
