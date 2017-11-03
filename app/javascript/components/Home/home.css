@@ -96,7 +96,11 @@ body {
     margin: 2em auto;
   }
   .destination {
+    font-size: .8em;
+  }
+  .destination {
     margin-right: .5rem;
+    display: inline-block;
 
     .middot {;
       margin-right: .5rem;
@@ -134,11 +138,15 @@ body {
 }
 
 .intro {
-  font-size: 1.3em;
+  font-size: 1.1em;
   margin: 1em 5vw;
-
-  .recommended & {
-    font-size: 2.6em;
+  
+  @media (--tablet-portrait) {
+    font-size: 1.3em;
+    
+    .recommended & {
+      font-size: 2.6em;
+    }
   }
   em {
     font-size: 1.2em;

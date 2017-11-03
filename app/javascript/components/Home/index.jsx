@@ -37,7 +37,7 @@ const HighlyRecommended = ({destinations}) => (
       cannabis products of the now,
       and where to get them
     </p>
-    <p className="caps">
+    <p className="destinations caps">
       { destinations.map(destination => <HighlyDestination {...destination} key={destination.id} />) }
     </p>
     <p className="small">
@@ -55,14 +55,14 @@ const HighlyDestination = ({title, slug, date}) => {
     return (
       <span className="destination" >
         <span className="middot">•</span>
-        <span className={cx('caps', {comingsoon: isComingSoon})} to={`/recommended/${slug}`}>{title}</span>
+        <span className={cx({comingsoon: isComingSoon})} to={`/recommended/${slug}`}>{title}</span>
       </span>
     )  
   } else {
     return (
       <span className="destination" >
         <span className="middot">•</span>
-        <Link className={cx('caps', {comingsoon: isComingSoon})} to={`/recommended/${slug}`}>{title}</Link>
+        <Link className={cx({comingsoon: isComingSoon})} to={`/recommended/${slug}`}>{title}</Link>
       </span>
     )  
   }
