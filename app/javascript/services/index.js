@@ -5,12 +5,14 @@ import {
   GET_HIGHLY_CONVERSATIONS_DETAIL,
   GET_HIGHLY_REPORTS,
   GET_ABOUT_PAGE,
+  GET_CONTACT_PAGE,
   getHighlyRecommendedReceived,
   getHighlyRecommendedDetailReceived,
   getHighlyConversationsReceived,
   getHighlyConversationsDetailReceived,
   getHighlyReportsReceived,
-  getAboutPageReceived
+  getAboutPageReceived,
+  getContactPageReceived
 } from '../actions'
 
 export default ({ dispatch, getState }) => {
@@ -90,6 +92,19 @@ export default ({ dispatch, getState }) => {
         .then(response => response.json())
         .then(json => {
           dispatch(getAboutPageReceived(json))
+        }).catch(error => {
+          console.error(error);
+        })
+        break;
+      }
+
+      case GET_CONTACT_PAGE: {
+        console.log('GET_CONTACT_PAGE!')
+        const credentials = 'same-origin'
+        fetch('/api/contact_page', { credentials })
+        .then(response => response.json())
+        .then(json => {
+          dispatch(getContactPageReceived(json))
         }).catch(error => {
           console.error(error);
         })

@@ -5,10 +5,10 @@ Rails.application.routes.draw do
   scope '/api' do
     resources :posts, only: [:index, :show]
     resources :destinations, only: [:index, :show]
-
     resources :categories, only: [:show]
 
     resource :about_page, only: [:show]
+    resource :contact_page, only: [:show]
   end
 
   get "*path", to: "application#index"

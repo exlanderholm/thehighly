@@ -20,6 +20,9 @@ export const GET_HIGHLY_REPORTS_RECEIVED = 'GET_HIGHLY_REPORTS_RECEIVED'
 export const GET_ABOUT_PAGE = 'GET_ABOUT_PAGE'
 export const GET_ABOUT_PAGE_RECEIVED = 'GET_ABOUT_PAGE_RECEIVED'
 
+export const GET_CONTACT_PAGE = 'GET_CONTACT_PAGE'
+export const GET_CONTACT_PAGE_RECEIVED = 'GET_CONTACT_PAGE_RECEIVED'
+
 // Action Creators
 export const openNavigation = () => {
   return {
@@ -123,6 +126,21 @@ export const getAboutPageReceived = ({aboutPage}) => {
     type: GET_ABOUT_PAGE_RECEIVED,
     payload: {
       aboutPage
+    }
+  }
+}
+
+export const getContactPage = () => {
+  return {
+    type: GET_CONTACT_PAGE
+  }
+}
+
+export const getContactPageReceived = ({contactPage}) => {
+  return {
+    type: GET_CONTACT_PAGE_RECEIVED,
+    payload: {
+      contactPage
     }
   }
 }
