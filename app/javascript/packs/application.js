@@ -43,10 +43,7 @@ history.listen(() => {
 // Also apply our middleware for navigating
 const store = createStore(
   reducers,
-  compose(
-    applyMiddleware(middleware, services),
-    window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__()
-  )
+  applyMiddleware(middleware, services)
 )
 
 document.addEventListener('DOMContentLoaded', () => {
