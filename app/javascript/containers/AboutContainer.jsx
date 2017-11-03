@@ -3,16 +3,12 @@ import { connect } from 'react-redux'
 import About from '../components/About'
 
 import {
-  getHighlyRecommended,
-  getHighlyConversations,
-  getHighlyReports
+  getAboutPage
 } from '../actions'
 
 class AboutContainer extends React.Component {
   componentDidMount() {
-    this.props.getHighlyRecommended();
-    this.props.getHighlyConversations();
-    this.props.getHighlyReports();
+    this.props.getAboutPage()
   }
 
   render() {
@@ -21,21 +17,16 @@ class AboutContainer extends React.Component {
 }
 
 const mapStateToProps = (state) => {
-
-  const { highlyRecommended, highlyConversations, highlyReports } = state
+  const { aboutPage } = state
 
   return {
-    highlyRecommended,
-    highlyConversations,
-    highlyReports
+    ...aboutPage
   };
 };
 
 const mapDispatchToProps = (dispatch) => {
   return {
-    getHighlyRecommended: () => dispatch(getHighlyRecommended()),
-    getHighlyConversations: () => dispatch(getHighlyConversations()),
-    getHighlyReports: () =>  dispatch(getHighlyReports())
+    getAboutPage: () => dispatch(getAboutPage())
   }
 }
 

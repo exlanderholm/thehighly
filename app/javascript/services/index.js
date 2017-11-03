@@ -4,11 +4,13 @@ import {
   GET_HIGHLY_CONVERSATIONS,
   GET_HIGHLY_CONVERSATIONS_DETAIL,
   GET_HIGHLY_REPORTS,
+  GET_ABOUT_PAGE,
   getHighlyRecommendedReceived,
   getHighlyRecommendedDetailReceived,
   getHighlyConversationsReceived,
   getHighlyConversationsDetailReceived,
-  getHighlyReportsReceived
+  getHighlyReportsReceived,
+  getAboutPageReceived
 } from '../actions'
 
 export default ({ dispatch, getState }) => {
@@ -76,6 +78,18 @@ export default ({ dispatch, getState }) => {
         .then(response => response.json())
         .then(json => {
           dispatch(getHighlyReportsReceived(json))
+        }).catch(error => {
+          console.error(error);
+        })
+        break;
+      }
+
+      case GET_ABOUT_PAGE: {
+        const credentials = 'same-origin'
+        fetch('/api/about_page', { credentials })
+        .then(response => response.json())
+        .then(json => {
+          dispatch(getAboutPageReceived(json))
         }).catch(error => {
           console.error(error);
         })
