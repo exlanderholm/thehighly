@@ -1,9 +1,6 @@
 @import '../../styles/variables';
 @import "./slick-theme.css";
 
-body {
-  background-color: #e9e9df
-}
 .home {
   margin-top: var(--header-height-mobile);
   min-height: calc(100vh - var(--header-height-mobile) - var(--footer-height-mobile));

@@ -15,11 +15,14 @@ const ConversationsDetail = ({
 
   return (
     <div className="post" style={{backgroundColor: postBackgroundColor}}>
-      <div className="hero" style={{backgroundColor: excerptBackgroundColor}}>
-        <div className="featured-image" style={{backgroundColor: featuredImageBackgroundColor}}>
-          <img src={featuredImageUrl} alt="Featured Image" />
+      <div className="hero-wrapper" style={{backgroundColor: excerptBackgroundColor}}>
+        <div className="hero">
+          {/* <div className="featured-image" style={{backgroundColor: featuredImageBackgroundColor}}> */}
+          <div className="featured-image" style={{backgroundColor: excerptBackgroundColor}}>
+            <img src={featuredImageUrl} alt="Featured Image" />
+          </div>
+          <div className="intro-content" dangerouslySetInnerHTML={createMarkupObject(excerpt)} />
         </div>
-        <div className="intro-content" dangerouslySetInnerHTML={createMarkupObject(excerpt)} />
       </div>
       <div className="body" dangerouslySetInnerHTML={createMarkupObject(body)} />
     </div>
