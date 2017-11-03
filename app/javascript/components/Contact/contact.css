@@ -1,0 +1,15 @@
+@import '../../styles/variables';
+.contact {
+  margin: var(--header-height-mobile) auto;
+  max-width: 320px;
+  min-height: 100vh;
+  text-align: center;
+
+  @media (--tablet-portrait) {
+    margin: var(--header-height-desktop) auto;
+  }
+
+  @media (--desktop-large) {
+    margin: var(--header-height-desktop-large) auto;
+  }
+}

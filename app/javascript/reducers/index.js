@@ -4,6 +4,7 @@ import navigation from './navigation'
 import highlyRecommended from './highly-recommended'
 import highlyConversations from './highly-conversations'
 import aboutPage from './about-page'
+import contactPage from './contact-page'
 
 import { routerReducer as router } from 'react-router-redux'
 
@@ -14,6 +15,7 @@ const rootReducer = combineReducers({
   highlyRecommended,
   highlyConversations,
   aboutPage,
+  contactPage,
   router
 })
 

@@ -1,7 +1,7 @@
 import React from 'react'
 import ReactDOM from 'react-dom'
 
-import { createStore, combineReducers, applyMiddleware } from 'redux'
+import { createStore, combineReducers, applyMiddleware, compose } from 'redux'
 import { Provider } from 'react-redux'
 
 import createHistory from 'history/createBrowserHistory'
@@ -14,12 +14,13 @@ import reducers from '../reducers'
 
 import services from '../services'
 
-import HeaderContainer from '../containers/HeaderContainer'
-import NavigationContainer from '../containers/NavigationContainer'
-import Footer from '../components/Footer'
-import HomeContainer from '../containers/HomeContainer'
-import ConversationsDetailContainer from '../containers/ConversationsDetailContainer'
 import AboutContainer from '../containers/AboutContainer'
+import ConversationsDetailContainer from '../containers/ConversationsDetailContainer'
+import ContactContainer from '../containers/ContactContainer'
+import Footer from '../components/Footer'
+import HeaderContainer from '../containers/HeaderContainer'
+import HomeContainer from '../containers/HomeContainer'
+import NavigationContainer from '../containers/NavigationContainer'
 import RecommendedDetailContainer from '../containers/RecommendedDetailContainer'
 
 import My404Component from '../components/My404Component'
@@ -42,7 +43,10 @@ history.listen(() => {
 // Also apply our middleware for navigating
 const store = createStore(
   reducers,
-  applyMiddleware(middleware, services)
+  compose(
+    applyMiddleware(middleware, services),
+    window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__()
+  )
 )
 
 document.addEventListener('DOMContentLoaded', () => {
@@ -54,6 +58,7 @@ document.addEventListener('DOMContentLoaded', () => {
           <Switch>
             <Route path="/" exact component={HomeContainer} />
             <Route path="/conversations/:id" component={ConversationsDetailContainer} />
+            <Route path="/contact" component={ContactContainer} />
             <Route path="/about" component={AboutContainer} />
             <Route path="/recommended/:id" component={RecommendedDetailContainer} />
             <Route component={My404Component} />
