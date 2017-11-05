@@ -18,7 +18,7 @@
   max-width: var(--site-width);
   display: flex;
   flex-direction: column;
-  
+
   @media (--tablet-portrait) {
     flex-direction: row;
     height: 50vw;
@@ -29,7 +29,7 @@
 }
 
 .hero .featured-image {
-  background-color: #e9e9df;  
+  background-color: #e9e9df;
   flex-basis: 50%;
   position: relative;
 }
@@ -50,7 +50,7 @@
   font: 18px/1.67 var(--font-family-sans-serif);
   margin: var(--gutter) 0;
   padding: 0 var(--gutter);
-  
+
   @media (orientation: landscape), (--tablet-landscape) {
     font: 24px/1.67 var(--font-family-sans-serif);
     margin: var(--gutter-desktop) 0;
@@ -77,7 +77,7 @@
   margin-bottom: 0;
 }
 
-.body {
+.post .body {
   font: 16px/1.667 var(--font-family-serif);
   margin: 3em auto 15em;
   max-width: var(--site-width);
@@ -94,7 +94,7 @@
   width: 400px;
 }
 
-.body strong {
+.post .body strong {
   display: block;
   margin: 5em 0 0;
 

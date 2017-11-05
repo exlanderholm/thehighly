@@ -1,23 +1,22 @@
 import {
-  GET_CONTACT_PAGE_RECEIVED
+  GET_PRIVACY_POLICY_RECEIVED
 } from "../actions"
 
 const initialState = {
   id: '',
   title: '',
-  intro: '',
   content: '',
-  featuredImage: ''
 }
 
-const contactPage = (state = initialState, action) => {
+const privacyPolicy = (state = initialState, action) => {
   const { type, payload } = action
 
+
   switch (type) {
-    case GET_CONTACT_PAGE_RECEIVED: {
+    case GET_PRIVACY_POLICY_RECEIVED: {
       return {
         ...state,
-        ...payload.contactPage
+        ...payload.privacyPolicy
       }
     }
 
@@ -27,4 +26,4 @@ const contactPage = (state = initialState, action) => {
   }
 }
 
-export default contactPage
+export default privacyPolicy

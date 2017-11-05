@@ -1,7 +1,9 @@
 import React from 'react'
 import ReactDOM from 'react-dom'
 
-import { createStore, combineReducers, applyMiddleware, compose } from 'redux'
+import { createStore, combineReducers, applyMiddleware  } from 'redux'
+import { composeWithDevTools } from 'redux-devtools-extension';
+
 import { Provider } from 'react-redux'
 
 import createHistory from 'history/createBrowserHistory'
@@ -22,6 +24,8 @@ import HeaderContainer from '../containers/HeaderContainer'
 import HomeContainer from '../containers/HomeContainer'
 import NavigationContainer from '../containers/NavigationContainer'
 import RecommendedDetailContainer from '../containers/RecommendedDetailContainer'
+import PrivacyPolicyContainer from '../containers/PrivacyPolicyContainer'
+import TermsAndConditionsContainer from '../containers/TermsAndConditionsContainer'
 
 import My404Component from '../components/My404Component'
 import styles from '../styles/layout'
@@ -43,7 +47,9 @@ history.listen(() => {
 // Also apply our middleware for navigating
 const store = createStore(
   reducers,
-  applyMiddleware(middleware, services)
+  composeWithDevTools(
+    applyMiddleware(middleware, services)
+  )
 )
 
 document.addEventListener('DOMContentLoaded', () => {
@@ -58,6 +64,8 @@ document.addEventListener('DOMContentLoaded', () => {
             <Route path="/contact" component={ContactContainer} />
             <Route path="/about" component={AboutContainer} />
             <Route path="/recommended/:id" component={RecommendedDetailContainer} />
+            <Route path="/privacy-policy" component={PrivacyPolicyContainer} />
+            <Route path="/terms-conditions" component={TermsAndConditionsContainer} />
             <Route component={My404Component} />
           </Switch>
           <Footer />

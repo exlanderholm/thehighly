@@ -1,23 +1,21 @@
 import {
-  GET_CONTACT_PAGE_RECEIVED
+  GET_TERMS_AND_CONDITIONS_RECEIVED
 } from "../actions"
 
 const initialState = {
   id: '',
   title: '',
-  intro: '',
   content: '',
-  featuredImage: ''
 }
 
-const contactPage = (state = initialState, action) => {
+const termsAndConditions = (state = initialState, action) => {
   const { type, payload } = action
 
   switch (type) {
-    case GET_CONTACT_PAGE_RECEIVED: {
+    case GET_TERMS_AND_CONDITIONS_RECEIVED: {
       return {
         ...state,
-        ...payload.contactPage
+        ...payload.termsAndConditions
       }
     }
 
@@ -27,4 +25,4 @@ const contactPage = (state = initialState, action) => {
   }
 }
 
-export default contactPage
+export default termsAndConditions

@@ -1,0 +1,17 @@
+@import '../../styles/variables';
+
+.privacy-policy {
+  margin: var(--header-height-mobile) auto;
+  min-height: 100vh;
+  padding: 0 var(--gutter);
+
+  @media (--tablet-portrait) {
+    margin: var(--header-height-desktop) auto;
+    padding: 0 var(--gutter-desktop);
+  }
+
+  @media (--desktop-large) {
+    margin: var(--header-height-desktop-large) auto;
+    padding: 0 var(--gutter-desktop-large);
+  }
+}
