@@ -30,13 +30,12 @@ const Home = ({ highlyRecommended, highlyConversations }) =>
 
 const HighlyRecommended = ({destinations}) => (
   <div className="content">
-    <p className="intro">
-      Your giude to the good-good.
+    <div className="intro">
+      Your guide to the good good.
       We've done the research for you —
-      here are the finest quality
-      cannabis products of the now,
-      and where to get them
-    </p>
+      here are the finest quality cannabis products of the now,
+      and where to get them.
+    </div>
     <p className="destinations caps">
       { destinations.map(destination => <HighlyDestination {...destination} key={destination.id} />) }
     </p>
@@ -57,37 +56,43 @@ const HighlyDestination = ({title, slug, date}) => {
         <span className="middot">•</span>
         <span className={cx({comingsoon: isComingSoon})} to={`/recommended/${slug}`}>{title}</span>
       </span>
-    )  
+    )
   } else {
     return (
       <span className="destination" >
         <span className="middot">•</span>
         <Link className={cx({comingsoon: isComingSoon})} to={`/recommended/${slug}`}>{title}</Link>
       </span>
-    )  
+    )
   }
 }
 
 const HighlyConversations = () => (
   <Slider  {...settings}>
     <div className="conversation">
-      <div className="image"><img src="//images.contentful.com/pzkgcz3qicwx/2rIcx9kpLSke0WE6WQoWEO/182303b5ecb2783ca1a563d5fc44b6ae/Steve_DeAngelo_Photo.jpg"/></div>
+      <div className="image">
+        <img src="//images.contentful.com/pzkgcz3qicwx/2rIcx9kpLSke0WE6WQoWEO/182303b5ecb2783ca1a563d5fc44b6ae/Steve_DeAngelo_Photo.jpg"/>
+      </div>
       {/* <h2 className="link"><Link to={`/conversations/steve-deangelo`}>Steve DeAngelo</Link></h2> */}
-      <p className="intro">
-        <em>Steve DeAngelo</em> is an author, activist, entrepreneur
+      <div className="excerpt">
+        <p>
+          <strong>Steve DeAngelo</strong> is an author, activist, entrepreneur
         and the owner of the world's largest dispensary.
-      </p>
-      <span className="small caps">November 10, 2017</span>
+        </p>
+      </div>
     </div>
     <div className="conversation">
-      <div className="image"><img src="//images.contentful.com/pzkgcz3qicwx/67Shz4f1BYa46ikmOYok04/39f6eed2c59d730c5c54498e60d2bcdc/image1.jpeg"/></div>
+      <div className="image">
+        <img src="//images.contentful.com/pzkgcz3qicwx/67Shz4f1BYa46ikmOYok04/39f6eed2c59d730c5c54498e60d2bcdc/image1.jpeg"/>
+      </div>
       {/* <h2 className="link"><Link to={`/conversations/rennee-gagnon`}>Rennee Gagnon</Link></h2> */}
-      <p className="intro">
-        <em>Rennee Gagnon</em> What disappoints me is when I get taken aside by women
+      <div className="excerpt">
+        <p>
+          <strong>Rennee Gagnon</strong> What disappoints me is when I get taken aside by women
           who tell me that I shouldn&#39;t be so hard on men.
           I understand where they&#39;re coming from.
-      </p>
-      <span className="small caps">November 12, 2017</span>
+        </p>
+      </div>
     </div>
   </Slider>
 )

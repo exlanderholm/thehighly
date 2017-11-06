@@ -6,7 +6,7 @@
   overflow: hidden;
   text-align: center;
   margin: var(--page-margin-mobile) auto;
-  
+
   @media (--tablet-portrait) {
     margin: var(--page-margin-tablet) auto;
   }
@@ -16,11 +16,11 @@
   @media (--desktop-large) {
     margin: var(--page-margin-desktop-large) auto;
   }
-  
+
   .intro {
     margin: 1em;
     font-size: 1.2em;
-    
+
     @media (--tablet-portrait) {
       margin: 1em 0;
       font-size: 1.5em;
@@ -29,7 +29,7 @@
   .content {
     max-width: 1000px;
     margin: 3em 0 0;
-    
+
     @media (--tablet-portrait) {
       display: flex;
       margin: 5em 0 0;
@@ -41,7 +41,7 @@
   }
   .cartoon {
     padding: 5.2em 3em;
-    background-color: #e9e9df;
+    background-color: var(--background-color);
 
     img {
       mix-blend-mode: multiply;
@@ -54,7 +54,7 @@
     @media (--tablet-portrait) {
       margin: 0;
     }
-    
+
     h2 {
       font-family: AlrightSans;
       font-weight: 500;
@@ -62,7 +62,7 @@
       font-size: 1.1em;
       letter-spacing: .15em;
       line-height: 1.2;
-      
+
       @media (--tablet-portrait) {
         /* font-size: 1.4em; */
       }

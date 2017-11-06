@@ -1,21 +1,20 @@
 @import './variables';
 
 :root {
-  font: normal 18px/1.667 HarrietText, Impact;
+  font: normal 16px/1.667 HarrietText, Impact;
   text-size-adjust: none;
 }
 
 body {
   margin: 0;
-  background-color: #e9e9df;  
+  background-color: var(--background-color);
 }
 
 /* harriettext-lightitalic.woff */
 @font-face{
-  font-family: HarrietText;
-  font-style: italic;
+  font-family: HarrietDisplay;
   font-weight: 300;
-  src: url('../fonts/harriettext-lightitalic.woff') format("woff");
+  src: url('../fonts/harrietdisplay-light.woff') format("woff");
 }
 
 /* harriettext-regular.woff */
@@ -54,12 +53,17 @@ body {
 }
 
 h1 {
-  font: normal 1em/1.333 var(--font-family-heading);
+  font: normal 2em/1.333 var(--font-family-heading);
   font-weight: 500;
 }
 
 h2 {
-  font: normal 1em/1.333 var(--font-family-heading);
+  font: normal 1.5em/1.333 var(--font-family-heading);
+  font-weight: 500;
+}
+
+h3 {
+  font: normal 1.17em/1.333 var(--font-family-heading);
   font-weight: 500;
 }
 
@@ -76,12 +80,13 @@ a {
   font-family: AlrightSans;
   font-weight: 500;
   text-transform: uppercase;
-  letter-spacing: .15em;
+  letter-spacing: 0.25em;
 }
 .small {
   font-family: AlrightSans;
   font-size: 11px;
 }
+
 img {
   max-width: 100%;
 }
