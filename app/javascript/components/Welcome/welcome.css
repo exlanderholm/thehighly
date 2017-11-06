@@ -1,0 +1,65 @@
+@import '../../styles/variables';
+
+.welcome {
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  padding: 3em 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  overflow: hidden;
+  background: rgb(233, 232, 203);
+  text-align: center;
+  z-index: 10;
+
+  /* display: none; */
+  
+  @media (--tablet-portrait) {
+    padding: 3em 1em;
+  }
+  .image {
+    font-size: 0;
+    width: 100vw;
+    height: 40vw;
+    margin: 0;
+    background: url('./AreYou21.gif') center no-repeat;
+    background-size: cover;
+    mix-blend-mode: multiply;
+
+    @media (--tablet-landscape) {
+      width: 50vw;
+      height: 20vw;
+      margin: 0 auto;
+    }
+  }
+  button {
+    margin: 1em;
+    padding: 1.4em 3em;
+    border: 1px solid black;
+    background: none;
+    font-size: 1em;
+    line-height: 1;
+    cursor: pointer;
+    
+    @media (--tablet-landscape) {
+      margin: 2em;
+    }    
+    &:hover {
+      background: red;
+      border-color: red;
+    }
+  }
+  .intro {
+    margin: 2em;
+    font-size: .6em;
+    
+    @media (--tablet-portrait) {
+      margin: 1em 0;
+      font-size: .8em;
+    }
+  }
+}
