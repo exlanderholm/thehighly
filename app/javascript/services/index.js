@@ -1,18 +1,23 @@
 import {
-  GET_HIGHLY_RECOMMENDED,
-  GET_HIGHLY_RECOMMENDED_DETAIL,
-  GET_HIGHLY_CONVERSATIONS,
-  GET_HIGHLY_CONVERSATIONS_DETAIL,
-  GET_HIGHLY_REPORTS,
   GET_ABOUT_PAGE,
   GET_CONTACT_PAGE,
-  getHighlyRecommendedReceived,
-  getHighlyRecommendedDetailReceived,
-  getHighlyConversationsReceived,
-  getHighlyConversationsDetailReceived,
-  getHighlyReportsReceived,
+  GET_HIGHLY_CONVERSATIONS,
+  GET_HIGHLY_CONVERSATIONS_DETAIL,
+  GET_HIGHLY_RECOMMENDED,
+  GET_HIGHLY_RECOMMENDED_DETAIL,
+  GET_HIGHLY_REPORTS,
+  GET_PRIVACY_POLICY,
+  GET_TERMS_AND_CONDITIONS,
+
   getAboutPageReceived,
-  getContactPageReceived
+  getContactPageReceived,
+  getHighlyRecommendedDetailReceived,
+  getHighlyRecommendedReceived,
+  getHighlyConversationsDetailReceived,
+  getHighlyConversationsReceived,
+  getHighlyReportsReceived,
+  getPrivacyPolicyReceived,
+  getTermsAndConditionsReceived
 } from '../actions'
 
 export default ({ dispatch, getState }) => {
@@ -99,12 +104,35 @@ export default ({ dispatch, getState }) => {
       }
 
       case GET_CONTACT_PAGE: {
-        console.log('GET_CONTACT_PAGE!')
         const credentials = 'same-origin'
         fetch('/api/contact_page', { credentials })
         .then(response => response.json())
         .then(json => {
           dispatch(getContactPageReceived(json))
+        }).catch(error => {
+          console.error(error);
+        })
+        break;
+      }
+
+      case GET_PRIVACY_POLICY: {
+        const credentials = 'same-origin'
+        fetch('/api/privacy_policy', { credentials })
+        .then(response => response.json())
+        .then(json => {
+          dispatch(getPrivacyPolicyReceived(json))
+        }).catch(error => {
+          console.error(error);
+        })
+        break;
+      }
+
+      case GET_TERMS_AND_CONDITIONS: {
+        const credentials = 'same-origin'
+        fetch('/api/terms_and_conditions', { credentials })
+        .then(response => response.json())
+        .then(json => {
+          dispatch(getTermsAndConditionsReceived(json))
         }).catch(error => {
           console.error(error);
         })

@@ -23,6 +23,12 @@ export const GET_ABOUT_PAGE_RECEIVED = 'GET_ABOUT_PAGE_RECEIVED'
 export const GET_CONTACT_PAGE = 'GET_CONTACT_PAGE'
 export const GET_CONTACT_PAGE_RECEIVED = 'GET_CONTACT_PAGE_RECEIVED'
 
+export const GET_PRIVACY_POLICY = 'GET_PRIVACY_POLICY'
+export const GET_PRIVACY_POLICY_RECEIVED = 'GET_PRIVACY_POLICY_RECEIVED'
+
+export const GET_TERMS_AND_CONDITIONS = 'GET_TERMS_AND_CONDITIONS'
+export const GET_TERMS_AND_CONDITIONS_RECEIVED = 'GET_TERMS_AND_CONDITIONS_RECEIVED'
+
 // Action Creators
 export const openNavigation = () => {
   return {
@@ -141,6 +147,36 @@ export const getContactPageReceived = ({contactPage}) => {
     type: GET_CONTACT_PAGE_RECEIVED,
     payload: {
       contactPage
+    }
+  }
+}
+
+export const getPrivacyPolicy = () => {
+  return {
+    type: GET_PRIVACY_POLICY
+  }
+}
+
+export const getPrivacyPolicyReceived = ({privacyPolicy}) => {
+  return {
+    type: GET_PRIVACY_POLICY_RECEIVED,
+    payload: {
+      privacyPolicy
+    }
+  }
+}
+
+export const getTermsAndConditions = () => {
+  return {
+    type: GET_TERMS_AND_CONDITIONS
+  }
+}
+
+export const getTermsAndConditionsReceived = ({termsAndConditions}) => {
+  return {
+    type: GET_TERMS_AND_CONDITIONS_RECEIVED,
+    payload: {
+      termsAndConditions
     }
   }
 }
