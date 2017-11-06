@@ -24,7 +24,7 @@ const Welcome = () => {
           <button className="caps yes">Yes</button>
           <button className="caps no">No</button>    
         </div>
-        <div className="intro">By using this website, you are agreeing to our Terms &amp; Conditions and Privacy Policy.</div>
+        <div className="note">By using this website, you are agreeing to our Terms &amp; Conditions and Privacy Policy.</div>
       </div>
     )
   // }

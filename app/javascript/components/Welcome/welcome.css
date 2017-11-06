@@ -52,8 +52,11 @@
       background: red;
       border-color: red;
     }
+    &:focus {
+      outline: none;
+    }
   }
-  .intro {
+  .note {
     margin: 2em;
     font-size: .6em;
     
