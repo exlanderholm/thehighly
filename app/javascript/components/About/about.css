@@ -8,7 +8,13 @@
   margin: var(--page-margin-mobile) auto;
   
   @media (--tablet-portrait) {
+    margin: var(--page-margin-tablet) auto;
+  }
+  @media (--tablet-landscape) {
     margin: var(--page-margin-desktop) auto;
+  }
+  @media (--desktop-large) {
+    margin: var(--page-margin-desktop-large) auto;
   }
   
   .intro {
