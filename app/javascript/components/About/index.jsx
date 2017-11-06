@@ -2,7 +2,7 @@ import React from 'react'
 import styles from './about.css'
 import classNames from "classnames/bind";
 
-const cx = classNames.bind(styles);
+const cx = classNames.bind(styles)
 
 
 const About = ({ title, intro, featuredImage, content }) => (
@@ -20,6 +20,6 @@ const About = ({ title, intro, featuredImage, content }) => (
 
 const feauredImageUrl = (url) => `${url}?w=1200&h=1200`
 
-const createMarkupObject = __html => ({ __html });
+const createMarkupObject = __html => ({ __html })
 
 export default About

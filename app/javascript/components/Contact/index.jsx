@@ -4,7 +4,7 @@ import styles from'./contact.css'
 
 const Contact = ({id, title, body}) =>
   <div className="contact">
-    <h1>{title}</h1>
+    <h2 className="caps">{title}</h2>
     <div className="body" dangerouslySetInnerHTML={createMarkupObject(body)} />
   </div>
 

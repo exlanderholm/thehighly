@@ -1,15 +1,39 @@
 @import '../../styles/variables';
+
 .contact {
-  margin: var(--header-height-mobile) auto;
-  max-width: 320px;
   min-height: 100vh;
+  max-width: 400px;
   text-align: center;
-
+  margin: var(--header-height-mobile) auto;
+  
   @media (--tablet-portrait) {
-    margin: var(--header-height-desktop) auto;
+    margin: var(--page-margin-tablet) auto;
   }
-
+  @media (--tablet-landscape) {
+    margin: var(--page-margin-desktop) auto;
+  }
   @media (--desktop-large) {
-    margin: var(--header-height-desktop-large) auto;
+    margin: var(--page-margin-desktop-large) auto;
+  }
+  
+  .body {
+    font: 18px/1.667 var(--font-family-sans-serif);
+    
+    @media (--tablet-landscape) {
+      font: 21px/1.667 var(--font-family-sans-serif);
+    }
+    
+    blockquote {
+      font: inherit;
+      font-size: .7em;
+      margin: 5em 0;
+
+      & > :first-child::before {
+        display: none;
+      }
+      & > :last-child::after {
+        display: none;
+      }
+    }
   }
 }
