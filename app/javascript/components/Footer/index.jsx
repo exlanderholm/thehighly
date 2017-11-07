@@ -14,6 +14,8 @@ const Footer = () =>
       <ul className="nav caps">
         <li><Link to="/about">About</Link></li>
         <li><Link to="/contact">Contact</Link></li>
+        <li><Link to="/terms-conditions">Terms of use</Link></li>
+        <li><Link to="/privacy-policy">Privacy Policy</Link></li>
         <li><a href="https://instagram.com/thehighly_" target="_blank">Instagram</a></li>
       </ul>
 

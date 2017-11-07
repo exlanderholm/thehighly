@@ -3,7 +3,7 @@ import styles from './terms-and-conditions'
 
 const TermsAndConditions = ({ title, body }) =>
   <div className="terms-and-conditions">
-    <h1>{title}</h1>
+    <h2 className="caps">{title}</h2>
     <div className="body" dangerouslySetInnerHTML={createMarkupObject(body)} />
   </div>
 
