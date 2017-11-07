@@ -21,7 +21,7 @@
     justify-content: space-between;
     padding: 4em var(--gutter-desktop-large);
   }
-  
+
   & > * {
     margin: 2rem 0;
     flex-basis: 100%;
@@ -36,15 +36,11 @@
   }
 
   @media (--desktop-large) {
-    
+
   }
 
   .tagline {
-    font: 500 24px/1.33 var(--font-family-serif);
-    font-style: italic;
-    
     @media (--tablet-portrait) {
-      font-size: 34px;
       order: 1;
       p {
         margin: 0;
@@ -55,7 +51,7 @@
   ul.nav {
     padding: 0;
     list-style: none;
-    
+
     li {
       display: inline-block;
       padding: 1em;
@@ -70,7 +66,7 @@
         flex-basis: 50%;
         padding: 0;
       }
-    }    
+    }
   }
 
   .subscribe-form {
@@ -79,7 +75,7 @@
     flex-flow: row wrap;
     line-height: normal;
     margin: 2rem;
-    
+
     @media (--tablet-portrait) {
       order: 2;
       margin: 2rem 0;
@@ -137,7 +133,7 @@
       order: 4;
       width: auto;
       text-align: right;
-      
+
       span {
         display: block;
         margin: 0;

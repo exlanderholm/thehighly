@@ -7,9 +7,9 @@ const Footer = () =>
 
     <div className="footer__inner">
 
-      <div className="tagline">
+      <blockquote className="tagline">
         <p>A guide to the good good.</p>
-      </div>
+      </blockquote>
 
       <ul className="nav caps">
         <li><Link to="/about">About</Link></li>

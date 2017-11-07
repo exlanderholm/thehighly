@@ -1,21 +1,35 @@
 @import './variables';
 
 :root {
-  font: normal 18px/1.667 HarrietText, Impact;
+  font: normal 16px/1.667 HarrietText, Impact;
   text-size-adjust: none;
 }
 
 body {
   margin: 0;
-  background-color: #e9e9df;  
+  background-color: var(--background-color);
 }
 
-/* harriettext-lightitalic.woff */
+/* harrietdisplay-light.woff */
 @font-face{
-  font-family: HarrietText;
-  font-style: italic;
+  font-family: HarrietDisplay;
   font-weight: 300;
-  src: url('../fonts/harriettext-lightitalic.woff') format("woff");
+  src: url('../fonts/harrietdisplay-light.woff') format("woff");
+}
+
+/* harrietdisplay-medium.woff */
+@font-face{
+  font-family: HarrietDisplay;
+  font-weight: 500;
+  src: url('../fonts/harrietdisplay-medium.woff') format("woff");
+}
+
+/* harrietdisplay-bolditalic.woff */
+@font-face{
+  font-family: HarrietDisplay;
+  font-style: italic;
+  font-weight: bold;
+  src: url('../fonts/harrietdisplay-bolditalic.woff') format("woff");
 }
 
 /* harriettext-regular.woff */
@@ -40,12 +54,6 @@ body {
   src: url('../fonts/harriettext-bolditalic.woff') format("woff");
 }
 
-@font-face{
-  font-family: HarrietDisplay;
-  font-weight: 500;
-  src: url('../fonts/harrietdisplay-medium.woff') format("woff");
-}
-
 
 @font-face {
   font-family: AlrightSans;
@@ -54,12 +62,17 @@ body {
 }
 
 h1 {
-  font: normal 1em/1.333 var(--font-family-heading);
+  font: normal 2em/1.333 var(--font-family-heading);
   font-weight: 500;
 }
 
 h2 {
-  font: normal 1em/1.333 var(--font-family-heading);
+  font: normal 1.5em/1.333 var(--font-family-heading);
+  font-weight: 500;
+}
+
+h3 {
+  font: normal 1.17em/1.333 var(--font-family-heading);
   font-weight: 500;
 }
 
@@ -76,15 +89,23 @@ a {
   font-family: AlrightSans;
   font-weight: 500;
   text-transform: uppercase;
-  letter-spacing: .15em;
+  letter-spacing: 0.25em;
 }
 .small {
   font-family: AlrightSans;
   font-size: 11px;
 }
+
 img {
   max-width: 100%;
 }
-* {
-  box-sizing: border-box;
+
+blockquote {
+  font: 300 26px var(--font-family-heading);
+  line-height: 1;
+  margin: 0;
+
+  @media (--tablet-portrait) {
+    font-size: 52px;
+  }
 }
