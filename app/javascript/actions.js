@@ -29,6 +29,8 @@ export const GET_PRIVACY_POLICY_RECEIVED = 'GET_PRIVACY_POLICY_RECEIVED'
 export const GET_TERMS_AND_CONDITIONS = 'GET_TERMS_AND_CONDITIONS'
 export const GET_TERMS_AND_CONDITIONS_RECEIVED = 'GET_TERMS_AND_CONDITIONS_RECEIVED'
 
+export const DEACTIVATE_WELCOME_SCREEN = 'DEACTIVATE_WELCOME_SCREEN'
+
 // Action Creators
 export const openNavigation = () => {
   return {
@@ -178,5 +180,11 @@ export const getTermsAndConditionsReceived = ({termsAndConditions}) => {
     payload: {
       termsAndConditions
     }
+  }
+}
+
+export const deactivateWelcomeScreen = () => {
+  return {
+    type: DEACTIVATE_WELCOME_SCREEN
   }
 }
