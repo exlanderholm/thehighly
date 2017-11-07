@@ -16,7 +16,7 @@
   text-align: center;
   z-index: 10;
 
-  /* display: none; */
+  display: none;
   
   @media (--tablet-portrait) {
     padding: 3em 1em;

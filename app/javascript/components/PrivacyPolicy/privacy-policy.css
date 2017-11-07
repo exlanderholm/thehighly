@@ -1,17 +1,32 @@
 @import '../../styles/variables';
 
 .privacy-policy {
-  margin: var(--header-height-mobile) auto;
   min-height: 100vh;
+  max-width: 1000px;
+  margin: var(--page-margin-mobile) auto;
   padding: 0 var(--gutter);
-
+  
   @media (--tablet-portrait) {
-    margin: var(--header-height-desktop) auto;
+    margin: var(--page-margin-tablet) auto;
     padding: 0 var(--gutter-desktop);
   }
-
+  @media (--tablet-landscape) {
+    margin: var(--page-margin-desktop) auto;
+  }
   @media (--desktop-large) {
-    margin: var(--header-height-desktop-large) auto;
+    margin: var(--page-margin-desktop-large) auto;
     padding: 0 var(--gutter-desktop-large);
   }
+
+  h2 {
+    text-align: center;
+  }
+  .body {
+    margin: var(--gutter-desktop-large) 0;
+
+    h1, h2, h3, h4, h5, h6 {
+      margin-top: 3em;
+    }
+  }
 }
+

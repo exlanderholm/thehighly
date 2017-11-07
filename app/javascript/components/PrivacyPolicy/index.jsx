@@ -4,7 +4,7 @@ import styles from './privacy-policy'
 
 const PrivacyPolicy = ({ title, body }) =>
   <div className="privacy-policy">
-    <h1>{title}</h1>
+    <h2 className="caps">{title}</h2>
     <div className="body" dangerouslySetInnerHTML={createMarkupObject(body)} />
   </div>
 
