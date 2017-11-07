@@ -26,6 +26,7 @@ import NavigationContainer from '../containers/NavigationContainer'
 import RecommendedDetailContainer from '../containers/RecommendedDetailContainer'
 import PrivacyPolicyContainer from '../containers/PrivacyPolicyContainer'
 import TermsAndConditionsContainer from '../containers/TermsAndConditionsContainer'
+import WelcomeContainer from '../containers/WelcomeContainer'
 
 import My404Component from '../components/My404Component'
 import styles from '../styles/layout'
@@ -70,6 +71,7 @@ document.addEventListener('DOMContentLoaded', () => {
           </Switch>
           <Footer />
           <NavigationContainer />
+          <WelcomeContainer />
         </div>
       </ConnectedRouter>
     </Provider>,
