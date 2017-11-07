@@ -4,7 +4,7 @@ import MapContainer from '../../containers/MapContainer'
 
 import styles from './recommended-detail.css'
 
-const RecommendedDetail = ({title, excerpt, whereToGo}) => {
+const RecommendedDetail = ({title, excerpt, whereToGo, whatToGet}) => {
   return (
     <div className="recommended-detail">
       <div className="recommended-detail__top">
@@ -24,8 +24,13 @@ const RecommendedDetail = ({title, excerpt, whereToGo}) => {
       <p className="notice">Delivery Info Coming Soon. ~~Bicycle~~</p>
 
       <div className="where-to-go">
-        <h4>Where to Go</h4>
+        <h4 className="caps">Where to Go</h4>
         {whereToGo.map( place => <Place {...place} key={place.id} /> )}
+      </div>
+
+      <div className="what-to-get">
+      <h4 className="caps">What To Get</h4>
+        {whatToGet.map( product => <Product {...product} key={product.id} /> )}
       </div>
     </div>
   )
@@ -34,13 +39,15 @@ const RecommendedDetail = ({title, excerpt, whereToGo}) => {
 RecommendedDetail.propTypes = {
   title: PropTypes.string,
   excerpt: PropTypes.string,
-  whereToGo: PropTypes.array
+  whereToGo: PropTypes.array,
+  whatToGet: PropTypes.array
 }
 
 RecommendedDetail.defaultProps = {
   title: '',
   excerpt: '',
-  whereToGo: []
+  whereToGo: [],
+  whatToGet: []
 }
 
 const Place = ({ id, title, description, location, website }) => (
@@ -52,6 +59,14 @@ const Place = ({ id, title, description, location, website }) => (
       <a target="_blank" href="/">Directions</a>
       Related: <a href="/">Post Link</a>
     </div>
+  </div>
+)
+const Product = ({ id, title, description, type, image }) => (
+  <div className="product">
+    <h3 className="product__title">{title}</h3>
+    <h6 className="product__type">{type}</h6>
+    <div dangerouslySetInnerHTML={createMarkupObject(description)} />
+    <img className="product__image" src={image.url} />
   </div>
 )
 

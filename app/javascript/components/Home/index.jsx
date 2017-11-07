@@ -22,7 +22,7 @@ const Home = ({ highlyRecommended, highlyConversations }) =>
       <HighlyConversations {...highlyConversations} />
     </div>
     <div className="recommended">
-      <h4 className="caps"><Link to={`/recommended`}>The Highly Recommended</Link></h4>
+      <h4 className="caps"><Link to={`/recommended/bay-area`}>The Highly Recommended</Link></h4>
       {<HighlyRecommended {...highlyRecommended} />}
     </div>
   </div>
@@ -40,8 +40,8 @@ const HighlyRecommended = ({destinations}) => (
       { destinations.map(destination => <HighlyDestination {...destination} key={destination.id} />) }
     </p>
     <p className="small">
-        Don't see your city? Contact us with your Highly Recommended.
-      </p>
+      Don't see your city? Contact us with your Highly Recommended.
+    </p>
   </div>
 )
 
