@@ -3,13 +3,11 @@
 
 .home {
   margin-top: var(--header-height-mobile);
-  min-height: calc(100vh - var(--header-height-mobile) - var(--footer-height-mobile));
   overflow: hidden;
   text-align: center;
 
   @media (--tablet-portrait) {
     margin-top: var(--header-height-desktop);
-    min-height: calc(100vh - var(--header-height-desktop) - var(--footer-height-desktop));
     display: flex;
     border-top: 1px solid #8E9093;
   }
@@ -77,7 +75,7 @@
   }
 
   .title {
-    margin: .3em 0;
+    margin: 1em 0;
   }
 
   .excerpt {
@@ -88,8 +86,15 @@
 
 .recommended {
   .content {
-    width: 90%;
-    margin: 2em auto;
+    padding: 0 var(--gutter);
+
+    @media (--tablet-portrait) {
+      padding: 0 var(--gutter-desktop);
+    }
+
+    @media (--desktop-large) {
+      padding: 0 var(--gutter-desktop-large);
+    }
   }
 
   .destination {

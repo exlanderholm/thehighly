@@ -30,12 +30,12 @@ const Home = ({ highlyRecommended, highlyConversations }) =>
 
 const HighlyRecommended = ({destinations}) => (
   <div className="content">
-    <div className="intro">
+    <blockquote className="intro">
       Your guide to the good good.
       We've done the research for you —
       here are the finest quality cannabis products of the now,
       and where to get them.
-    </div>
+    </blockquote>
     <p className="destinations caps">
       { destinations.map(destination => <HighlyDestination {...destination} key={destination.id} />) }
     </p>
