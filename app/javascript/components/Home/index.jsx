@@ -79,6 +79,7 @@ const HighlyConversations = () => (
           <strong>Steve DeAngelo</strong> is an author, activist, entrepreneur
         and the owner of the world's largest dispensary.
         </p>
+        <span className="small caps">November 10, 2017</span>
       </div>
     </div>
     <div className="conversation">
@@ -92,6 +93,7 @@ const HighlyConversations = () => (
           who tell me that I shouldn&#39;t be so hard on men.
           I understand where they&#39;re coming from.
         </p>
+        <span className="small caps">November 11, 2017</span>
       </div>
     </div>
   </Slider>
