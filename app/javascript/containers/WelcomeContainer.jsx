@@ -2,22 +2,26 @@ import React, { Component } from 'react'
 import { connect } from 'react-redux'
 import Welcome from '../components/Welcome'
 
-import { openNavigation } from '../actions'
+import { deactivateWelcomeScreen } from '../actions'
 
 const WelcomeContainer = (props) => <Welcome {...props} />
 
-const mapStateToProps = ({navigation, router}) => {
-  const { isOpen } = navigation
-  const isHomePage = (router.location.pathname === "/")
+const mapStateToProps = ({welcome}) => {
+  const { isActive } = welcome
   return {
-    isOpen,
-    isHomePage
+    isActive
   }
 }
 
 const mapDispatchToProps = (dispatch) => {
   return {
-    openNavigation: () => dispatch(openNavigation())
+    respondToYes: () => {
+      console.log('responding to yes')
+      dispatch(deactivateWelcomeScreen())
+    },
+    respondToNo: () => {
+      window.location = "http://google.com/"
+    }
   }
 }
 
