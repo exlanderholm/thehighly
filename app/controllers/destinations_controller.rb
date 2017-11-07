@@ -54,9 +54,10 @@ class DestinationsController < ApplicationController
   def tidy_what_to_get(what_to_get)
     {
       id: what_to_get.id,
-      title: what_to_get.title,
-      description: what_to_get.description,
-      type: what_to_get.type
+      title: what_to_get.fields[:title],
+      description: what_to_get.fields[:description],
+      image: what_to_get.fields[:image] ? parse_image(what_to_get.fields[:image]) : {},
+      type: what_to_get.fields[:type]
     }
   end
 
