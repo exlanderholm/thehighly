@@ -44,7 +44,7 @@ class DestinationsController < ApplicationController
     {
       id: where_to_go.id,
       title: where_to_go.fields[:title],
-      description: where_to_go.fields[:description],
+      description: markdown.render(where_to_go.fields[:description]),
       location: where_to_go.fields[:location],
       website: where_to_go.fields[:website],
       relatedPosts: tidy_related_post(where_to_go.fields[:related_posts])
@@ -55,7 +55,7 @@ class DestinationsController < ApplicationController
     {
       id: what_to_get.id,
       title: what_to_get.fields[:title],
-      description: what_to_get.fields[:description],
+      description: markdown.render(what_to_get.fields[:description]),
       image: what_to_get.fields[:image] ? parse_image(what_to_get.fields[:image]) : {},
       type: what_to_get.fields[:type]
     }

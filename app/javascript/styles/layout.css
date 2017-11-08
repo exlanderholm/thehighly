@@ -11,21 +11,21 @@ body {
 }
 
 /* harrietdisplay-light.woff */
-@font-face{
+@font-face {
   font-family: HarrietDisplay;
   font-weight: 300;
   src: url('../fonts/harrietdisplay-light.woff') format("woff");
 }
 
 /* harrietdisplay-medium.woff */
-@font-face{
+@font-face {
   font-family: HarrietDisplay;
   font-weight: 500;
   src: url('../fonts/harrietdisplay-medium.woff') format("woff");
 }
 
 /* harrietdisplay-bolditalic.woff */
-@font-face{
+@font-face {
   font-family: HarrietDisplay;
   font-style: italic;
   font-weight: bold;
@@ -33,21 +33,21 @@ body {
 }
 
 /* harriettext-regular.woff */
-@font-face{
+@font-face {
   font-family: HarrietText;
   font-weight: normal;
   src: url('../fonts/harriettext-regular.woff') format("woff");
 }
 
 /* harriettext-bold.woff */
-@font-face{
+@font-face {
   font-family: HarrietText;
   font-weight: bold;
   src: url('../fonts/harriettext-bold.woff') format("woff");
 }
 
 /* harriettext-bolditalic.woff */
-@font-face{
+@font-face {
   font-family: HarrietText;
   font-style: italic;
   font-weight: bold;
@@ -62,22 +62,32 @@ body {
 }
 
 h1 {
-  font: normal 2em/1.333 var(--font-family-heading);
+  font: normal 2em/1 var(--font-family-sans-serif);
   font-weight: 500;
 }
 
 h2 {
-  font: normal 1.5em/1.333 var(--font-family-heading);
+  font: normal 1.5em/1 var(--font-family-sans-serif);
   font-weight: 500;
 }
 
 h3 {
-  font: normal 1.17em/1.333 var(--font-family-heading);
+  font: normal 1.17em/1 var(--font-family-sans-serif);
   font-weight: 500;
 }
 
 h4 {
-  font: normal 1em/1.333 var(--font-family-sans-serif);
+  font: normal 1em/1 var(--font-family-sans-serif);
+  text-transform: uppercase;
+}
+
+h5 {
+  font: normal 0.83em/1 var(--font-family-sans-serif);
+  text-transform: uppercase;
+}
+
+h6 {
+  font: normal 0.67em/1 var(--font-family-sans-serif);
   text-transform: uppercase;
 }
 
@@ -85,12 +95,14 @@ a {
   color: inherit;
   text-decoration: none;
 }
+
 .caps {
-  font-family: AlrightSans;
+  font-family: var(--font-family-sans-serif);
   font-weight: 500;
   text-transform: uppercase;
   letter-spacing: 0.25em;
 }
+
 .small {
   font-family: AlrightSans;
   font-size: 11px;
@@ -102,7 +114,7 @@ img {
 
 blockquote {
   font: 300 26px var(--font-family-heading);
-  line-height: 1.33;
+  line-height: 1;
   margin: 0;
 
   @media (--tablet-portrait) {
