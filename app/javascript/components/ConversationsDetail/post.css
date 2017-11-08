@@ -109,7 +109,7 @@
   margin: 3em 0;
 
   @media (--tablet-landscape) {
-    margin: 3em -5em;
+    margin: 3em -4em;
   }
 
   & > :first-child::before {
