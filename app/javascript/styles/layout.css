@@ -98,9 +98,9 @@ a {
 
 .caps {
   font-family: var(--font-family-sans-serif);
-  font-weight: 500;
+  font-weight: 600;
   text-transform: uppercase;
-  letter-spacing: 0.25em;
+  letter-spacing: 0.2em;
 }
 
 .small {
@@ -113,8 +113,7 @@ img {
 }
 
 blockquote {
-  font: 300 26px var(--font-family-heading);
-  line-height: 1;
+  font: 300 26px/1.33 var(--font-family-heading);
   margin: 0;
 
   @media (--tablet-portrait) {

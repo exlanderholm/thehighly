@@ -52,13 +52,13 @@ RecommendedDetail.defaultProps = {
 
 const Place = ({ id, title, description, location, website }) => (
   <div className="place">
-    <h3 className="place__title">{title}</h3>
-    <div dangerouslySetInnerHTML={createMarkupObject(description)} />
-    <div className="place__bottom">
-      <a href={website}>website</a>
-      <a target="_blank" href="/">Directions</a>
-      Related: <a href="/">Post Link</a>
-    </div>
+    <ul className="place__header">
+      <li><h3 className="place__title">{title}</h3></li>
+      <li><a className="caps" href={website}>website</a></li>
+      <li><a className="caps" target="_blank" href="/">Directions</a></li>
+      <li><span className="caps">Related: <a href="/">Post Link</a></span></li>
+    </ul>
+    <div className="place__content" dangerouslySetInnerHTML={createMarkupObject(description)} />
   </div>
 )
 const Product = ({ id, title, description, type, image }) => (
