@@ -8,8 +8,8 @@ const Navigation = ({closeNavigation, isOpen}) => (
       <button className="close-button" onClick={closeNavigation}>Close</button>
     </div>
     <nav className="main-navigation">
-      <Link to="/recommended">The Highly Recommended</Link>
-      <Link to="/conversations">Conversations</Link>
+      <Link to="/recommended/the-bay">Highly Recommended</Link>
+      <Link to="/conversations/steve-deangelo">The Conversations</Link>
       <Link to="/about">About</Link>
     </nav>
   </div>
