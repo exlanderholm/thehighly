@@ -22,7 +22,7 @@ const Home = ({ highlyRecommended, highlyConversations }) =>
       <HighlyConversations {...highlyConversations} />
     </div>
     <div className="recommended">
-      <h4 className="caps"><Link to={`/recommended/bay-area`}>Highly Recommended</Link></h4>
+      <h4 className="caps"><Link to={`/recommended/the-bay`}>Highly Recommended</Link></h4>
       {<HighlyRecommended {...highlyRecommended} />}
     </div>
   </div>
