@@ -89,9 +89,7 @@ const HighlyConversations = () => (
       {/* <h2 className="link"><Link to={`/conversations/rennee-gagnon`}>Rennee Gagnon</Link></h2> */}
       <div className="excerpt">
         <p>
-          <strong>Rennee Gagnon</strong> What disappoints me is when I get taken aside by women
-          who tell me that I shouldn&#39;t be so hard on men.
-          I understand where they&#39;re coming from.
+          <strong>Rennee Gagnon:</strong> I found a substance that I could repeat and repeat and it didn’t hurt me and I liked that.
         </p>
         <span className="small caps">November 11, 2017</span>
       </div>

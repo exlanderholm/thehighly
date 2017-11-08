@@ -35,12 +35,11 @@
     }
   }
 
-  @media (--desktop-large) {
-
-  }
-
   .tagline {
+    font-size: 2em;
+
     @media (--tablet-portrait) {
+      font-size: 3em;
       order: 1;
       p {
         margin: 0;

@@ -102,10 +102,10 @@ img {
 
 blockquote {
   font: 300 26px var(--font-family-heading);
-  line-height: 1;
+  line-height: 1.33;
   margin: 0;
 
   @media (--tablet-portrait) {
-    font-size: 52px;
+    font-size: 44px;
   }
 }

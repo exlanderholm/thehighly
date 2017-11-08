@@ -12,8 +12,10 @@
 {
   position: absolute;
   top: 32vw;
+  
   @media (--tablet-portrait) {
-    top: 15.5vw;
+    top: 50%;
+    transform: translateY(calc(-50% - 55px));
   }
   font-size: 0;
   line-height: 0;
