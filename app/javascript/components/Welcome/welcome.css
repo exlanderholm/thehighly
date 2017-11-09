@@ -1,23 +1,27 @@
 @import '../../styles/variables';
 
 .welcome {
-  position: fixed;
-  top: 0;
-  right: 0;
+  align-items: center;
+  background: rgb(233, 232, 203);
   bottom: 0;
-  left: 0;
-  padding: 3em 0;
-  display: none;
+  display: flex;
   flex-direction: column;
   justify-content: space-between;
-  align-items: center;
+  left: 0;
+  opacity: 0;
   overflow: hidden;
-  background: rgb(233, 232, 203);
+  padding: 3em 0;
+  pointer-events: none;
+  position: fixed;
+  right: 0;
   text-align: center;
+  top: 0;
+  transition: opacity 400ms;
   z-index: 10;
 
   &.isActive {
-    display: flex;
+    opacity: 1;
+    pointer-events: auto;
   }
 
   @media (--tablet-portrait) {
@@ -39,13 +43,13 @@
     }
   }
   button {
-    margin: 1em;
-    padding: 1.4em 3em;
-    border: 1px solid black;
     background: none;
+    border: 1px solid black;
+    cursor: pointer;
     font-size: 1em;
     line-height: 1;
-    cursor: pointer;
+    margin: 1em;
+    padding: 1.4em 3em;
 
     @media (--tablet-landscape) {
       margin: 2em;

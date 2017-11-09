@@ -8,6 +8,7 @@ import {
   GET_HIGHLY_REPORTS,
   GET_PRIVACY_POLICY,
   GET_TERMS_AND_CONDITIONS,
+  DEACTIVATE_WELCOME_SCREEN,
 
   getAboutPageReceived,
   getContactPageReceived,
@@ -136,6 +137,12 @@ export default ({ dispatch, getState }) => {
         }).catch(error => {
           console.error(error);
         })
+        break;
+      }
+
+      case DEACTIVATE_WELCOME_SCREEN: {
+        console.log('deactivating');
+        localStorage.setItem('isOlderThan21', true)
         break;
       }
     }

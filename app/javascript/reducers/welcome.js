@@ -1,6 +1,6 @@
 import { DEACTIVATE_WELCOME_SCREEN } from "../actions"
 
-const initialState = { isActive: true }
+const initialState = { isActive: localStorage.getItem('isOlderThan21') ? false : true }
 
 const welcome = (state = initialState, action) => {
   const { type, payload } = action
