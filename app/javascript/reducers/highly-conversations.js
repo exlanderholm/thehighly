@@ -3,7 +3,14 @@ import {
   GET_HIGHLY_CONVERSATIONS_DETAIL_RECEIVED
 } from "../actions";
 
-const initialState = { posts: [], post: {} }
+const initialState = {
+  posts: [],
+  post: {
+    featuredImage: {
+      url: ''
+    }
+  }
+}
 
 const highlyConversations = (state = initialState, action) => {
   const { type, payload } = action

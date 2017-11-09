@@ -19,14 +19,17 @@
   max-width: var(--site-width);
   display: flex;
   flex-direction: column;
+  padding: 0 var(--gutter);
 
   @media (--tablet-portrait) {
     flex-direction: row;
     height: 50vw;
+    padding: 0 var(--gutter-desktop);
   }
 
   @media (--desktop-large) {
     height: 700px;
+    padding: 0 var(--gutter-desktop-large);
   }
 }
 
