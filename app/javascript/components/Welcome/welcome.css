@@ -50,16 +50,13 @@
     line-height: 1;
     margin: 1em;
     padding: 1.4em 3em;
-    transition-duration: 800ms;
-    transition-property: background-color, color;
 
     @media (--tablet-landscape) {
       margin: 2em;
     }
     &:hover {
-      background: black;
-      color: var(--background-color);
-      transition-duration: 400ms;
+      background: red;
+      border-color: red;
     }
     &:focus {
       outline: none;
