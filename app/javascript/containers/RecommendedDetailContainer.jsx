@@ -7,6 +7,7 @@ import {
 } from '../actions'
 
 class RecommendedDetailContainer extends React.Component {
+  
   componentDidMount() {
     const { id } = this.props.match.params
     this.props.getHighlyRecommendedDetail({id})
@@ -29,5 +30,7 @@ const mapDispatchToProps = (dispatch) => {
     }
   }
 }
+
+
 
 export default connect(mapStateToProps, mapDispatchToProps)(RecommendedDetailContainer)
