@@ -169,6 +169,7 @@
   border-top: 2px solid black;
 
   .product {
+    position: relative;
     margin: 6em 0;
     
     @media (--tablet-portrait) {
@@ -177,9 +178,19 @@
     
     .product__title {
       font-size: 34px;
+      cursor: crosshair;
     }
     .product__image {
-      display: none;
+      visibility: hidden;
+      position: absolute;
+      top: 0;
+      left: 0;
+      max-width: 35%;
+      transform: translate(150%, -50%);
+    }
+    .product__title:hover + .product__image,
+    .product__image:hover {
+      visibility: visible;
     }
   }
 }
