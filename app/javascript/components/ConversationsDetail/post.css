@@ -98,6 +98,13 @@
 .body img {
   width: 400px;
 }
+.body a {
+  border-bottom: 1px solid red;
+  
+  &:hover {
+    color: red;
+  }
+}
 
 .post .body strong {
   display: block;

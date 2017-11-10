@@ -17,18 +17,19 @@ var settings = {
 const Home = ({ highlyRecommended, highlyConversations }) =>
 
   <div className="home">
-    <div className="conversations">
-      <div className="top">
-        <h4 className="caps"><Link to={`/conversations/steve-deangelo`}>The Conversations</Link></h4>
-      </div>
-      {highlyConversations && <HighlyConversations {...highlyConversations} />}
-    </div>
     <div className="recommended">
       <div className="top">
         <h4 className="caps"><Link to={`/recommended/the-bay`}>Highly Recommended</Link></h4>
       </div>
       <HighlyRecommended {...highlyRecommended} />
     </div>
+    <div className="conversations">
+      <div className="top">
+        <h4 className="caps"><Link to={`/conversations/steve-deangelo`}>The Conversations</Link></h4>
+      </div>
+      {highlyConversations && <HighlyConversations {...highlyConversations} />}
+    </div>
+
   </div>
 
 
