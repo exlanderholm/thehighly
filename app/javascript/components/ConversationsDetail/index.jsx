@@ -17,7 +17,6 @@ const ConversationsDetail = ({
     <div className="post" style={{backgroundColor: postBackgroundColor}}>
       <div className="hero-wrapper" style={{backgroundColor: excerptBackgroundColor}}>
         <div className="hero">
-          {/* <div className="featured-image" style={{backgroundColor: featuredImageBackgroundColor}}> */}
           <div className="featured-image" style={{backgroundColor: excerptBackgroundColor}}>
             <img src={featuredImageUrl} alt="Featured Image" />
           </div>
@@ -27,14 +26,6 @@ const ConversationsDetail = ({
       <div className="body" dangerouslySetInnerHTML={createMarkupObject(body)} />
     </div>
   )
-}
-
-ConversationsDetail.defaultProps = {
-  title: 'Mike is cool diary',
-  featuredImage: {
-    id: "",
-    url: ""
-  }
 }
 
 const createMarkupObject = __html => ({ __html });
