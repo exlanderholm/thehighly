@@ -34,7 +34,7 @@
 }
 
 .hero .featured-image {
-  background-color: #e9e9df;
+  background-color: var(--background-color-alt);
   flex-basis: 50%;
   position: relative;
 }
@@ -112,11 +112,21 @@
   margin: 3em 0;
 
   @media (--tablet-landscape) {
-    margin: 3em -4em;
+    margin: 3em -3em 3em -2em;
+  }
+  @media (--desktop-large) {
+    margin: 3em -4em 3em -3em;
   }
 
-  & > :first-child::before {
-    content: "“";
+  & > :first-child {
+    position: relative;
+
+    &::before {
+      content: "“";
+      /* position: absolute;
+      top: 0;
+      left: -.4em; */
+    }
   }
 
   & > :last-child::after {

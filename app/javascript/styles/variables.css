@@ -8,6 +8,7 @@
 :root {
   --border-color: #8E9093;
   --background-color: #F6F2E9;
+  --background-color-alt: #e9e9df;
 
   --gutter: 24px;
   --gutter-desktop: 45px;
