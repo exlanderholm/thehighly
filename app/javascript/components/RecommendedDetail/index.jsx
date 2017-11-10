@@ -58,7 +58,7 @@ const RecommendedDetail = ({
         </div>
 
         <div className="product__type">
-          <h3 className="caps">CartridgeOil</h3>
+          <h3 className="caps">Cartridge Vapeables</h3>
           {productsCartridgeOil.map( product => <Product {...product} key={product.id} /> )}
         </div>
 
@@ -133,8 +133,8 @@ const Place = ({ id, title, description, location, website }) => (
 const Product = ({ id, title, description, type, image }) => (
   <div className="product">
     <h3 className="product__title">{title}</h3>
-    {<div dangerouslySetInnerHTML={createMarkupObject(description)} />}
-    {<img className="product__image" src={image.url} />}
+    <img className="product__image" src={image.url} />
+    <div dangerouslySetInnerHTML={createMarkupObject(description)} />
   </div>
 )
 
