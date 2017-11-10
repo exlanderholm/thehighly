@@ -30,8 +30,8 @@
   --site-width: 1440px;
 
   --font-family-heading: HarrietDisplay, Impact, serif;
-  --font-family-sans-serif: AlrightSans, Impact, serif;
-  --font-family-serif: HarrietText, Impact, sans-serif;
+  --font-family-sans-serif: AlrightSans, Impact, sans-serif;
+  --font-family-serif: HarrietText, Impact, serif;
 
   --fast: 400ms;
   --slow: 800ms;
