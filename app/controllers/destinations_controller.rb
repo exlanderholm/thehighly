@@ -55,8 +55,9 @@ class DestinationsController < ApplicationController
     {
       id: what_to_get.id,
       title: what_to_get.fields[:title],
-      description: markdown.render(what_to_get.fields[:description]),
       image: what_to_get.fields[:image] ? parse_image(what_to_get.fields[:image]) : {},
+      description: markdown.render(what_to_get.fields[:description]),
+      affiliateLink: what_to_get.fields[:affiliate_link],
       type: what_to_get.fields[:type]
     }
   end

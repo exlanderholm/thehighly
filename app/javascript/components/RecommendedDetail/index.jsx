@@ -18,7 +18,6 @@ const RecommendedDetail = ({
   productsPets
 }) => {
   const whatToGetSorted = sortWtg({whatToGet})
-  console.log(whatToGetSorted)
   return (
     <div className="recommended-detail">
 
@@ -122,10 +121,16 @@ const ProductGroup = ({type, products}) =>
     </div>
   </div>
 
-const Product = ({ id, title, description, type, image }) => (
+const Product = ({ id, title, image, description, affiliateLink, type }) => (
   <div className="product">
-    <h3 className="product__title">{title}</h3>
+    <h3 className="product__title">
+      <a href={affiliateLink} target="_blank">
+        {title}
+      </a>
+    </h3>
+
     <img className="product__image" src={image.url} />
+
     <div dangerouslySetInnerHTML={createMarkupObject(description)} />
   </div>
 )
