@@ -115,8 +115,11 @@ const Place = ({ id, title, description, location, website }) => (
 
 const ProductGroup = ({type, products}) =>
   <div className="product__type">
-    <h3 className="caps">{type}</h3>
-    {products.map( product => <Product {...product} key={product.id} /> )}
+    <label htmlFor={`product_type_${type}`} className="caps">{type}</label>
+    <input className="product_type_checkbox" type="checkbox" id={`product_type_${type}`} />
+    <div className="product_products">
+      {products.map( product => <Product {...product} key={product.id} /> )}
+    </div>
   </div>
 
 const Product = ({ id, title, description, type, image }) => (
