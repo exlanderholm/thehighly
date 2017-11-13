@@ -37,7 +37,7 @@ const HighlyRecommended = ({destinations}) => (
   <div className="content">
     <blockquote className="intro">
       Your guide to the good good.
-      We've done the research for you —
+      We&rsquo;ve done the research for you —
       here are the finest quality cannabis products of the now,
       and where to get them.
     </blockquote>

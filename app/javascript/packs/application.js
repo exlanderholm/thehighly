@@ -35,13 +35,14 @@ const history = createHistory()
 
 import { closeNavigation } from '../actions'
 
-
 // Build the middleware for intercepting and dispatching navigation actions
 const middleware = routerMiddleware(history)
 
 // Close the menu when going to new route
-history.listen(() => {
+history.listen((location, action) => {
   store.dispatch(closeNavigation())
+  document.body.scrollTop = 0; // For Chrome, Safari and Opera
+  document.documentElement.scrollTop = 0; // For IE and Firefox
 })
 
 // Add the reducer to your store on the `router` key

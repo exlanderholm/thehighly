@@ -21,12 +21,12 @@ const Footer = () =>
 
       <form action="mailto:mailto:hello@thehighly.co" className="subscribe-form">
         <input placeholder="email" type="email" /> <button className="caps">Subscribe</button>
-        <p>We won't sell you out</p>
+        <p>We won&rsquo;t sell you out</p>
       </form>
 
       <div className="copyright">
         <span>&copy; 2017 The Highly</span>
-        <span>Please don't steal our stuff.</span>
+        <span>Please don&rsquo;t steal our stuff.</span>
       </div>
 
     </div>
