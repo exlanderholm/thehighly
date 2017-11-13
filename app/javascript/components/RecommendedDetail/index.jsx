@@ -58,7 +58,7 @@ const RecommendedDetail = ({
         </div>
 
         <div className="product__type">
-          <h3 className="caps">Cartridge Vapeables</h3>
+          <h3 className="caps">Cartridge Vapables</h3>
           {productsCartridgeOil.map( product => <Product {...product} key={product.id} /> )}
         </div>
 
