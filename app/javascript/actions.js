@@ -2,6 +2,9 @@
 export const OPEN_NAVIGATION = 'OPEN_NAVIGATION'
 export const CLOSE_NAVIGATION = 'CLOSE_NAVIGATION'
 
+export const GET_NAVIGATION_LINK = 'GET_NAVIGATION_LINK'
+export const GET_NAVIGATION_LINK_RECEIVED = 'GET_NAVIGATION_LINK_RECEIVED'
+
 export const GET_HIGHLY_RECOMMENDED = 'GET_HIGHLY_RECOMMENDED'
 export const GET_HIGHLY_RECOMMENDED_RECEIVED = 'GET_HIGHLY_RECOMMENDED_RECEIVED'
 
@@ -41,6 +44,24 @@ export const openNavigation = () => {
 export const closeNavigation = () => {
   return {
     type: CLOSE_NAVIGATION
+  }
+}
+
+export const getNavigationLink = ({slug}) => {
+  return {
+    type: GET_NAVIGATION_LINK,
+    payload: {
+      slug
+    }
+  }
+}
+
+export const getNavigationLinkReceived = ({navigationLink}) => {
+  return {
+    type: GET_NAVIGATION_LINK_RECEIVED,
+    payload: {
+      navigationLink
+    }
   }
 }
 

@@ -32,14 +32,6 @@ class DestinationsController < ApplicationController
       excerpt: destination.fields[:excerpt] ? markdown.render(destination.excerpt) : "",
       whereToGo: Array(destination.fields[:where_to_go]).map { |wtg| tidy_where_to_go(wtg) },
       whatToGet: Array(destination.fields[:what_to_get]).map { |wtg| tidy_what_to_get(wtg) },
-      
-      productsFlower: Array(destination.fields[:products_flower]).map { |wtg| tidy_what_to_get(wtg) },
-      productsEdibles: Array(destination.fields[:products_edibles]).map { |wtg| tidy_what_to_get(wtg) },
-      productsCartridgeOil: Array(destination.fields[:products_cartridgeOil]).map { |wtg| tidy_what_to_get(wtg) },
-      productsTopicals: Array(destination.fields[:products_topicals]).map { |wtg| tidy_what_to_get(wtg) },
-      productsSensuals: Array(destination.fields[:products_sensuals]).map { |wtg| tidy_what_to_get(wtg) },
-      productsTinctures: Array(destination.fields[:products_tinctures]).map { |wtg| tidy_what_to_get(wtg) },
-      productsPets: Array(destination.fields[:products_pets]).map { |wtg| tidy_what_to_get(wtg) }
     }
   end
 
@@ -64,8 +56,9 @@ class DestinationsController < ApplicationController
     {
       id: what_to_get.id,
       title: what_to_get.fields[:title],
-      description: markdown.render(what_to_get.fields[:description]),
       image: what_to_get.fields[:image] ? parse_image(what_to_get.fields[:image]) : {},
+      description: markdown.render(what_to_get.fields[:description]),
+      affiliateLink: what_to_get.fields[:affiliate_link],
       type: what_to_get.fields[:type]
     }
   end
