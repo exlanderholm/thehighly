@@ -19,7 +19,7 @@ const RecommendedDetail = ({
 }) => {
   return (
     <div className="recommended-detail">
-      
+
       <div className="recommended-detail__top">
         <h1 className="title">{title}</h1>
         <div className="recommended-detail__excerpt" dangerouslySetInnerHTML={createMarkupObject(excerpt)} />
@@ -32,6 +32,7 @@ const RecommendedDetail = ({
           loadingElement={<div style={{ height: `50vw` }} />}
           containerElement={<div style={{ height: `50vw` }} />}
           mapElement={<div style={{ height: `50vw` }} />}
+          whereToGo={whereToGo}
         />
       </div>
 
