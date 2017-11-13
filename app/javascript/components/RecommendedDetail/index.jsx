@@ -33,6 +33,7 @@ const RecommendedDetail = ({
           loadingElement={<div style={{ height: `50vw` }} />}
           containerElement={<div style={{ height: `50vw` }} />}
           mapElement={<div style={{ height: `50vw` }} />}
+          whereToGo={whereToGo}
         />
       </div>
 
