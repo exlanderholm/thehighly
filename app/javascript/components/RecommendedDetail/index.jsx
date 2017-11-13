@@ -17,9 +17,10 @@ const RecommendedDetail = ({
   productsTinctures,
   productsPets
 }) => {
+  const whatToGetSorted = sortWtg({whatToGet})
   return (
     <div className="recommended-detail">
-      
+
       <div className="recommended-detail__top">
         <h1 className="title">{title}</h1>
         <div className="recommended-detail__excerpt" dangerouslySetInnerHTML={createMarkupObject(excerpt)} />
@@ -37,7 +38,6 @@ const RecommendedDetail = ({
 
       <p className="notice">Delivery Info Coming Soon. (bicycle)</p>
 
-
       <div className="where-to-go">
         <h4 className="section__title caps">Where to Go</h4>
         {whereToGo.map( place => <Place {...place} key={place.id} /> )}
@@ -45,45 +45,8 @@ const RecommendedDetail = ({
 
       <div className="what-to-get">
         <h4 className="section__title caps">What To Get</h4>
-        {/*whatToGet.map( product => <Product {...product} key={product.id} /> )*/}
-
-        <div className="product__type">
-          <h3 className="caps">Flower</h3>
-          {productsFlower.map( product => <Product {...product} key={product.id} /> )}
-        </div>
-
-        <div className="product__type">
-          <h3 className="caps">Edibles</h3>
-          {productsEdibles.map( product => <Product {...product} key={product.id} /> )}
-        </div>
-
-        <div className="product__type">
-          <h3 className="caps">Cartridge Vapeables</h3>
-          {productsCartridgeOil.map( product => <Product {...product} key={product.id} /> )}
-        </div>
-
-        <div className="product__type">
-          <h3 className="caps">Topicals</h3>
-          {productsTopicals.map( product => <Product {...product} key={product.id} /> )}
-        </div>
-
-        <div className="product__type">
-          <h3 className="caps">Sensuals</h3>
-          {productsSensuals.map( product => <Product {...product} key={product.id} /> )}
-        </div>
-
-        <div className="product__type">
-          <h3 className="caps">Tinctures</h3>
-          {productsTinctures.map( product => <Product {...product} key={product.id} /> )}
-        </div>
-
-        <div className="product__type">
-          <h3 className="caps">Pets</h3>
-          {productsPets.map( product => <Product {...product} key={product.id} /> )}
-        </div>
-
+        {whatToGetSorted.map( (group, idx) => <ProductGroup {...group} key={idx} />)}
       </div>
-
     </div>
   )
 }
@@ -118,6 +81,25 @@ RecommendedDetail.defaultProps = {
   productsPets: []
 }
 
+const sortWtg = ({whatToGet}) => {
+  var whatToGetSortedObject = {}
+  whatToGet.forEach(element => {
+    whatToGetSortedObject[element.type] = whatToGetSortedObject[element.type] || []
+    whatToGetSortedObject[element.type].push(element)
+  })
+
+  var whatToGetSortedArray = []
+
+  Object.keys(whatToGetSortedObject).forEach( (groupName) => {
+    whatToGetSortedArray.push({
+      products: whatToGetSortedObject[groupName],
+      type: groupName
+    })
+  })
+
+  return whatToGetSortedArray
+}
+
 const Place = ({ id, title, description, location, website }) => (
   <div className="place">
     <ul className="place__header">
@@ -130,10 +112,25 @@ const Place = ({ id, title, description, location, website }) => (
   </div>
 )
 
-const Product = ({ id, title, description, type, image }) => (
+const ProductGroup = ({type, products}) =>
+  <div className="product__type">
+    <label htmlFor={`product_type_${type}`} className="caps">{type}</label>
+    <input className="product_type_checkbox" type="checkbox" id={`product_type_${type}`} />
+    <div className="product_products">
+      {products.map( product => <Product {...product} key={product.id} /> )}
+    </div>
+  </div>
+
+const Product = ({ id, title, image, description, affiliateLink, type }) => (
   <div className="product">
-    <h3 className="product__title">{title}</h3>
+    <h3 className="product__title">
+      <a href={affiliateLink} target="_blank">
+        {title}
+      </a>
+    </h3>
+
     <img className="product__image" src={image.url} />
+
     <div dangerouslySetInnerHTML={createMarkupObject(description)} />
   </div>
 )
