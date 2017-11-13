@@ -1,6 +1,16 @@
-import { OPEN_NAVIGATION, CLOSE_NAVIGATION } from "../actions";
+import {
+  OPEN_NAVIGATION,
+  CLOSE_NAVIGATION,
+  GET_NAVIGATION_LINK_RECEIVED
+} from "../actions"
 
-const initialState = { isOpen: false }
+const initialState = {
+  isOpen: false,
+  navigationLinks: {
+    recommended: '/recommended',
+    conversations: '/conversations'
+  }
+}
 
 const navigation = (state = initialState, action) => {
   const { type, payload } = action
@@ -18,10 +28,22 @@ const navigation = (state = initialState, action) => {
         isOpen: false
       }
     }
+
+    case GET_NAVIGATION_LINK_RECEIVED: {
+      const { navigationLink } = payload
+      const { section, href } = navigationLink
+      var navigationLinks = state.navigationLinks
+      navigationLinks[navigationLink.section] = href
+      return {
+        ...state,
+        navigationLinks
+      }
+    }
+
     default: {
       return state;
     }
   }
 };
 
-export default navigation;
+export default navigation

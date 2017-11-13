@@ -2,22 +2,32 @@ import React, { Component } from 'react'
 import { connect } from 'react-redux'
 import Header from '../components/Header'
 
-import { openNavigation } from '../actions'
+import { openNavigation, getNavigationLink } from '../actions'
 
-const HeaderContainer = (props) => <Header {...props} />
+class HeaderContainer extends React.Component {
+  componentDidMount() {
+    this.props.getNavigationLink({slug: 'conversations'})
+    this.props.getNavigationLink({slug: 'recommended'})
+  }
+  render() {
+    return <Header {...this.props} />
+  }
+}
 
 const mapStateToProps = ({navigation, router}) => {
-  const { isOpen } = navigation
+  const { isOpen, navigationLinks } = navigation
   const isHomePage = (router.location.pathname === "/")
   return {
     isOpen,
-    isHomePage
+    isHomePage,
+    navigationLinks
   }
 }
 
 const mapDispatchToProps = (dispatch) => {
   return {
-    openNavigation: () => dispatch(openNavigation())
+    openNavigation: () => dispatch(openNavigation()),
+    getNavigationLink: ({slug}) => dispatch(getNavigationLink({slug}))
   }
 }
 
