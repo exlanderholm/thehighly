@@ -25,7 +25,7 @@ const Home = ({ highlyRecommended, highlyConversations }) =>
     </div>
     <div className="conversations">
       <div className="top">
-        <h4 className="caps"><Link to={`/conversations/steve-deangelo`}>The Conversations</Link></h4>
+        <h4 className="caps"><Link to={`/conversations/steve-deangelo`}>Conversations</Link></h4>
       </div>
       {highlyConversations && <HighlyConversations {...highlyConversations} />}
     </div>
@@ -50,7 +50,7 @@ const HighlyRecommended = ({destinations}) => (
   </div>
 )
 
-const HighlyDestination = ({title, slug, date}) => {
+const HighlyDestination = ({name, slug, date}) => {
   const postDate = new Date(date);
   const today = new Date();
   const isComingSoon = postDate > today;
@@ -59,14 +59,14 @@ const HighlyDestination = ({title, slug, date}) => {
     return (
       <span className="destination" >
         <span className="middot">•</span>
-        <span className={cx({comingsoon: isComingSoon})} to={`/recommended/${slug}`}>{title}</span>
+        <span className={cx({comingsoon: isComingSoon})} to={`/recommended/${slug}`}>{name}</span>
       </span>
     )
   } else {
     return (
       <span className="destination" >
         <span className="middot">•</span>
-        <Link className={cx({comingsoon: isComingSoon})} to={`/recommended/${slug}`}>{title}</Link>
+        <Link className={cx({comingsoon: isComingSoon})} to={`/recommended/${slug}`}>{name}</Link>
       </span>
     )
   }

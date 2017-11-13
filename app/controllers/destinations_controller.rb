@@ -25,6 +25,7 @@ class DestinationsController < ApplicationController
   def tidy_destination(destination)
     {
       id: destination.id,
+      name: destination.fields[:name],
       title: destination.fields[:title],
       slug: destination.slug,
       date: destination.fields[:date],

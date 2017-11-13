@@ -125,6 +125,13 @@
       max-width: 500px;
       margin: 2em auto 1em;
     }
+    a {
+      border-bottom: 1px solid red;
+      
+      &:hover {
+        color: red;
+      }
+    }
   }
 
 }
