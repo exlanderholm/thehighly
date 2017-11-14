@@ -101,13 +101,25 @@ const sortWtg = ({whatToGet}) => {
   return whatToGetSortedArray
 }
 
-const Place = ({ id, title, description, location, website }) => (
+// const relatedPosts = (relatedPosts) => {
+
+//   return (
+//     <span className="caps">Related: </span>
+//   )
+//   relatedPosts.forEach(relatedPost => {
+//     return (
+//       <span className=""><a href={relatedPost.link}>{relatedPost.title}</a></span>
+//     )
+//   })
+// }
+
+const Place = ({ id, title, description, location, website, relatedPosts }) => (
   <div className="place">
     <ul className="place__header">
       <li><h3 className="place__title">{title}</h3></li>
       <li><a className="caps" href={website}>website</a></li>
       <li><a className="caps" target="_blank" href="/">Directions</a></li>
-      <li><span className="caps">Related: <a href="/">Post Link</a></span></li>
+      {/* {relatedPosts} */}
     </ul>
     <div className="place__content" dangerouslySetInnerHTML={createMarkupObject(description)} />
   </div>

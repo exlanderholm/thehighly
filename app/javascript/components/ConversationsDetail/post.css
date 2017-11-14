@@ -81,7 +81,15 @@
 .hero .intro-content p:last-child {
   margin-bottom: 0;
 }
-
+.hero, .body {
+  a {
+    border-bottom: 1px solid red;
+    
+    &:hover {
+      color: red;
+    }
+  }
+}
 .post .body {
   font: 16px/1.667 var(--font-family-serif);
   margin: 3em auto 15em;
@@ -94,18 +102,9 @@
     padding: 0 var(--gracious-gutter);
   }
 }
-
-.body img {
-  width: 400px;
-}
-.hero, .body {
-  a {
-    border-bottom: 1px solid red;
-    
-    &:hover {
-      color: red;
-    }
-  }
+.post .body img {
+  max-width: 600px;
+  max-height: 400px;
 }
 
 .post .body strong {

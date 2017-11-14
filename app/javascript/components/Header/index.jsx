@@ -12,7 +12,7 @@ const Header = ({ openNavigation, isHomePage, navigationLinks }) => (
       <div className="logo-area">
         <Logo />
       </div>
-        {!isHomePage && <Link className="mainLink caps" to={navigationLinks.recommended}>Recommended</Link>}
+        {!isHomePage && <Link className="mainLink caps" to={navigationLinks.recommended}>Highly Recommended</Link>}
       <div className="menu-button-area">
         <button className="menu-button"onClick={openNavigation}>Menu</button>
       </div>
