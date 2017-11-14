@@ -17,7 +17,6 @@ const highlyConversations = (state = initialState, action) => {
 
   switch (type) {
     case GET_HIGHLY_CONVERSATIONS_RECEIVED: {
-      console.log(payload.posts);
       return {
         ...state,
         posts: payload.posts

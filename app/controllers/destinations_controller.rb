@@ -7,7 +7,15 @@ class DestinationsController < ApplicationController
       tidy_destination(destination)
     end
 
-    render json: {destinations: destinations}
+    today = Date.today
+    destinations_coming_soon = destinations.select { |item| item[:date] > today}
+    destinations_present_past = destinations.select { |item| item[:date] <= today}
+
+    render json: {
+      destinations: destinations,
+      destinationsComingSoon: destinations_coming_soon,
+      destinationsPresentPast: destinations_present_past
+    }
   end
 
   def show

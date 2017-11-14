@@ -71,11 +71,13 @@ export const getHighlyRecommended = () => {
   }
 }
 
-export const getHighlyRecommendedReceived = ({destinations}) => {
+export const getHighlyRecommendedReceived = ({destinations, destinationsComingSoon, destinationsPresentPast}) => {
   return {
     type: GET_HIGHLY_RECOMMENDED_RECEIVED,
     payload: {
-      destinations
+      destinations,
+      destinationsComingSoon,
+      destinationsPresentPast
     }
   }
 }

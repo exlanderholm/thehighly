@@ -18,11 +18,6 @@ class HomeContainer extends React.Component {
   }
 }
 
-// HeaderContainer.propTypes = {
-//   loggedIn: bool,
-//   logOut: func
-// };
-
 const mapStateToProps = (state) => {
 
   const { highlyRecommended, highlyConversations, highlyReports } = state
