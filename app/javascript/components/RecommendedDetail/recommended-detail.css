@@ -95,15 +95,20 @@
     padding-bottom: 1em;
     text-align: center;
     text-transform: uppercase;
+    vertical-align: middle;
 
     @media (--tablet-landscape) {
       border-width: 2px;
-      margin: 1em 2rem 0;
+      margin: 1.2em 2rem 0;
     }
 
     @media (--desktop-large) {
       width: 1400px;
-      margin: 1em auto 0;
+      margin: 1.2em auto 0;
+    }
+    svg {
+      width: 44px;
+      margin: -8px 10px;
     }
   }
 }
