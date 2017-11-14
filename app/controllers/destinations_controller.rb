@@ -55,7 +55,7 @@ class DestinationsController < ApplicationController
     {
       id: where_to_go.id,
       title: where_to_go.fields[:title],
-      description: markdown.render(where_to_go.fields[:description]),
+      description: where_to_go.fields[:description] ? markdown.render(where_to_go.fields[:description]) : nil,
       location: where_to_go.fields[:location],
       website: where_to_go.fields[:website],
       relatedPosts: tidy_related_post(where_to_go.fields[:related_posts])
@@ -67,7 +67,7 @@ class DestinationsController < ApplicationController
       id: what_to_get.id,
       title: what_to_get.fields[:title],
       image: what_to_get.fields[:image] ? parse_image(what_to_get.fields[:image]) : {},
-      description: markdown.render(what_to_get.fields[:description]),
+      description: what_to_get.fields[:description] ? markdown.render(what_to_get.fields[:description]) : nil,
       affiliateLink: what_to_get.fields[:affiliate_link],
       type: what_to_get.fields[:type]
     }

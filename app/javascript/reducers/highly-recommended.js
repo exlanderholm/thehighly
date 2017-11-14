@@ -7,7 +7,8 @@ const initialState = {
   destinations: [],
   destinationsComingSoon: [],
   destinationsPresentPast: [],
-  destination: {}
+  destination: {
+  }
 }
 
 const highlyRecommended = (state = initialState, action) => {
