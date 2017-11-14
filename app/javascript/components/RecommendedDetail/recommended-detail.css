@@ -2,7 +2,7 @@
 
 :root {
   --page-width: 870px;
-}
+} 
 
 .recommended-detail {
   max-width: var(--site-width);
@@ -34,7 +34,17 @@
   &__excerpt {
 
   }
-
+  .recommended-detail__excerpt,
+  .place__content,
+  .product__content {
+    a {
+      border-bottom: 1px solid red;
+      
+      &:hover {
+        color: red;
+      }
+    }
+  }
   .title {
     font-size: 34px;
     line-height: 1;

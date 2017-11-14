@@ -125,7 +125,7 @@ const Product = ({ id, title, image, description, affiliateLink, type }) => (
 
     <img className="product__image" src={image.url} />
 
-    <div dangerouslySetInnerHTML={createMarkupObject(description)} />
+    <div className="product__content" dangerouslySetInnerHTML={createMarkupObject(description)} />
   </div>
 )
 
