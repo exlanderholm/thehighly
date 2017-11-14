@@ -22,14 +22,15 @@ const RecommendedDetail = ({
       </div>
 
       <div className="map-container">
-        <MapContainer
+        {coordinates && <MapContainer
           isMarkerShown
           googleMapURL="https://maps.googleapis.com/maps/api/js?key=AIzaSyB0sfdV9YRi7xlGTu2wWal0fKLWInIQ6ME&v=3.exp&libraries=geometry,drawing,places"
-          loadingElement={<div style={{ height: `50vw` }} />}
-          containerElement={<div style={{ height: `50vw` }} />}
-          mapElement={<div style={{ height: `50vw` }} />}
+          loadingElement={<div style={{ height: `550px` }} />}
+          containerElement={<div style={{ height: `auto` }} />}
+          mapElement={<div style={{ height: `550px` }} />}
           whereToGo={whereToGo}
-        />
+          coordinates={coordinates}
+        />}
       </div>
 
       <div className="notice" dangerouslySetInnerHTML={createMarkupObject(mapMessaging)} />
