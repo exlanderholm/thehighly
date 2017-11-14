@@ -92,7 +92,6 @@
   .notice {
     border-bottom: 2px solid black;
     font:  500 18px/1.22 var(--font-family-sans-serif);
-    padding-bottom: 1em;
     text-align: center;
     text-transform: uppercase;
     vertical-align: middle;
@@ -111,7 +110,7 @@
       display: none;
     }
 
-    svg {
+    img {
       width: 44px;
       margin: -8px 10px;
     }
