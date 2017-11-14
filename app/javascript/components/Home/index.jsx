@@ -23,7 +23,6 @@ const decorators = [
 
 var settings = {
   wrapAround: true,
-  decoratorz: Carousel.getDefaultProps().decorators.slice(0, 3),
   decorators
 }
 

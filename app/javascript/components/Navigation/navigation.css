@@ -43,7 +43,7 @@
 
     &:focus,
     &:active {
-      color: red;
+      border: none;
       outline: none;
     }
   }

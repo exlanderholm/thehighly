@@ -9,7 +9,7 @@ const Navigation = ({closeNavigation, isOpen}) => (
     </div>
     <nav className="main-navigation">
       <Link to="/recommended/the-bay">Highly Recommended</Link>
-      <Link to="/conversations/steve-deangelo">The Conversations</Link>
+      <Link to="/conversations/steve-deangelo">Conversations</Link>
       <Link to="/about">About</Link>
     </nav>
   </div>
