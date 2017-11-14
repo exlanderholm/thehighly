@@ -30,6 +30,8 @@ class DestinationsController < ApplicationController
       slug: destination.slug,
       date: destination.fields[:date],
       excerpt: destination.fields[:excerpt] ? markdown.render(destination.excerpt) : "",
+      coordinates: destination.fields[:coordinates],
+      mapMessaging: destination.fields[:map_messaging] ? markdown.render(destination.map_messaging) : "",
       whereToGo: Array(destination.fields[:where_to_go]).map { |wtg| tidy_where_to_go(wtg) },
       whatToGet: Array(destination.fields[:what_to_get]).map { |wtg| tidy_what_to_get(wtg) },
     }
