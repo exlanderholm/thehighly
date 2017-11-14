@@ -19,8 +19,10 @@ const Footer = () =>
         <li><Link to="/terms-conditions">Terms of use</Link></li>
       </ul>
 
-      <form action="mailto:mailto:hello@thehighly.co" className="subscribe-form">
-        <input placeholder="email" type="email" /> <button className="caps">Subscribe</button>
+      <form action="https://itshighlyrecommended.us16.list-manage.com/subscribe/post?u=1b77c1d70c504ec82d801b47f&amp;id=05a8deb122" className="subscribe-form" method="post" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form" target="_blank">
+        <input type="hidden" name="b_1b77c1d70c504ec82d801b47f_05a8deb122" tabIndex="-1" value="" />
+        <input placeholder="email" type="email" name="EMAIL" className="required email" id="mce-EMAIL" />
+        <button className="caps">Subscribe</button>
         <p>We won&rsquo;t sell you out</p>
       </form>
 
@@ -28,9 +30,7 @@ const Footer = () =>
         <span>&copy; 2017 The Highly</span>
         <span>Please don&rsquo;t steal our stuff.</span>
       </div>
-
     </div>
-
   </footer>
 
 export default Footer
