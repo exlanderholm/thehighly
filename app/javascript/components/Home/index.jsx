@@ -44,7 +44,7 @@ const Home = ({ highlyRecommended, highlyConversations }) =>
   </div>
 
 
-const HighlyRecommended = ({destinations}) => (
+const HighlyRecommended = ({destinations, destinationsPresentPast, destinationsComingSoon}) => (
   <div className="content">
     <blockquote className="intro">
       Your guide to the good good.
@@ -53,7 +53,8 @@ const HighlyRecommended = ({destinations}) => (
       and where to get them.
     </blockquote>
     <p className="destinations caps">
-      { destinations.map(destination => <HighlyDestination {...destination} key={destination.id} />) }
+      { destinationsPresentPast.map(destination => <HighlyDestination {...destination} key={destination.id} />) }
+      { destinationsComingSoon.map(destination => <HighlyDestination {...destination} key={destination.id} />) }
     </p>
     <p className="small">
       Don't see your city? Contact us with your Highly Recommended.
@@ -70,14 +71,14 @@ const HighlyDestination = ({name, slug, date}) => {
     return (
       <span className="destination" >
         <span className="middot">•</span>
-        <span className={cx({comingsoon: isComingSoon})} to={`/recommended/${slug}`}>{name}</span>
+        <span className={cx('comingsoon')} to={`/recommended/${slug}`}>{name}</span>
       </span>
     )
   } else {
     return (
       <span className="destination" >
         <span className="middot">•</span>
-        <Link className={cx({comingsoon: isComingSoon})} to={`/recommended/${slug}`}>{name}</Link>
+        <Link to={`/recommended/${slug}`}>{name}</Link>
       </span>
     )
   }
