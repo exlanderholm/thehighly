@@ -29,6 +29,7 @@ class PostsController < ApplicationController
       title: post.fields[:title],
       date: post.fields[:date],
       excerpt: post.fields[:excerpt] ? markdown.render(post.excerpt) : "",
+      tagline: post.fields[:tagline] ? markdown.render(post.tagline) : "",
       body: post.fields[:body] ? markdown.render(post.body) : "",
       featuredImage: post.fields[:featured_image] ? parse_image(post.featured_image) : {},
       featuredImageBackgroundColor: post.fields[:featured_image_background_color] ? post.featured_image_background_color : "transparent",

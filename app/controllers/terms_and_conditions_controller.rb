@@ -4,6 +4,7 @@ class TermsAndConditionsController < ApplicationController
     .entries(content_type: "termsAndConditions", include: 2)
     .first
 
+
     if terms_and_conditions.fields.keys
       render json: {termsAndConditions: tidy_terms_and_conditions(terms_and_conditions)}
     else
@@ -16,6 +17,7 @@ class TermsAndConditionsController < ApplicationController
       id: terms_and_conditions.id,
       title: terms_and_conditions.fields[:title],
       body: terms_and_conditions.fields[:body] ? markdown.render(terms_and_conditions.body) : "",
+      updatedAt: terms_and_conditions.updated_at
     }
   end
 
