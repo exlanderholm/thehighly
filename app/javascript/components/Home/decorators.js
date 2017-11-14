@@ -14,8 +14,8 @@ const getButtonStyles = (disabled) => {
 const LeftArrow = ({currentSlide, previousSlide, wrapAround}) => {
   return (
     <button style={getButtonStyles(currentSlide === 0 && !wrapAround)} onClick={event => { event.preventDefault(); previousSlide() }}>
-      <svg width="60px" height="80px" viewBox="0 0 50 80">
-        <polyline fill="none" stroke="#8E9093" strokeWidth="1" strokeLinecap="round" strokeLinejoin="round" points="45.63,75.8 0.375,38.087 45.63,0.375" />
+      <svg width="32px" height="62px" viewBox="0 0 32 62">
+        <polyline fill="none" stroke="#666666" strokeWidth="1" strokeLinecap="round" strokeLinejoin="round" points="31.2,60.8 0.8,31 31.2,1.2 " />
       </svg>
     </button>
   )
@@ -24,8 +24,8 @@ const LeftArrow = ({currentSlide, previousSlide, wrapAround}) => {
 const RightArrow = ({currentSlide, nextSlide, wrapAround}) => {
   return (
     <button style={getButtonStyles(currentSlide === 0 && !wrapAround)} onClick={event => { event.preventDefault(); nextSlide() }}>
-      <svg width="60px" height="80px" viewBox="0 0 50 80">
-        <polyline fill="none" stroke="#8E9093" strokeWidth="1" strokeLinecap="round" strokeLinejoin="round" points="0.375,0.375 45.63,38.087 0.375,75.8" />
+      <svg width="32px" height="62px" viewBox="0 0 32 62">
+        <polyline fill="none" stroke="#666666" strokeWidth="1" strokeLinecap="round" strokeLinejoin="round" points="0.8,1.2 31.2,31 0.8,60.8 " />
       </svg>
     </button>
   )

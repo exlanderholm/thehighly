@@ -13,11 +13,17 @@ const cx = classNames.bind(styles);
 const decorators = [
   {
     component: LeftArrow,
-    position: 'CenterLeft'
+    position: 'CenterLeft',
+    style: {
+      padding: 20
+    }
   },
   {
     component: RightArrow,
-    position: 'CenterRight'
+    position: 'CenterRight',
+    style: {
+      padding: 20
+    }
   }
 ]
 
