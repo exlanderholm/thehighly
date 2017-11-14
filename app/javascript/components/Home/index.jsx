@@ -100,11 +100,6 @@ const HighlyConversation = ({tagline, featuredImage, slug, title}) => (
         <img src={featuredImage.url} />
       </Link>
     </div>
-    <h2 className="title">
-      <Link to={`/conversations/${slug}`}>
-        {title}
-      </Link>
-    </h2>
     <div className="tagline excerpt" dangerouslySetInnerHTML={createMarkupObject(tagline)} />
   </div>
 )
