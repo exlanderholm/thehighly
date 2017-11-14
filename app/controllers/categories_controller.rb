@@ -24,6 +24,7 @@ class CategoriesController < ApplicationController
         title: post.title,
         date: post.date,
         excerpt: post.fields[:excerpt] ? markdown.render(post.excerpt) : "",
+        tagline: post.fields[:tagline] ? markdown.render(post.tagline) : "",
         body: post.fields[:body] ? markdown.render(post.body) : "",
         featuredImage: post.fields[:featured_image] ? parse_image(post.featured_image) : {},
         slug: post.slug,

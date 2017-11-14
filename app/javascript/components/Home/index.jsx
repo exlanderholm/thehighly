@@ -1,21 +1,33 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
-import Slider from 'react-slick'
-import "../../styles/slick/slick.css"
+
+import Carousel from 'nuka-carousel'
+
+import { LeftArrow, RightArrow } from './decorators'
+
 import styles from './home.css'
 import classNames from "classnames/bind";
 
 const cx = classNames.bind(styles);
 
-var settings = {
-    lazyLoad: true,
-    speed: 500,
-    slidesToShow: 1,
-    slidesToScroll: 1
+const decorators = [
+  {
+    component: LeftArrow,
+    position: 'CenterLeft'
+  },
+  {
+    component: RightArrow,
+    position: 'CenterRight'
   }
+]
+
+var settings = {
+  wrapAround: true,
+  decoratorz: Carousel.getDefaultProps().decorators.slice(0, 3),
+  decorators
+}
 
 const Home = ({ highlyRecommended, highlyConversations }) =>
-
   <div className="home">
     <div className="recommended">
       <div className="top">
@@ -29,11 +41,10 @@ const Home = ({ highlyRecommended, highlyConversations }) =>
       </div>
       {highlyConversations && <HighlyConversations {...highlyConversations} />}
     </div>
-
   </div>
 
 
-const HighlyRecommended = ({destinations}) => (
+const HighlyRecommended = ({destinations, destinationsPresentPast, destinationsComingSoon}) => (
   <div className="content">
     <blockquote className="intro">
       Your guide to the good good.
@@ -42,7 +53,8 @@ const HighlyRecommended = ({destinations}) => (
       and where to get them.
     </blockquote>
     <p className="destinations caps">
-      { destinations.map(destination => <HighlyDestination {...destination} key={destination.id} />) }
+      { destinationsPresentPast.map(destination => <HighlyDestination {...destination} key={destination.id} />) }
+      { destinationsComingSoon.map(destination => <HighlyDestination {...destination} key={destination.id} />) }
     </p>
     <p className="small">
       Don't see your city? Contact us with your Highly Recommended.
@@ -59,14 +71,14 @@ const HighlyDestination = ({name, slug, date}) => {
     return (
       <span className="destination" >
         <span className="middot">•</span>
-        <span className={cx({comingsoon: isComingSoon})} to={`/recommended/${slug}`}>{name}</span>
+        <span className={cx('comingsoon')} to={`/recommended/${slug}`}>{name}</span>
       </span>
     )
   } else {
     return (
       <span className="destination" >
         <span className="middot">•</span>
-        <Link className={cx({comingsoon: isComingSoon})} to={`/recommended/${slug}`}>{name}</Link>
+        <Link to={`/recommended/${slug}`}>{name}</Link>
       </span>
     )
   }
@@ -74,12 +86,14 @@ const HighlyDestination = ({name, slug, date}) => {
 
 const HighlyConversations = ({posts}) =>
   <div className="content">
-    {
-      posts.map(post => <HighlyConversation {...post} key={post.id} />)
-    }
+    <Carousel {...settings}>
+      {
+        posts.map(post => <HighlyConversation {...post} key={post.id} />)
+      }
+    </Carousel>
   </div>
 
-const HighlyConversation = ({excerpt, featuredImage, slug, title}) => (
+const HighlyConversation = ({tagline, featuredImage, slug, title}) => (
   <div className="conversation">
     <div className="image">
       <Link to={`/conversations/${slug}`}>
@@ -91,7 +105,7 @@ const HighlyConversation = ({excerpt, featuredImage, slug, title}) => (
         {title}
       </Link>
     </h2>
-    <div className="excerpt" dangerouslySetInnerHTML={createMarkupObject(excerpt)} />
+    <div className="tagline excerpt" dangerouslySetInnerHTML={createMarkupObject(tagline)} />
   </div>
 )
 

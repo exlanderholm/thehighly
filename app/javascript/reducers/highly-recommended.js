@@ -3,7 +3,12 @@ import {
   GET_HIGHLY_RECOMMENDED_DETAIL_RECEIVED
 } from "../actions";
 
-const initialState = { destinations: [], destination: {} }
+const initialState = {
+  destinations: [],
+  destinationsComingSoon: [],
+  destinationsPresentPast: [],
+  destination: {}
+}
 
 const highlyRecommended = (state = initialState, action) => {
   const { type, payload } = action
@@ -12,7 +17,9 @@ const highlyRecommended = (state = initialState, action) => {
     case GET_HIGHLY_RECOMMENDED_RECEIVED: {
       return {
         ...state,
-        destinations: payload.destinations
+        destinations: payload.destinations,
+        destinationsComingSoon: payload.destinationsComingSoon,
+        destinationsPresentPast: payload.destinationsPresentPast
       }
     }
 

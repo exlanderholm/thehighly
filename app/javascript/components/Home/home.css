@@ -23,11 +23,10 @@
 .home {
   .conversations,
   .recommended {
-    flex-basis: 50vw;
-    padding-bottom: 2em;
-    overflow: hidden;
     display: flex;
+    flex-basis: 50vw;
     flex-direction: column;
+    overflow: hidden;
   }
 
   .top {
@@ -36,20 +35,13 @@
     align-items: center;
     justify-content: center;
     flex-shrink: 0;
-
-    /* @media (--tablet-portrait) {
-      flex-basis: var(--gutter-desktop);
-    } */
-
-    /* @media (--desktop-large) {
-      flex-basis: var(--gutter-desktop-large);
-    } */
   }
 
   h4 {
     a {
       position: relative;
     }
+
     a::before {
       border-bottom: 2px solid transparent;
       content: '';
@@ -59,6 +51,7 @@
       bottom: -5px;
       height: 1px;
     }
+
     a::before:hover {
       border-bottom-color: black;
     }
@@ -67,7 +60,6 @@
   .content {
     flex-grow: 1;
   }
-
 }
 
 .conversations {
@@ -127,7 +119,7 @@
     }
     a {
       border-bottom: 1px solid red;
-      
+
       &:hover {
         color: red;
       }
