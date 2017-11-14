@@ -98,7 +98,7 @@ const Place = ({ id, title, description, location, website, relatedPosts }) => (
   <div className="place">
     <ul className="place__header">
       <li><h3 className="place__title">{title}</h3></li>
-      <li><a className="caps" href={website}>website</a></li>
+      <li><a className="caps" href={website} target="_blank">website</a></li>
       <li><a className="caps" target="_blank" href="/">Directions</a></li>
       {/* {relatedPosts} */}
     </ul>
