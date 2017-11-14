@@ -86,7 +86,7 @@
 
   &:focus,
   &:active {
-    border-color: red;
+    border: none;
     outline: none;
   }
 }
