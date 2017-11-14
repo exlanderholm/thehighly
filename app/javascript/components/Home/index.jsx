@@ -1,21 +1,33 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
-import Slider from 'react-slick'
-import "../../styles/slick/slick.css"
+
+import Carousel from 'nuka-carousel'
+
+import { LeftArrow, RightArrow } from './decorators'
+
 import styles from './home.css'
 import classNames from "classnames/bind";
 
 const cx = classNames.bind(styles);
 
-var settings = {
-    lazyLoad: true,
-    speed: 500,
-    slidesToShow: 1,
-    slidesToScroll: 1
+const decorators = [
+  {
+    component: LeftArrow,
+    position: 'CenterLeft'
+  },
+  {
+    component: RightArrow,
+    position: 'CenterRight'
   }
+]
+
+var settings = {
+  wrapAround: true,
+  decoratorz: Carousel.getDefaultProps().decorators.slice(0, 3),
+  decorators
+}
 
 const Home = ({ highlyRecommended, highlyConversations }) =>
-
   <div className="home">
     <div className="recommended">
       <div className="top">
@@ -29,7 +41,6 @@ const Home = ({ highlyRecommended, highlyConversations }) =>
       </div>
       {highlyConversations && <HighlyConversations {...highlyConversations} />}
     </div>
-
   </div>
 
 
@@ -74,12 +85,14 @@ const HighlyDestination = ({name, slug, date}) => {
 
 const HighlyConversations = ({posts}) =>
   <div className="content">
-    {
-      posts.map(post => <HighlyConversation {...post} key={post.id} />)
-    }
+    <Carousel {...settings}>
+      {
+        posts.map(post => <HighlyConversation {...post} key={post.id} />)
+      }
+    </Carousel>
   </div>
 
-const HighlyConversation = ({excerpt, featuredImage, slug, title}) => (
+const HighlyConversation = ({tagline, featuredImage, slug, title}) => (
   <div className="conversation">
     <div className="image">
       <Link to={`/conversations/${slug}`}>
@@ -91,7 +104,7 @@ const HighlyConversation = ({excerpt, featuredImage, slug, title}) => (
         {title}
       </Link>
     </h2>
-    <div className="excerpt" dangerouslySetInnerHTML={createMarkupObject(excerpt)} />
+    <div className="tagline excerpt" dangerouslySetInnerHTML={createMarkupObject(tagline)} />
   </div>
 )
 
