@@ -3,17 +3,31 @@ import { Link } from 'react-router-dom'
 
 import Carousel from 'nuka-carousel'
 
+import { LeftArrow, RightArrow } from './decorators'
+
 import styles from './home.css'
 import classNames from "classnames/bind";
 
 const cx = classNames.bind(styles);
 
+const decorators = [
+  {
+    component: LeftArrow,
+    position: 'CenterLeft'
+  },
+  {
+    component: RightArrow,
+    position: 'CenterRight'
+  }
+]
+
 var settings = {
-  wrapAround: true
+  wrapAround: true,
+  decoratorz: Carousel.getDefaultProps().decorators.slice(0, 3),
+  decorators
 }
 
 const Home = ({ highlyRecommended, highlyConversations }) =>
-
   <div className="home">
     <div className="recommended">
       <div className="top">
