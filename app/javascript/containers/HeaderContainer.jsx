@@ -2,7 +2,7 @@ import React, { Component } from 'react'
 import { connect } from 'react-redux'
 import Header from '../components/Header'
 
-import { openNavigation, getNavigationLink } from '../actions'
+import { toggleNavigation, getNavigationLink } from '../actions'
 
 class HeaderContainer extends React.Component {
   componentDidMount() {
@@ -26,7 +26,7 @@ const mapStateToProps = ({navigation, router}) => {
 
 const mapDispatchToProps = (dispatch) => {
   return {
-    openNavigation: () => dispatch(openNavigation()),
+    toggleNavigation: () => dispatch(toggleNavigation()),
     getNavigationLink: ({slug}) => dispatch(getNavigationLink({slug}))
   }
 }

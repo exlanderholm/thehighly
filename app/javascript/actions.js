@@ -1,6 +1,5 @@
 // Action Types
-export const OPEN_NAVIGATION = 'OPEN_NAVIGATION'
-export const CLOSE_NAVIGATION = 'CLOSE_NAVIGATION'
+export const TOGGLE_NAVIGATION = 'TOGGLE_NAVIGATION'
 
 export const GET_NAVIGATION_LINK = 'GET_NAVIGATION_LINK'
 export const GET_NAVIGATION_LINK_RECEIVED = 'GET_NAVIGATION_LINK_RECEIVED'
@@ -35,15 +34,10 @@ export const GET_TERMS_AND_CONDITIONS_RECEIVED = 'GET_TERMS_AND_CONDITIONS_RECEI
 export const DEACTIVATE_WELCOME_SCREEN = 'DEACTIVATE_WELCOME_SCREEN'
 
 // Action Creators
-export const openNavigation = () => {
-  return {
-    type: OPEN_NAVIGATION
-  }
-}
 
-export const closeNavigation = () => {
+export const toggleNavigation = () => {
   return {
-    type: CLOSE_NAVIGATION
+    type: TOGGLE_NAVIGATION
   }
 }
 
