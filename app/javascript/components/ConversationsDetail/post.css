@@ -52,17 +52,24 @@
   align-self: flex-end;
   box-sizing: border-box;
   flex-basis: 50%;
-  font: 18px/1.67 var(--font-family-sans-serif);
+  font: 17px/1.67 var(--font-family-sans-serif);
   margin: var(--gutter) 0;
   padding: 0 var(--gutter);
 
+  @media (--tablet-portrait) {
+    font: 14px/1.67 var(--font-family-sans-serif);
+  }
   @media (orientation: landscape), (--tablet-landscape) {
-    font: 24px/1.67 var(--font-family-sans-serif);
+    font: 16px/1.67 var(--font-family-sans-serif);
     margin: var(--gutter-desktop) 0;
     padding: 0 var(--gutter-desktop);
   }
-
+  
+  @media (--desktop) {
+    font: 22px/1.67 var(--font-family-sans-serif);
+  }
   @media (--desktop-large) {
+    font: 23px/1.67 var(--font-family-sans-serif);
     margin: var(--gutter-desktop-large) 0;
     padding: 0 var(--gutter-desktop-large);
   }
