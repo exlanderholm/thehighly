@@ -33,14 +33,14 @@ import styles from '../styles/layout'
 // Create a history of your choosing (we're using a browser history in this case)
 const history = createHistory()
 
-import { toggleNavigation } from '../actions'
+import { closeNavigation } from '../actions'
 
 // Build the middleware for intercepting and dispatching navigation actions
 const middleware = routerMiddleware(history)
 
 // Close the menu when going to new route
 history.listen((location, action) => {
-  store.dispatch(toggleNavigation())
+  store.dispatch(closeNavigation())
   document.body.scrollTop = 0; // For Chrome, Safari and Opera
   document.documentElement.scrollTop = 0; // For IE and Firefox
 })
