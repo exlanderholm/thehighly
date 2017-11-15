@@ -53,7 +53,7 @@ export default ({ dispatch, getState }) => {
             fetch('/api/destinations', { credentials })
             .then(response => response.json())
             .then(json => {
-              const destination = json.destinations[0]
+              const destination = json.destinationsPresentPast[0]
               const section = 'recommended'
               const { slug } = destination
               const href = `/recommended/${slug}`

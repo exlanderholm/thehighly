@@ -29,6 +29,7 @@ const decorators = [
 
 var settings = {
   wrapAround: true,
+  initialSlideHeight: 400,
   decorators
 }
 

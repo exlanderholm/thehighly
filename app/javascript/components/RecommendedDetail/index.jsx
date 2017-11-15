@@ -95,17 +95,19 @@ const sortWtg = ({whatToGet}) => {
 //   })
 // }
 
-const Place = ({ id, title, description, location, website, relatedPosts }) => (
+const Place = ({ id, title, description, location, website, relatedPosts }) => {
+
+  return (
   <div className="place">
     <ul className="place__header">
       <li><h3 className="place__title">{title}</h3></li>
       <li><a className="caps" href={website} target="_blank">website</a></li>
-      <li><a className="caps" target="_blank" href="/">Directions</a></li>
+      <li><a className="caps" target="_blank" href={`https://www.google.com/maps/search/?api=1&query=${location.lat},${location.lon}`}>Directions</a></li>
       {/* {relatedPosts} */}
     </ul>
     <div className="place__content" dangerouslySetInnerHTML={createMarkupObject(description)} />
   </div>
-)
+)}
 
 const ProductGroup = ({type, products}) =>
   <div className="product__type">
