@@ -4,7 +4,7 @@ import Logo from '../Logo'
 
 import styles from './header.css'
  
-const Header = ({ openNavigation, isHomePage, navigationLinks }) => (
+const Header = ({ toggleNavigation, isOpen, isHomePage, navigationLinks }) => (
   <header className="header">
     <div className="header__inner">
       <div className="menu-button-area"></div>
@@ -14,7 +14,7 @@ const Header = ({ openNavigation, isHomePage, navigationLinks }) => (
       </div>
         {!isHomePage && <Link className="mainLink caps" to={navigationLinks.recommended}>Highly Recommended</Link>}
       <div className="menu-button-area">
-        <button className="menu-button"onClick={openNavigation}>Menu</button>
+        <button className={`menu-button ${isOpen ? 'isOpen' : ''}`} onClick={toggleNavigation}>Menu</button>
       </div>
     </div>
   </header>
