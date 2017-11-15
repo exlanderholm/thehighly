@@ -54,11 +54,20 @@ const store = createStore(
   )
 )
 
+const newTab = (event) => {
+  const links = document.links
+  for (var i = 0, linksLength = links.length; i < linksLength; i++) {
+    if (links[i].hostname != window.location.hostname) {
+      links[i].target = '_blank'
+    } 
+  }
+}
+
 document.addEventListener('DOMContentLoaded', () => {
   ReactDOM.render(
     <Provider store={store}>
       <ConnectedRouter history={history}>
-        <div>
+        <div onClick={newTab}>
           <HeaderContainer />
           <Switch>
             <Route path="/" exact component={HomeContainer} />
