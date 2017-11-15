@@ -2,7 +2,7 @@ import React, { Component } from 'react'
 import { connect } from 'react-redux'
 import Navigation from '../components/Navigation'
 
-// import { openNavigation, closeNavigation } from '../actions'
+import { toggleNavigation } from '../actions'
 
 const NavigationContainer = (props) => <Navigation {...props} />
 
@@ -12,5 +12,10 @@ const mapStateToProps = ({navigation}) => {
     isOpen
   }
 }
-
-export default connect(mapStateToProps)(NavigationContainer)
+const mapDispatchToProps = (dispatch) => {
+  return {			
+    toggleNavigation: () => dispatch(toggleNavigation())		
+  }		
+}		
+    
+export default connect(mapStateToProps, mapDispatchToProps)(NavigationContainer); 
