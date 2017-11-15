@@ -1,5 +1,4 @@
 @import '../../styles/variables';
-@import "./slick-theme.css";
 
 .home {
   margin-top: var(--header-height-mobile);
