@@ -7,13 +7,15 @@ const cx = classNames.bind(styles)
 
 const About = ({ title, intro, featuredImage, content }) => (
   <div className={cx("about")}>
-    <h2 className="caps">{title}</h2>
-    <div className={cx("intro")} dangerouslySetInnerHTML={createMarkupObject(intro)} />
-    <div className={cx("content")}>
-      <div className="cartoon">
-        <img src={feauredImageUrl(featuredImage.url)} />
+    <div className={cx("about__inner")}>
+      <h2 className="caps">{title}</h2>
+      <div className={cx("intro")} dangerouslySetInnerHTML={createMarkupObject(intro)} />
+      <div className={cx("content")}>
+        <div className="cartoon">
+          <img src={feauredImageUrl(featuredImage.url)} />
+        </div>
+        <div className="before-about" dangerouslySetInnerHTML={createMarkupObject(content)} />
       </div>
-      <div className="before-about" dangerouslySetInnerHTML={createMarkupObject(content)} />
     </div>
   </div>
 )
