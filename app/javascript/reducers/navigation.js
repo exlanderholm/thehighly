@@ -1,4 +1,6 @@
 import {
+  OPEN_NAVIGATION,
+  CLOSE_NAVIGATION,
   TOGGLE_NAVIGATION,
   GET_NAVIGATION_LINK_RECEIVED
 } from "../actions"
@@ -28,19 +30,18 @@ const navigation = (state = initialState, action) => {
         }
       }
     }
-
-    // case OPEN_NAVIGATION: {
-    //   return {
-    //     ...state,
-    //     isOpen: true
-    //   }
-    // }
-    // case CLOSE_NAVIGATION: {
-    //   return {
-    //     ...state,
-    //     isOpen: false
-    //   }
-    // }
+    case OPEN_NAVIGATION: {
+      return {
+        ...state,
+        isOpen: true
+      }
+    }
+    case CLOSE_NAVIGATION: {
+      return {
+        ...state,
+        isOpen: false
+      }
+    }
 
     case GET_NAVIGATION_LINK_RECEIVED: {
       const { navigationLink } = payload
