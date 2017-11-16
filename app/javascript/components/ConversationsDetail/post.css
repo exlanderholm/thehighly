@@ -113,10 +113,6 @@
     padding: 0 (--gutter-desktop-large);
   }
 }
-.post .body img {
-  max-width: 600px;
-  max-height: 400px;
-}
 
 .body blockquote {
   margin: 1em calc(var(--gutter) / -2);
