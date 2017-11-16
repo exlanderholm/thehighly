@@ -1,7 +1,6 @@
 @import '../../styles/variables';
 
 .not-found {
-  /* min-height: calc(100vh - var(--header-height-mobile) - var(--footer-height-mobile)); */
   min-height: 30vh;
   overflow: hidden;
   margin: 8vh auto;
