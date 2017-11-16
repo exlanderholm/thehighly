@@ -1,6 +1,7 @@
 // Action Types
 export const OPEN_NAVIGATION = 'OPEN_NAVIGATION'
 export const CLOSE_NAVIGATION = 'CLOSE_NAVIGATION'
+export const TOGGLE_NAVIGATION = 'TOGGLE_NAVIGATION'
 
 export const GET_NAVIGATION_LINK = 'GET_NAVIGATION_LINK'
 export const GET_NAVIGATION_LINK_RECEIVED = 'GET_NAVIGATION_LINK_RECEIVED'
@@ -44,6 +45,12 @@ export const openNavigation = () => {
 export const closeNavigation = () => {
   return {
     type: CLOSE_NAVIGATION
+  }
+}
+
+export const toggleNavigation = () => {
+  return {
+    type: TOGGLE_NAVIGATION
   }
 }
 
