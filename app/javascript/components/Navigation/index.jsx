@@ -4,10 +4,7 @@ import styles from './navigation.css'
 
 const Navigation = ({closeNavigation, isOpen}) => (
   <div className={`navigation ${isOpen ? 'isOpen' : ''}`}>
-    <div className="close-button-area">
-      <button className="close-button" onClick={closeNavigation}>Close</button>
-    </div>
-    <nav className="main-navigation">
+    <nav className="main-navigation"> 
       <Link to="/recommended/the-bay">Highly Recommended</Link>
       <Link to="/conversations/steve-deangelo">Conversations</Link>
       <Link to="/about">About</Link>
