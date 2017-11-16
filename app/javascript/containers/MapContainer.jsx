@@ -9,17 +9,28 @@ const infoBoxStyles = {
   borderRadius: '100px',
   borderStyle: 'solid',
   borderWidth: '4px',
+  boxSizing: 'border-box',
   color: 'black',
+  fontSize: '16px',
   fontWeight: 'bold',
-  padding: '1em 3em',
-  whiteSpace: 'nowrap'
+  padding: '1em 3px',
+  textAlign: 'center',
+  whiteSpace: 'nowrap',
+  width: '200px'
 }
 
 const MapContainer = ({isMarkerShown, whereToGo, coordinates}) => {
   const { lat, lon } = coordinates
+
+  const options = {
+    closeBoxURL: ``,
+    enableEventPropagation: true,
+    pixelOffset: new google.maps.Size(-100, -64)
+  }
+
   return (
     <GoogleMap
-      defaultZoom={13}
+      defaultZoom={12}
       defaultCenter={{ lat: lat, lng: lon }}
     >
       {isMarkerShown && whereToGo.map( ( place, idx ) => {
@@ -31,7 +42,7 @@ const MapContainer = ({isMarkerShown, whereToGo, coordinates}) => {
           key={idx}
           defaultPosition={{ lat, lng: lon }}
           defaultPosition={new google.maps.LatLng(lat, lon)}
-          options={{ closeBoxURL: ``, enableEventPropagation: true }}
+          options={options}
           >
             <div>
               <div style={infoBoxStyles}>
@@ -55,7 +66,7 @@ export default withScriptjs(withGoogleMap(MapContainer))
 
 
 // <Marker key={idx} position={{ lat, lng: lon }} title={title}>
-//   <InfoWindow>
+//   <InfoBox>
 //     <p>This is a test</p>
-//   </InfoWindow>
+//   </InfoBox>
 // </Marker>
