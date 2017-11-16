@@ -30,8 +30,7 @@ const decorators = [
 var settings = {
   wrapAround: true,
   initialSlideHeight: 400,
-  decorators,
-  initialSlideHeight: 450
+  decorators
 }
 
 const Home = ({ highlyRecommended, highlyConversations }) =>
