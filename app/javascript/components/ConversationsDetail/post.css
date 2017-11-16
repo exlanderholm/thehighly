@@ -91,7 +91,7 @@
 }
 .hero, .body {
   a {
-    border-bottom: 2px solid red;
+    border-bottom: 1px solid red;
 
     &:hover {
       color: red;
@@ -104,45 +104,31 @@
   max-width: var(--site-width);
   padding: 0 var(--gutter);
 
-  @media (orientation: landscape), (--tablet-landscape) {
+  @media (--tablet-portrait) {
     font-size: 18px;
     max-width: 50em;
-    padding: 0 var(--gracious-gutter);
+    padding: 0 var(--gutter-desktop);
   }
-}
-.post .body img {
-  max-width: 600px;
-  max-height: 400px;
-}
 
-.post .body strong {
-  display: block;
-  margin: 5em 0 0;
-
-  @media (--tablet-landscape) {
-    margin: 6em 0 0;
+  @media (--desktop-large) {
+    padding: 0 (--gutter-desktop-large);
   }
 }
 
 .body blockquote {
-  margin: 3em 0;
+  margin: 1em calc(var(--gutter) / -2);
+  text-align: justify;
 
-  @media (--tablet-landscape) {
-    margin: 3em -3em 3em -2em;
+  @media (--tablet-portrait) {
+    margin: 2em calc(var(--gutter-desktop) / -2);
   }
+
   @media (--desktop-large) {
-    margin: 3em -4em 3em -3em;
+    margin: 3em -3em;
   }
 
-  & > :first-child {
-    position: relative;
-
-    &::before {
-      content: "“";
-      /* position: absolute;
-      top: 0;
-      left: -.4em; */
-    }
+  & > :first-child::before  {
+    content: "“";
   }
 
   & > :last-child::after {
