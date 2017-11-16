@@ -1,28 +1,34 @@
 @import '../../styles/variables';
 
 .contact {
+  background: #f6f3ec;
   min-height: 100vh;
-  max-width: 400px;
+  overflow: hidden;
+  padding-top: var(--header-height-mobile);
   text-align: center;
-  margin: var(--header-height-mobile) auto;
-  
-  @media (--tablet-portrait) {
-    margin: var(--page-margin-tablet) auto;
+
+  &__inner {
+    margin: auto;
+    max-width: 400px;
+
+    @media (--tablet-portrait) {
+      margin: var(--page-margin-tablet) auto;
+    }
+    @media (--tablet-landscape) {
+      margin: var(--page-margin-desktop) auto;
+    }
+    @media (--desktop-large) {
+      margin: var(--page-margin-desktop-large) auto;
+    }
   }
-  @media (--tablet-landscape) {
-    margin: var(--page-margin-desktop) auto;
-  }
-  @media (--desktop-large) {
-    margin: var(--page-margin-desktop-large) auto;
-  }
-  
+
   .body {
     font: 18px/1.667 var(--font-family-sans-serif);
-    
+
     @media (--tablet-landscape) {
       font: 21px/1.667 var(--font-family-sans-serif);
     }
-    
+
     blockquote {
       font: inherit;
       font-size: .7em;

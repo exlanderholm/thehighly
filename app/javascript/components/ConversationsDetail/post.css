@@ -1,6 +1,7 @@
 @import '../../styles/variables';
 
 .post {
+  background: #f4eee3;
   overflow: hidden;
   margin-top: var(--header-height-mobile);
 
