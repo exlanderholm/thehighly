@@ -64,7 +64,7 @@
     margin: var(--gutter-desktop) 0;
     padding: 0 var(--gutter-desktop);
   }
-  
+
   @media (--desktop) {
     font: 22px/1.67 var(--font-family-sans-serif);
   }
@@ -91,7 +91,7 @@
 .hero, .body {
   a {
     border-bottom: 1px solid red;
-    
+
     &:hover {
       color: red;
     }
@@ -108,10 +108,6 @@
     max-width: 50em;
     padding: 0 var(--gracious-gutter);
   }
-}
-.post .body img {
-  max-width: 600px;
-  max-height: 400px;
 }
 
 .post .body strong {
