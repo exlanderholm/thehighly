@@ -62,6 +62,8 @@
 }
 
 .conversations {
+  padding-bottom: 2em;
+
   @media (--tablet-portrait) {
     order: -1;
     border-right: 1px solid var(--border-color);
@@ -69,8 +71,6 @@
 }
 
 .conversation {
-  padding-bottom: 2em;
-
   @media (--tablet-portrait) {
     display: flex;
     flex-direction: column;
@@ -126,6 +126,7 @@
   }
 
 }
+
 
 .recommended {
 

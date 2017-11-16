@@ -30,7 +30,8 @@ const decorators = [
 var settings = {
   wrapAround: true,
   initialSlideHeight: 400,
-  decorators
+  decorators,
+  initialSlideHeight: 450
 }
 
 const Home = ({ highlyRecommended, highlyConversations }) =>
@@ -103,7 +104,7 @@ const HighlyConversation = ({tagline, featuredImage, slug, title}) => (
   <div className="conversation">
     <div className="image">
       <Link to={`/conversations/${slug}`}>
-        <img src={featuredImage.url} />
+        <img src={`${featuredImage.url}?w=860&h=860`} />
       </Link>
     </div>
     <div className="tagline excerpt" dangerouslySetInnerHTML={createMarkupObject(tagline)} />
