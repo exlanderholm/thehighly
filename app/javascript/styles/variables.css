@@ -6,6 +6,8 @@
 @custom-media --desktop-large (min-width: 1440px);
 
 :root {
+  --anchor-border-style: 2px solid red;
+
   --border-color: #8E9093;
   --background-color: #F6F2E9;
   --background-color-alt: #e9e9df;
