@@ -38,7 +38,7 @@
   .place__content,
   .product__content {
     a {
-      border-bottom: 1px solid red;
+      border-bottom: var(--anchor-border-style);
 
       &:hover {
         color: red;
