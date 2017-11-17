@@ -10,9 +10,11 @@
     display: flex;
     border-top: 1px solid #8E9093;
   }
+
   @media (--tablet-landscape) {
     min-height: calc(100vh - 445px);
   }
+
   @media (--desktop-large) {
     min-height: calc(100vh - 475px);
     margin-top: var(--header-height-desktop-large);
@@ -123,13 +125,16 @@
         color: red;
       }
     }
+
+    strong {
+      font-size: larger
+    }
   }
 
 }
 
 
 .recommended {
-
   .content {
     padding: 0 var(--gutter);
 
@@ -150,13 +155,16 @@
       @media (--tablet-portrait) {
         font-size: 26px;
       }
+
       @media (--tablet-landscape) {
         padding-bottom: 1em;
         font-size: 34px;
       }
+
       @media (--desktop) {
         font-size: 39px;
       }
+
       @media (--desktop-large) {
         font-size: 47px;
       }
