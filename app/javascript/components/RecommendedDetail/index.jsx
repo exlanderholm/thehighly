@@ -111,7 +111,7 @@ const Place = ({ id, title, description, location, website, relatedPosts }) => {
 
 const ProductGroup = ({type, products}) =>
   <div className="product__type">
-    <label htmlFor={`product_type_${type}`} className="caps">{type}</label>
+    <label htmlFor={`product_type_${type}`}>{type}</label>
     <input className="product_type_checkbox" type="checkbox" id={`product_type_${type}`} />
     <div className="product_products">
       {products.map( product => <Product {...product} key={product.id} /> )}
@@ -120,11 +120,11 @@ const ProductGroup = ({type, products}) =>
 
 const Product = ({ id, title, image, description, affiliateLink, type }) => (
   <div className="product">
-    <h3 className="product__title">
+    <h2 className="product__title">
       <a href={affiliateLink} target="_blank">
         {title}
       </a>
-    </h3>
+    </h2>
 
     <img className="product__image" src={image.url} />
 
