@@ -33,7 +33,7 @@ const RecommendedDetail = ({
         />}
       </div>
 
-      <div className="notice" dangerouslySetInnerHTML={createMarkupObject(mapMessaging)} />
+      <div className="notice caps" dangerouslySetInnerHTML={createMarkupObject(mapMessaging)} />
 
       <div className="where-to-go">
         <h4 className="section__title caps">Where to Go</h4>
