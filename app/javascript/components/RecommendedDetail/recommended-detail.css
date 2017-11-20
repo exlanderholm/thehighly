@@ -101,8 +101,8 @@
 
   .notice {
     border-bottom: 1px solid black;
-    font:  500 18px/1.22 var(--font-family-sans-serif);
-    padding-bottom: 1em;
+    font:  500 17px/1.22 var(--font-family-sans-serif);
+    padding-bottom: .5em;
     text-align: center;
     text-transform: uppercase;
     vertical-align: middle;
