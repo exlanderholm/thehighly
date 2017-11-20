@@ -223,6 +223,10 @@
       background: white;
       margin-left: 2em;
       margin-bottom: 1em;
+      opacity: 0;
+    }
+    &:hover .product__image {
+      opacity: 1;
     }
   }
 
