@@ -221,6 +221,9 @@ a {
 
     .product__title {
       cursor: crosshair;
+      a:hover {
+        color: red;
+      }
     }
 
     .product__image {

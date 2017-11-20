@@ -155,6 +155,7 @@
 
     blockquote {
       padding-bottom: .5em;
+      font-weight: 300;
 
       @media (--tablet-portrait) {
         font-size: 26px;
