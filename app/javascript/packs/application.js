@@ -19,7 +19,7 @@ import services from '../services'
 import AboutContainer from '../containers/AboutContainer'
 import ConversationsDetailContainer from '../containers/ConversationsDetailContainer'
 import ContactContainer from '../containers/ContactContainer'
-import Footer from '../components/Footer'
+import FooterContainer from '../containers/FooterContainer'
 import HeaderContainer from '../containers/HeaderContainer'
 import HomeContainer from '../containers/HomeContainer'
 import NavigationContainer from '../containers/NavigationContainer'
@@ -59,7 +59,7 @@ const newTab = (event) => {
   for (var i = 0, linksLength = links.length; i < linksLength; i++) {
     if (links[i].hostname != window.location.hostname) {
       links[i].target = '_blank'
-    } 
+    }
   }
 }
 
@@ -79,7 +79,7 @@ document.addEventListener('DOMContentLoaded', () => {
             <Route path="/terms-conditions" component={TermsAndConditionsContainer} />
             <Route component={My404Component} />
           </Switch>
-          <Footer />
+          <FooterContainer />
           <NavigationContainer />
           <WelcomeContainer />
         </div>
