@@ -37,6 +37,7 @@
 
   .tagline {
     font-size: 2em;
+    /* font-weight: 300; */
 
     @media (--tablet-portrait) {
       font-size: 3em;
