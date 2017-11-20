@@ -16,7 +16,7 @@ const decorators = [
     position: 'CenterLeft',
     style: {
       padding: 20
-    }
+    } 
   },
   {
     component: RightArrow,
