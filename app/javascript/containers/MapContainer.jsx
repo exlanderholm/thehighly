@@ -47,7 +47,7 @@ const MapContainer = ({isMarkerShown, whereToGo, coordinates}) => {
 
   return (
     <GoogleMap
-      defaultZoom={12}
+      defaultZoom={11}
       defaultCenter={{ lat: lat, lng: lon }}
       options={googleMapOptions}
     >
