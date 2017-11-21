@@ -2,20 +2,44 @@ import React, { Component } from 'react'
 import { connect } from 'react-redux'
 import Navigation from '../components/Navigation'
 
-import { toggleNavigation } from '../actions'
+import { getHighlyRecommended, getHighlyConversations, toggleNavigation } from '../actions'
 
-const NavigationContainer = (props) => <Navigation {...props} />
+class NavigationContainer extends React.Component {
+  componentDidMount() {
+    this.props.getHighlyRecommended()
+    this.props.getHighlyConversations()
+  }
+  render () {
+    return (
+      <Navigation {...this.props} />
+    )
+  }
+}
 
-const mapStateToProps = ({navigation}) => {
+const mapStateToProps = ({highlyRecommended, highlyConversations, navigation}) => {
+
   const { isOpen } = navigation
+
+  const highlyRecommendedLinks = highlyRecommended.destinations.map(({ name, slug, id }) => {
+    return { name, slug, id }
+  })
+
+  const highlyConversationsLinks = highlyConversations.posts.map(({ title, slug, id }) => {
+    return { title, slug, id }
+  })
+
   return {
-    isOpen
+    isOpen,
+    highlyRecommendedLinks,
+    highlyConversationsLinks
   }
 }
 const mapDispatchToProps = (dispatch) => {
-  return {			
+  return {		
+    getHighlyRecommended: () => dispatch(getHighlyRecommended()),
+    getHighlyConversations: () => dispatch(getHighlyConversations()),	
     toggleNavigation: () => dispatch(toggleNavigation())		
   }		
 }		
-    
+
 export default connect(mapStateToProps, mapDispatchToProps)(NavigationContainer); 
