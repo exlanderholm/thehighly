@@ -16,7 +16,6 @@ const mapStateToProps = ({welcome}) => {
 const mapDispatchToProps = (dispatch) => {
   return {
     respondToYes: () => {
-      console.log('responding to yes')
       dispatch(deactivateWelcomeScreen())
     },
     respondToNo: () => {
