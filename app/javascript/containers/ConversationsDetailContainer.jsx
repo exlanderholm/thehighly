@@ -12,6 +12,13 @@ class ConversationsDetailContainer extends React.Component {
     this.props.getHighlyConversationsDetail({id})
   }
 
+  componentWillReceiveProps(nextProps) {
+    if(this.props.match.params.id && this.props.match.params.id !== nextProps.match.params.id) {
+      const id = nextProps.match.params.id
+      this.props.getHighlyConversationsDetail({id})
+    }
+  }
+
   render() {
     return <ConversationsDetail {...this.props} />
   }

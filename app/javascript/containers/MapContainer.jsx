@@ -27,7 +27,7 @@ const MapContainer = ({isMarkerShown, whereToGo, coordinates}) => {
   const { lat, lon } = coordinates
 
   const googleMapOptions = {
-    draggable: false,
+    draggable: true,
     disableDefaultUI: true,
     styles: [
       {
