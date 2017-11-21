@@ -88,18 +88,14 @@ const HighlyDestination = ({name, slug, date}) => {
   }
 }
 
-const HighlyConversations = ({posts}) => {
-  console.log(posts.length)
-  return (
-    <div className="content">
-      {posts.length > 1 && <Carousel {...settings}>
-        {
-          posts.map(post => <HighlyConversation {...post} key={post.id} />)
-        }
-      </Carousel>}
-    </div>
-  )
-}
+const HighlyConversations = ({posts}) =>
+  <div className="content">
+    {posts.length > 1 && <Carousel {...settings}>
+      {
+        posts.map(post => <HighlyConversation {...post} key={post.id} />)
+      }
+    </Carousel>}
+  </div>
 
 const HighlyConversation = ({tagline, featuredImage, slug, title}) => (
   <div className="conversation">
