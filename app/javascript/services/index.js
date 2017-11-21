@@ -174,7 +174,6 @@ export default ({ dispatch, getState }) => {
       }
 
       case DEACTIVATE_WELCOME_SCREEN: {
-        console.log('deactivating')
         localStorage.setItem('isOlderThan21', true)
         break
       }

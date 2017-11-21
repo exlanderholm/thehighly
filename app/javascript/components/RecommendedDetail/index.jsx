@@ -37,7 +37,7 @@ const RecommendedDetail = ({
 
       <div className="where-to-go">
         <h4 className="section__title caps">Where to Go</h4>
-        {whereToGo.map( place => <Place {...place} key={place.id} /> )}
+        {whereToGo.filter( place => place.contentTypeId === 'place' ).map( place => <Place {...place} key={place.id} /> )}
       </div>
 
       <div className="what-to-get">
