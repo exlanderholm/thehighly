@@ -92,7 +92,7 @@
         right: 50%;
         left: 0;
         height: 0;
-        padding: 0 0 0 4.3em;
+        padding: 0 0 0 4.7em;
       }
       /* @media (--desktop-large) { */
       @media (min-width: 1585px) {
@@ -118,7 +118,7 @@
       }
     }
     &:hover ul.dropdown {
-      height: 150px;
+      height: auto;
     }
     &.recommended {
       justify-content: flex-end;
@@ -126,15 +126,12 @@
       ul.dropdown {
         right: 0;
         left: 50%;
-        padding: 0 4.3em 0 0;
+        padding: 0 4.7em 0 0;
         
         /* @media (--desktop-large) { */
         @media (min-width: 1585px) {
           padding: 0 calc(50vw - 722px) 0 0;
         }
-      }
-      &:hover ul.dropdown {
-        height: 50px;
       }
     }
   }
