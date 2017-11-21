@@ -2,33 +2,48 @@ import React, { Component } from 'react'
 import { connect } from 'react-redux'
 import Header from '../components/Header'
 
-import { toggleNavigation, getNavigationLink } from '../actions'
+import { getHighlyRecommended, getHighlyConversations, toggleNavigation } from '../actions'
 
 class HeaderContainer extends React.Component {
   componentDidMount() {
-    this.props.getNavigationLink({slug: 'conversations'})
-    this.props.getNavigationLink({slug: 'recommended'})
+    this.props.getHighlyRecommended()
+    this.props.getHighlyConversations()
   }
   render() {
     return <Header {...this.props} />
   }
 }
 
-const mapStateToProps = ({navigation, router}) => {
-  const { isOpen, navigationLinks } = navigation
+const mapStateToProps = ({highlyRecommended, highlyConversations, navigation, router}) => {
+
+  const { isOpen } = navigation
+  
   const isHomePage = (router.location.pathname === "/")
+
+  const highlyRecommendedLinks = highlyRecommended.destinations.map(({ name, slug, id }) => {
+    return { name, slug, id }
+  })
+
+  const highlyConversationsLinks = highlyConversations.posts.map(({ title, slug, id }) => {
+    return { title, slug, id }
+  })
+
   return {
     isOpen,
     isHomePage,
-    navigationLinks
+    highlyRecommendedLinks,
+    highlyConversationsLinks
   }
 }
 
 const mapDispatchToProps = (dispatch) => {
-  return {
-    toggleNavigation: () => dispatch(toggleNavigation()),
-    getNavigationLink: ({slug}) => dispatch(getNavigationLink({slug}))
+  return {		
+    getHighlyRecommended: () => dispatch(getHighlyRecommended()),
+    getHighlyConversations: () => dispatch(getHighlyConversations()),	
+    toggleNavigation: () => dispatch(toggleNavigation())		
   }
 }
+
+
 
 export default connect(mapStateToProps, mapDispatchToProps)(HeaderContainer)
