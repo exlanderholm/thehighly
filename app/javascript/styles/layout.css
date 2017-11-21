@@ -17,6 +17,21 @@ body {
   src: url('../fonts/harrietdisplay-light.woff') format("woff");
 }
 
+/* harrietdisplay-lightitalic.woff */
+@font-face {
+  font-family: HarrietDisplay;
+  font-style: italic;
+  font-weight: 300;
+  src: url('../fonts/harrietdisplay-lightitalic.woff') format("woff");
+}
+/* harrietdisplay-italic.woff */
+@font-face {
+  font-family: HarrietDisplay;
+  font-style: italic;
+  font-weight: 400;
+  src: url('../fonts/harrietdisplay-italic.woff') format("woff");
+}
+
 /* harrietdisplay-medium.woff */
 @font-face {
   font-family: HarrietDisplay;
@@ -112,10 +127,14 @@ img {
 }
 
 blockquote {
-  font: italic bold 26px/1.33 var(--font-family-heading);
+  font: italic 300 26px/1.33 var(--font-family-heading);
   margin: 0;
 
   @media (--tablet-portrait) {
+    font-size: 34px;
+  }
+
+  @media (--desktop) {
     font-size: 44px;
   }
 }

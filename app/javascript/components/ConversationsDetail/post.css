@@ -78,11 +78,9 @@
       font-size: 1.25em;
     }
   }
-
   .intro-content p:first-child {
     margin-top: 0;
   }
-
   .intro-content p:last-child {
     margin-bottom: 0;
   }
@@ -105,7 +103,7 @@ a {
 
 .post .body {
   font: 16px/1.667 var(--font-family-serif);
-  margin: 3em auto 15em;
+  margin: 5em auto 15em;
   max-width: var(--site-width);
   padding: 0 var(--gutter);
 
@@ -128,15 +126,12 @@ a {
 }
 
 .body blockquote {
-  margin: 1em calc(var(--gutter) / -2);
+  margin: 4em 0 0;
   text-align: justify;
 
-  @media (--tablet-portrait) {
-    margin: 2em calc(var(--gutter-desktop) / -2);
-  }
 
-  @media (--desktop-large) {
-    margin: 3em -3em;
+  @media (--desktop) {
+    margin: 4em -3em 2em;
   }
 
   & > :first-child::before  {
