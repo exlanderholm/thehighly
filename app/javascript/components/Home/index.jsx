@@ -10,27 +10,25 @@ import classNames from "classnames/bind";
 
 const cx = classNames.bind(styles);
 
-const decorators = [
-  {
-    component: LeftArrow,
-    position: 'CenterLeft',
-    style: {
-      padding: 20
-    } 
-  },
-  {
-    component: RightArrow,
-    position: 'CenterRight',
-    style: {
-      padding: 20
-    }
-  }
-]
 
 var settings = {
-  wrapAround: true,
-  initialSlideHeight: 400,
-  decorators
+  decorators: [
+    {
+      component: LeftArrow,
+      position: 'CenterLeft',
+      style: {
+        padding: 20
+      }
+    },
+    {
+      component: RightArrow,
+      position: 'CenterRight',
+      style: {
+        padding: 20
+      }
+    }
+  ],
+  wrapAround: true
 }
 
 const Home = ({ highlyRecommended, highlyConversations }) =>
@@ -90,14 +88,18 @@ const HighlyDestination = ({name, slug, date}) => {
   }
 }
 
-const HighlyConversations = ({posts}) =>
-  <div className="content">
-    <Carousel {...settings}>
-      {
-        posts.map(post => <HighlyConversation {...post} key={post.id} />)
-      }
-    </Carousel>
-  </div>
+const HighlyConversations = ({posts}) => {
+  console.log(posts.length)
+  return (
+    <div className="content">
+      {posts.length > 1 && <Carousel {...settings}>
+        {
+          posts.map(post => <HighlyConversation {...post} key={post.id} />)
+        }
+      </Carousel>}
+    </div>
+  )
+}
 
 const HighlyConversation = ({tagline, featuredImage, slug, title}) => (
   <div className="conversation">
