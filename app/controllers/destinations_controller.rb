@@ -53,12 +53,13 @@ class DestinationsController < ApplicationController
 
   def tidy_where_to_go(where_to_go)
     {
-      id: where_to_go.id,
-      title: where_to_go.fields[:title],
+      contentTypeId: where_to_go.content_type.id,
       description: where_to_go.fields[:description] ? markdown.render(where_to_go.fields[:description]) : nil,
+      id: where_to_go.id,
       location: where_to_go.fields[:location],
-      website: where_to_go.fields[:website],
-      relatedPosts: tidy_related_post(where_to_go.fields[:related_posts])
+      relatedPosts: tidy_related_post(where_to_go.fields[:related_posts]),
+      title: where_to_go.fields[:title],
+      website: where_to_go.fields[:website]
     }
   end
 

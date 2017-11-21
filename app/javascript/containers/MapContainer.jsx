@@ -37,13 +37,37 @@ const MapContainer = ({isMarkerShown, whereToGo, coordinates}) => {
       defaultZoom={12}
       defaultCenter={{ lat: lat, lng: lon }}
     >
-      {isMarkerShown && whereToGo.map( ( place, idx ) => {
+      {isMarkerShown && whereToGo.filter( (place) => { return place.contentTypeId === 'place' }).map( ( place ) => {
         const { location, title } = place
         const { lat, lon } = location
-        console.log({ lat, lon })
+
         return (
           <InfoBox
-          key={idx}
+          key={place.id}
+          defaultPosition={{ lat, lng: lon }}
+          defaultPosition={new google.maps.LatLng(lat, lon)}
+          options={options}
+          >
+            <div>
+              <div style={infoBoxStyles}>
+                {title}
+              </div>
+              <div style={{textAlign: 'center'}}>
+                <svg viewBox="0 0 22 18" width="22" height="18" xmlns="http://www.w3.org/2000/svg">
+                  <polygon points="0,0 22,0 11,18" style={{fill: 'black'}} />
+                </svg>
+              </div>
+            </div>
+          </InfoBox>
+        )
+      } )}
+      {isMarkerShown && whereToGo.filter( (place) => { return place.contentTypeId === 'airport' }).map( ( place ) => {
+        const { location, title } = place
+        const { lat, lon } = location
+
+        return (
+          <InfoBox
+          key={place.id}
           defaultPosition={{ lat, lng: lon }}
           defaultPosition={new google.maps.LatLng(lat, lon)}
           options={options}
