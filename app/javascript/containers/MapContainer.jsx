@@ -4,6 +4,7 @@ import { withScriptjs, withGoogleMap, GoogleMap, Marker } from "react-google-map
 import { InfoBox } from "react-google-maps/lib/components/addons/InfoBox"
 
 const infoBoxStyles = {
+  alignItems: 'center',
   backgroundColor: 'white',
   borderColor: 'black',
   borderRadius: '100px',
@@ -11,11 +12,14 @@ const infoBoxStyles = {
   borderWidth: '4px',
   boxSizing: 'border-box',
   color: 'black',
+  display: 'flex',
   fontSize: '16px',
   fontWeight: 'bold',
-  padding: '1em 3px',
+  height: '3em',
+  justifyContent: 'center',
+  lineHeight: '1',
+  padding: '0 1em',
   textAlign: 'center',
-  whiteSpace: 'nowrap',
   width: '200px'
 }
 
