@@ -17,10 +17,10 @@ class HeaderContainer extends React.Component {
 const mapStateToProps = ({highlyRecommended, highlyConversations, navigation, router}) => {
 
   const { isOpen } = navigation
-  
+
   const isHomePage = (router.location.pathname === "/")
 
-  const highlyRecommendedLinks = highlyRecommended.destinations.map(({ name, slug, id }) => {
+  const highlyRecommendedLinks = highlyRecommended.destinationsPresentPast.map(({ name, slug, id }) => {
     return { name, slug, id }
   })
 
@@ -37,10 +37,10 @@ const mapStateToProps = ({highlyRecommended, highlyConversations, navigation, ro
 }
 
 const mapDispatchToProps = (dispatch) => {
-  return {		
+  return {
     getHighlyRecommended: () => dispatch(getHighlyRecommended()),
-    getHighlyConversations: () => dispatch(getHighlyConversations()),	
-    toggleNavigation: () => dispatch(toggleNavigation())		
+    getHighlyConversations: () => dispatch(getHighlyConversations()),
+    toggleNavigation: () => dispatch(toggleNavigation())
   }
 }
 
