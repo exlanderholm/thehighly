@@ -68,8 +68,6 @@
 }
 
 .conversations {
-  padding-bottom: 2em;
-
   @media (--tablet-portrait) {
     order: -1;
     border-right: 1px solid var(--border-color);
@@ -116,10 +114,12 @@
   }
 
   .excerpt {
+    min-height: 5em;
     padding: 0 50px;
 
     @media (--desktop-large) {
       max-width: 500px;
+      min-height: 8em;
       margin: 2em auto 1em;
     }
     a {
