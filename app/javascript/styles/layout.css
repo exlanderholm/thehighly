@@ -1,7 +1,7 @@
 @import './variables';
 
 :root {
-  font: normal 16px/1.667 HarrietText, Impact;
+  font: normal 16px/1.667 HarrietText, serif;
   text-size-adjust: none;
 }
 
