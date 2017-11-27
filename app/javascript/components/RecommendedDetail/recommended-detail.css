@@ -213,6 +213,7 @@ a {
 
 
   .product {
+    background-color: var(--background-color);
     position: relative;
     margin: 2em 0;
 
@@ -228,16 +229,14 @@ a {
     }
 
     .product__image {
+      filter: saturate(0);
       float: right;
       max-width: 35%;
-      background: white;
       margin-left: 2em;
       margin-bottom: 1em;
-
-      @media (--tablet-portrait) {
-        opacity: 0;
-      }
+      mix-blend-mode: multiply;
     }
+
     &:hover .product__image {
       opacity: 1;
     }
