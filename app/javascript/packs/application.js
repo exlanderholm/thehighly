@@ -75,39 +75,36 @@ const newTab = (event) => {
   }
 }
 
-document.addEventListener('DOMContentLoaded', () => {
-  ReactDOM.render(
-    <Provider store={store}>
-      <ConnectedRouter history={history}>
-        <div onClick={newTab}>
-          <HeaderContainer />
-          <Switch>
-            <Route path="/" exact component={HomeContainer} />
-            <Route path="/conversations/:id" component={ConversationsDetailContainer} />
-            <Route path="/contact" component={ContactContainer} />
-            <Route path="/about" component={AboutContainer} />
-            <Route path="/recommended/:id" component={RecommendedDetailContainer} />
-            <Route path="/privacy-policy" component={PrivacyPolicyContainer} />
-            <Route path="/terms-conditions" component={TermsAndConditionsContainer} />
-            <Route component={My404Component} />
-          </Switch>
-          <FooterContainer />
-          <NavigationContainer />
-          <WelcomeContainer />
-        </div>
-      </ConnectedRouter>
-    </Provider>,
-    document.body.appendChild(document.createElement('div'))
-  )
-})
-
-// document.addEventListener('DOMContentLoaded', () => {
-//   ReactDOM.render(
-//     <div>
-//       <Header />
-//       <PostContainer />
-//       <Footer />
-//     </div>,
-//     document.body.appendChild(document.createElement('div'))
-//   )
-// })
+if (typeof fetch === 'function') {
+  document.addEventListener('DOMContentLoaded', () => {
+    ReactDOM.render(
+      <Provider store={store}>
+        <ConnectedRouter history={history}>
+          <div onClick={newTab}>
+            <HeaderContainer />
+            <Switch>
+              <Route path="/" exact component={HomeContainer} />
+              <Route path="/conversations/:id" component={ConversationsDetailContainer} />
+              <Route path="/contact" component={ContactContainer} />
+              <Route path="/about" component={AboutContainer} />
+              <Route path="/recommended/:id" component={RecommendedDetailContainer} />
+              <Route path="/privacy-policy" component={PrivacyPolicyContainer} />
+              <Route path="/terms-conditions" component={TermsAndConditionsContainer} />
+              <Route component={My404Component} />
+            </Switch>
+            <FooterContainer />
+            <NavigationContainer />
+            <WelcomeContainer />
+          </div>
+        </ConnectedRouter>
+      </Provider>,
+      document.body.appendChild(document.createElement('div'))
+    )
+  })
+} else {
+  document.addEventListener('DOMContentLoaded', () => {
+    var message = document.createElement('div')
+    message.innerHTML = '<p style="text-align:center">Your browser is out of date. Please update your browser and <a href="https://browsehappy.com/" style="text-decoration:underline">browse happy</a>.</p>'
+    document.body.appendChild(message)
+  })
+}
