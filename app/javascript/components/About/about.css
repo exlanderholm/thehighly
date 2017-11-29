@@ -17,7 +17,7 @@
   &__inner {
     margin: var(--page-margin-mobile) auto;
     max-width: 1000px;
-    padding: 0 (--gutter);
+    padding: 0 var(--gutter);
     text-align: center;
 
     @media (--tablet-portrait) {
