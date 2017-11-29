@@ -37,7 +37,7 @@
     background-color: var(--background-color-alt);
     flex-basis: 50%;
     position: relative;
-    
+
     img {
       display: block;
       object-fit: cover;
@@ -114,7 +114,7 @@ a {
   }
 
   @media (--desktop-large) {
-    padding: 0 (--gutter-desktop-large);
+    padding: 0 var(--gutter-desktop-large);
   }
   p strong {
     display: inline-block;
