@@ -12,8 +12,8 @@ import { Route } from 'react-router'
 import { Switch } from 'react-router-dom'
 import { ConnectedRouter, routerMiddleware, push } from 'react-router-redux'
 
+import { closeNavigation } from '../actions'
 import reducers from '../reducers'
-
 import services from '../services'
 
 import AboutContainer from '../containers/AboutContainer'
@@ -27,22 +27,34 @@ import RecommendedDetailContainer from '../containers/RecommendedDetailContainer
 import PrivacyPolicyContainer from '../containers/PrivacyPolicyContainer'
 import TermsAndConditionsContainer from '../containers/TermsAndConditionsContainer'
 import WelcomeContainer from '../containers/WelcomeContainer'
-
 import My404Component from '../components/My404Component'
+
 import styles from '../styles/layout'
+
+import ReactGA from 'react-ga';
+
 // Create a history of your choosing (we're using a browser history in this case)
 const history = createHistory()
 
-import { closeNavigation } from '../actions'
+
 
 // Build the middleware for intercepting and dispatching navigation actions
 const middleware = routerMiddleware(history)
 
+
+ReactGA.pageview(location.pathname);
 // Close the menu when going to new route
 history.listen((location, action) => {
   store.dispatch(closeNavigation())
   document.body.scrollTop = 0; // For Chrome, Safari and Opera
   document.documentElement.scrollTop = 0; // For IE and Firefox
+})
+
+// Google Analytics
+ReactGA.initialize('UA-110405709-1');
+// ReactGA.pageview(location.pathname);
+history.listen((location, action) => {
+  ReactGA.pageview(location.pathname);
 })
 
 // Add the reducer to your store on the `router` key
