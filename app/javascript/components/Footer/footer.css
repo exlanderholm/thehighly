@@ -1,8 +1,13 @@
 @import '../../styles/variables';
 
 .footer {
+  /* background-color: #939ca9; */
+  /* background-color: #c7cccb; */
+  /* background-color: #bcc0c7; */
+  /* background-color: #b8bbc1; */
+  background-color: #d6d4cb;
   align-items: flex-start;
-  border-top: 1px solid var(--border-color);
+  /* border-top: 1px solid var(--border-color); */
   box-sizing: border-box;
   font: 500 12px/2.33 var(--font-family-sans-serif);
 }
@@ -19,7 +24,7 @@
 
   @media (--tablet-portrait) {
     justify-content: space-between;
-    padding: 4em var(--gutter-desktop-large);
+    padding: 2em var(--gutter-desktop-large) 3em;
   }
 
   & > * {

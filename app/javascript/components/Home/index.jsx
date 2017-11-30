@@ -74,14 +74,14 @@ const HighlyDestination = ({name, slug, date}) => {
   if(isComingSoon) {
     return (
       <span className="destination" >
-        <span className="middot">•</span>
+        <span className="middot">/</span>
         <span className={cx('comingsoon')} to={`/recommended/${slug}`}>{name}</span>
       </span>
     )
   } else {
     return (
       <span className="destination" >
-        <span className="middot">•</span>
+        <span className="middot">/</span>
         <Link to={`/recommended/${slug}`}>{name}</Link>
       </span>
     )
