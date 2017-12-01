@@ -3,7 +3,8 @@ import { Link } from 'react-router-dom'
 import styles from './footer.css'
 
 const Footer = ({backgroundColor}) =>
-  <footer className="footer" style={{backgroundColor}}>
+  // <footer className="footer" style={{backgroundColor}}>
+  <footer className="footer">
 
     <div className="footer__inner">
 
