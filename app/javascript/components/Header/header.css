@@ -67,7 +67,7 @@
       display: flex;
       align-items: center;
     }
-    
+
     &.recommended {
       text-align: right;
     }
@@ -85,7 +85,7 @@
       margin: 0;
       background: #f6f2e9;
       /* transition: .1s height; */
-      
+
       @media (--tablet-landscape) {
         position: absolute;
         top: 100%;
@@ -98,12 +98,12 @@
       @media (min-width: 1585px) {
         padding: 0 0 0 calc(50vw - 722px);
       }
-      
+
       li {
         display: block;
         padding: .3em 0;
         font-size: 1.2em;
-        
+
         @media (--tablet-landscape) {
           display: inline-block;
 
@@ -127,7 +127,7 @@
         right: 0;
         left: 50%;
         padding: 0 4.7em 0 0;
-        
+
         /* @media (--desktop-large) { */
         @media (min-width: 1585px) {
           padding: 0 calc(50vw - 722px) 0 0;

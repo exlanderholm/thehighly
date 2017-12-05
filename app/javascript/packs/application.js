@@ -19,16 +19,16 @@ import services from '../services'
 import AboutContainer from '../containers/AboutContainer'
 import ConversationsContainer from '../containers/ConversationsContainer'
 import ConversationsDetailContainer from '../containers/ConversationsDetailContainer'
-import ContactContainer from '../containers/ContactContainer'
 import FooterContainer from '../containers/FooterContainer'
 import HeaderContainer from '../containers/HeaderContainer'
 import HomeContainer from '../containers/HomeContainer'
+import My404Component from '../components/My404Component'
 import NavigationContainer from '../containers/NavigationContainer'
-import RecommendedDetailContainer from '../containers/RecommendedDetailContainer'
 import PrivacyPolicyContainer from '../containers/PrivacyPolicyContainer'
+import RecommendedContainer from '../containers/RecommendedContainer'
+import RecommendedDetailContainer from '../containers/RecommendedDetailContainer'
 import TermsAndConditionsContainer from '../containers/TermsAndConditionsContainer'
 import WelcomeContainer from '../containers/WelcomeContainer'
-import My404Component from '../components/My404Component'
 
 import styles from '../styles/layout'
 
@@ -89,6 +89,7 @@ if (typeof fetch === 'function') {
               <Route path="/conversations/:id" component={ConversationsDetailContainer} />
               <Route path="/contact" component={ContactContainer} />
               <Route path="/about" component={AboutContainer} />
+              <Route path="/recommended" exact component={RecommendedContainer} />
               <Route path="/recommended/:id" component={RecommendedDetailContainer} />
               <Route path="/privacy-policy" component={PrivacyPolicyContainer} />
               <Route path="/terms-conditions" component={TermsAndConditionsContainer} />

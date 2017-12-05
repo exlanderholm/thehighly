@@ -5,6 +5,7 @@ import {
   GET_HIGHLY_CONVERSATIONS_DETAIL,
   GET_HIGHLY_RECOMMENDED,
   GET_HIGHLY_RECOMMENDED_DETAIL,
+  GET_HIGHLY_RECOMMENDED_LANDING,
   GET_HIGHLY_REPORTS,
   GET_NAVIGATION_LINK,
   GET_PRIVACY_POLICY,
@@ -14,6 +15,7 @@ import {
   getAboutPageReceived,
   getContactPageReceived,
   getHighlyRecommendedDetailReceived,
+  getHighlyRecommendedLandingReceived,
   getHighlyRecommendedReceived,
   getHighlyConversationsDetailReceived,
   getHighlyConversationsReceived,
@@ -93,6 +95,16 @@ export default ({ dispatch, getState }) => {
         break
       }
 
+      case GET_HIGHLY_RECOMMENDED_LANDING: {
+        fetch(`/api/recommended_landing`, { credentials })
+        .then(response => response.json())
+        .then(json => {
+          dispatch(getHighlyRecommendedLandingReceived(json))
+        }).catch(error => {
+          console.error(error)
+        })
+        break
+      }
 
       case GET_HIGHLY_CONVERSATIONS: {
         fetch('/api/categories/highly-conversations', { credentials })
