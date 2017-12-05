@@ -17,6 +17,7 @@ import reducers from '../reducers'
 import services from '../services'
 
 import AboutContainer from '../containers/AboutContainer'
+import ContactContainer from '../containers/ContactContainer'
 import ConversationsContainer from '../containers/ConversationsContainer'
 import ConversationsDetailContainer from '../containers/ConversationsDetailContainer'
 import FooterContainer from '../containers/FooterContainer'
