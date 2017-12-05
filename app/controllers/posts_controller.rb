@@ -34,9 +34,26 @@ class PostsController < ApplicationController
       featuredImage: post.fields[:featured_image] ? parse_image(post.featured_image) : {},
       featuredImageBackgroundColor: post.fields[:featured_image_background_color] ? post.featured_image_background_color : "transparent",
       slug: post.slug,
-      category: post.fields[:category] ? post.category : {},
+      category: post.fields[:category] ? tidy_category(post.category) : {},
+      issue: post.fields[:issue] ? tidy_issue(post.issue) : {},
       excerptBackgroundColor: post.fields[:excerpt_background_color] ? post.excerpt_background_color : "transparent",
       postBackgroundColor: post.fields[:post_background_color] ? post.post_background_color : "#f4eee3"
+    }
+  end
+
+  def tidy_category(category)
+    {
+      id: category.id,
+      title: category.title,
+      slug: category.slug
+    }
+  end
+
+  def tidy_issue(issue)
+    {
+      id: issue.id,
+      title: issue.title,
+      publicationDate: issue.publication_date
     }
   end
 

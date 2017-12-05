@@ -8,8 +8,7 @@ const Header = ({ highlyRecommendedLinks, highlyConversationsLinks, toggleNaviga
   <header className="header">
     <div className="header__inner">
       <div className="menu-button-area"></div>
-
-      {!isHomePage && <ConversationsLinks highlyConversationsLinks={highlyConversationsLinks} />}
+        {!isHomePage && <ConversationsLinks highlyConversationsLinks={highlyConversationsLinks} />}
 
       <div className="logo-area">
         <Logo />
@@ -24,7 +23,7 @@ const Header = ({ highlyRecommendedLinks, highlyConversationsLinks, toggleNaviga
 
 const RecommendedLinks = ({highlyRecommendedLinks}) => (
   <div className="nav-item recommended">
-    <span className="caps">Highly Recommended</span>
+    <Link to="/recommended" className="caps">Highly Recommended</Link>
     <ul className="dropdown">
       {highlyRecommendedLinks.map(link => <li key={link.id}><Link to={`/recommended/${link.slug}`}>{link.name}</Link></li>)}
     </ul>
@@ -32,7 +31,7 @@ const RecommendedLinks = ({highlyRecommendedLinks}) => (
 )
 const ConversationsLinks = ({highlyConversationsLinks}) => (
   <div className="nav-item">
-    <span className="caps">Conversations</span>
+    <Link to="/conversations" className="caps">Conversations</Link>
     <ul className="dropdown">
       {highlyConversationsLinks.map(link => <li key={link.id}><Link to={`/conversations/${link.slug}`}>{link.title}</Link></li>)}
     </ul>
