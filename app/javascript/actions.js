@@ -6,6 +6,9 @@ export const TOGGLE_NAVIGATION = 'TOGGLE_NAVIGATION'
 export const GET_NAVIGATION_LINK = 'GET_NAVIGATION_LINK'
 export const GET_NAVIGATION_LINK_RECEIVED = 'GET_NAVIGATION_LINK_RECEIVED'
 
+export const GET_HIGHLY_RECOMMENDED_LANDING = 'GET_HIGHLY_RECOMMENDED_LANDING'
+export const GET_HIGHLY_RECOMMENDED_LANDING_RECEIVED = 'GET_HIGHLY_RECOMMENDED_LANDING_RECEIVED'
+
 export const GET_HIGHLY_RECOMMENDED = 'GET_HIGHLY_RECOMMENDED'
 export const GET_HIGHLY_RECOMMENDED_RECEIVED = 'GET_HIGHLY_RECOMMENDED_RECEIVED'
 
@@ -68,6 +71,21 @@ export const getNavigationLinkReceived = ({navigationLink}) => {
     type: GET_NAVIGATION_LINK_RECEIVED,
     payload: {
       navigationLink
+    }
+  }
+}
+
+export const getHighlyRecommendedLanding = () => {
+  return {
+    type: GET_HIGHLY_RECOMMENDED_LANDING
+  }
+}
+
+export const getHighlyRecommendedLandingReceived = ({recommendedLanding}) => {
+  return {
+    type: GET_HIGHLY_RECOMMENDED_LANDING_RECEIVED,
+    payload: {
+      recommendedLanding
     }
   }
 }

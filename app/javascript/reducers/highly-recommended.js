@@ -1,6 +1,7 @@
 import {
-  GET_HIGHLY_RECOMMENDED_RECEIVED,
-  GET_HIGHLY_RECOMMENDED_DETAIL_RECEIVED
+  GET_HIGHLY_RECOMMENDED_DETAIL_RECEIVED,
+  GET_HIGHLY_RECOMMENDED_LANDING_RECEIVED,
+  GET_HIGHLY_RECOMMENDED_RECEIVED
 } from "../actions";
 
 const initialState = {
@@ -8,6 +9,11 @@ const initialState = {
   destinationsComingSoon: [],
   destinationsPresentPast: [],
   destination: {
+  },
+  recommendedLanding: {
+    mapIllustration: {
+      url: ""
+    }
   }
 }
 
@@ -21,6 +27,13 @@ const highlyRecommended = (state = initialState, action) => {
         destinations: payload.destinations,
         destinationsComingSoon: payload.destinationsComingSoon,
         destinationsPresentPast: payload.destinationsPresentPast
+      }
+    }
+
+    case GET_HIGHLY_RECOMMENDED_LANDING_RECEIVED: {
+      return {
+        ...state,
+        recommendedLanding: payload.recommendedLanding
       }
     }
 

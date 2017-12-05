@@ -3,13 +3,14 @@ import { NavLink, Link } from 'react-router-dom'
 import Logo from '../Logo'
 
 import styles from './header.css'
- 
+
 const Header = ({ highlyRecommendedLinks, highlyConversationsLinks, toggleNavigation, isOpen, isHomePage }) => (
   <header className="header">
     <div className="header__inner">
       <div className="menu-button-area"></div>
-        {!isHomePage && <ConversationsLinks highlyConversationsLinks={highlyConversationsLinks} />}
-        
+
+      {!isHomePage && <ConversationsLinks highlyConversationsLinks={highlyConversationsLinks} />}
+
       <div className="logo-area">
         <Logo />
       </div>

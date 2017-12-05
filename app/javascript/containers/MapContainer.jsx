@@ -23,7 +23,7 @@ const infoBoxStyles = {
   width: '200px'
 }
 
-const MapContainer = ({isMarkerShown, whereToGo, coordinates}) => {
+const MapContainer = ({isMarkerShown, whereToGo, coordinates, defaultZoom}) => {
   const { lat, lon } = coordinates
 
   const googleMapOptions = {
@@ -31,9 +31,171 @@ const MapContainer = ({isMarkerShown, whereToGo, coordinates}) => {
     disableDefaultUI: true,
     styles: [
       {
-        "featureType": "all",
+        "featureType": "administrative",
+        "elementType": "all",
         "stylers": [
-          { "saturation": "-100" }
+          {
+            "visibility": "off"
+          }
+        ]
+      },
+      {
+        "featureType": "administrative",
+        "elementType": "labels.text.fill",
+        "stylers": [
+          {
+            "color": "#444444"
+          }
+        ]
+      },
+      {
+        "featureType": "administrative.country",
+        "elementType": "all",
+        "stylers": [
+          {
+            "visibility": "on"
+          }
+        ]
+      },
+      {
+        "featureType": "administrative.country",
+        "elementType": "labels",
+        "stylers": [
+          {
+            "visibility": "off"
+          }
+        ]
+      },
+      {
+        "featureType": "administrative.country",
+        "elementType": "labels.icon",
+        "stylers": [
+          {
+            "visibility": "off"
+          }
+        ]
+      },
+      {
+        "featureType": "administrative.province",
+        "elementType": "all",
+        "stylers": [
+          {
+            "visibility": "off"
+          }
+        ]
+      },
+      {
+        "featureType": "administrative.locality",
+        "elementType": "all",
+        "stylers": [
+          {
+            "visibility": "off"
+          }
+        ]
+      },
+      {
+        "featureType": "administrative.neighborhood",
+        "elementType": "all",
+        "stylers": [
+          {
+            "visibility": "off"
+          }
+        ]
+      },
+      {
+        "featureType": "landscape",
+        "elementType": "all",
+        "stylers": [
+          {
+            "color": "#d6d4cb"
+          },
+          {
+            "visibility": "on"
+          }
+        ]
+      },
+      {
+        "featureType": "landscape.natural",
+        "elementType": "geometry.fill",
+        "stylers": [
+          {
+            "visibility": "on"
+          },
+          {
+            "saturation": "17"
+          }
+        ]
+      },
+      {
+        "featureType": "poi",
+        "elementType": "all",
+        "stylers": [
+          {
+            "visibility": "off"
+          }
+        ]
+      },
+      {
+        "featureType": "road",
+        "elementType": "all",
+        "stylers": [
+          {
+            "saturation": -100
+          },
+          {
+            "lightness": 45
+          },
+          {
+            "visibility": "off"
+          }
+        ]
+      },
+      {
+        "featureType": "road.highway",
+        "elementType": "all",
+        "stylers": [
+          {
+            "visibility": "simplified"
+          }
+        ]
+      },
+      {
+        "featureType": "road.highway",
+        "elementType": "labels",
+        "stylers": [
+          {
+            "visibility": "off"
+          }
+        ]
+      },
+      {
+        "featureType": "road.arterial",
+        "elementType": "labels.icon",
+        "stylers": [
+          {
+            "visibility": "off"
+          }
+        ]
+      },
+      {
+        "featureType": "transit",
+        "elementType": "all",
+        "stylers": [
+          {
+            "visibility": "off"
+          }
+        ]
+      },
+      {
+        "featureType": "water",
+        "elementType": "all",
+        "stylers": [
+          {
+            "color": "#f6f2e9"
+          },
+          {
+            "visibility": "on"
+          }
         ]
       }
     ]
@@ -47,11 +209,12 @@ const MapContainer = ({isMarkerShown, whereToGo, coordinates}) => {
 
   return (
     <GoogleMap
-      defaultZoom={11}
+      defaultZoom={defaultZoom}
       defaultCenter={{ lat: lat, lng: lon }}
       options={googleMapOptions}
+      defaultZoom={11}
     >
-      {isMarkerShown && whereToGo.filter( (place) => { return place.contentTypeId === 'place' }).map( ( place ) => {
+      {isMarkerShown && whereToGo && whereToGo.filter( (place) => { return place.contentTypeId === 'place' }).map( ( place ) => {
         const { location, title } = place
         const { lat, lon } = location
 
@@ -75,7 +238,7 @@ const MapContainer = ({isMarkerShown, whereToGo, coordinates}) => {
           </InfoBox>
         )
       } )}
-      {isMarkerShown && whereToGo.filter( (place) => { return place.contentTypeId === 'airport' }).map( ( place ) => {
+      {isMarkerShown && whereToGo && whereToGo.filter( (place) => { return place.contentTypeId === 'airport' }).map( ( place ) => {
         const { location, title } = place
         const { lat, lon } = location
 
@@ -89,6 +252,7 @@ const MapContainer = ({isMarkerShown, whereToGo, coordinates}) => {
           />
         )
       } )}
+
     </GoogleMap>
   )
 }
