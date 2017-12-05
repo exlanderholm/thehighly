@@ -6,9 +6,8 @@ import {
   getHighlyConversations,
 } from '../actions'
 
-class ConversationsDetailContainer extends React.Component {
+class ConversationsContainer extends React.Component {
   componentDidMount() {
-    const { id } = this.props.match.params
     this.props.getHighlyConversations()
   }
 
@@ -17,17 +16,24 @@ class ConversationsDetailContainer extends React.Component {
   }
 }
 
-const mapStateToProps = ({highlyConversations}) => {
-  const { posts } = highlyConversations
-  return posts
+const mapStateToProps = ({ highlyConversations }) => {
+  const { posts, intro } = highlyConversations
+
+  // const postsByIssue = {}
+  // posts.forEach(post => {
+  //   postByIssue[post.issue.id].posts[] = post
+  // });
+  // console.log(postsByIssue)
+
+  return { posts, intro }
 }
 
 const mapDispatchToProps = (dispatch) => {
   return {
-    getHighlyConversationsDetail: ({id}) => {
-      dispatch(getHighlyConversations)
+    getHighlyConversations: () => {
+      dispatch(getHighlyConversations())
     }
   }
 }
 
-export default connect(mapStateToProps, mapDispatchToProps)(ConversationsDetailContainer)
+export default connect(mapStateToProps, mapDispatchToProps)(ConversationsContainer)

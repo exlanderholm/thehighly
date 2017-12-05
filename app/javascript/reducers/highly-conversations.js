@@ -4,6 +4,7 @@ import {
 } from "../actions";
 
 const initialState = {
+  intro: `Delve into the minds and ideas charting this new frontier.`,
   posts: [],
   post: {
     featuredImage: {
