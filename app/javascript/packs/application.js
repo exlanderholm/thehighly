@@ -17,6 +17,7 @@ import reducers from '../reducers'
 import services from '../services'
 
 import AboutContainer from '../containers/AboutContainer'
+import ConversationsContainer from '../containers/ConversationsContainer'
 import ConversationsDetailContainer from '../containers/ConversationsDetailContainer'
 import ContactContainer from '../containers/ContactContainer'
 import FooterContainer from '../containers/FooterContainer'
@@ -84,6 +85,7 @@ if (typeof fetch === 'function') {
             <HeaderContainer />
             <Switch>
               <Route path="/" exact component={HomeContainer} />
+              <Route path="/conversations" exact component={ConversationsContainer} />
               <Route path="/conversations/:id" component={ConversationsDetailContainer} />
               <Route path="/contact" component={ContactContainer} />
               <Route path="/about" component={AboutContainer} />

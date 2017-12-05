@@ -28,7 +28,24 @@ class CategoriesController < ApplicationController
         body: post.fields[:body] ? markdown.render(post.body) : "",
         featuredImage: post.fields[:featured_image] ? parse_image(post.featured_image) : {},
         slug: post.slug,
-        category: post.fields[:category] ? post.category.slug : nil
+        category: post.fields[:category] ? tidy_category(post.category) : {},
+        issue: post.fields[:issue] ? tidy_issue(post.issue) : {}
+      }
+    end
+
+    def tidy_category(category)
+      {
+        id: category.id,
+        title: category.title,
+        slug: category.slug
+      }
+    end
+
+    def tidy_issue(issue)
+      {
+        id: issue.id,
+        title: issue.title,
+        publicationDate: issue.publication_date
       }
     end
 

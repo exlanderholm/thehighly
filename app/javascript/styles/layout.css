@@ -47,6 +47,13 @@ body {
   src: url('../fonts/harrietdisplay-bolditalic.woff') format("woff");
 }
 
+/* harriettext-light.woff */
+@font-face {
+  font-family: HarrietText;
+  font-weight: 300;
+  src: url('../fonts/harriettext-light.woff') format("woff");
+}
+
 /* harriettext-regular.woff */
 @font-face {
   font-family: HarrietText;

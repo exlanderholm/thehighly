@@ -23,7 +23,7 @@ const mapStateToProps = ({router}) => {
       break
     }
     case 'conversations': {
-      backgroundColor = '#F4EEE3'
+      backgroundColor = '#dfccc8'
       break
     }
     default: {
