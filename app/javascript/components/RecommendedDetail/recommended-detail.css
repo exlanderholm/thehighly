@@ -53,7 +53,7 @@ a {
   }
 
   .title {
-    font-size: 34px;
+    font: 300 34px var(--font-family-heading);
     line-height: 1;
     text-align: center;
 
