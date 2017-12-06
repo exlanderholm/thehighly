@@ -1,15 +1,16 @@
 @import '../../styles/variables';
 
-.conversations-landing {
-  margin-top: var(--header-height-mobile);
+.conversations {
+  padding-top: var(--header-height-mobile);
+  min-height: 100vh;
   overflow: hidden;
 
   @media (--tablet-portrait) {
-    margin-top: var(--header-height-desktop);
+    padding-top: var(--header-height-desktop);
   }
 
   @media (--desktop-large) {
-    margin-top: var(--header-height-desktop-large);
+    padding-top: var(--header-height-desktop-large);
   }
 
   .intro {
@@ -27,19 +28,28 @@
     }
 
     h1 {
-      font: 300/1.33 55px var(--font-family-heading);
+      font: 300 55px/1.33 var(--font-family-heading);
       margin: 2em 0;
       text-align: center;
     }
 
     .issue {
+      font: 500 16px/2 var(--font-family-sans-serif);
+      letter-spacing: 3px;
       margin: 2em 0;
       text-align: center;
     }
   }
 
+  &.isLoading .posts {
+    opacity: 0;
+  }
+
   .posts {
+    transition: opacity 400ms;
     background-color: var(--pinkish-grey);
+    padding: 20px 0;
+
     .inner {
       display: flex;
       flex-wrap: wrap;
@@ -83,6 +93,7 @@
     }
 
     img {
+      mix-blend-mode: multiply;
       display: block;
       width: 100%;
     }
