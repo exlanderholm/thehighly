@@ -17,7 +17,7 @@ class ConversationsContainer extends React.Component {
 }
 
 const mapStateToProps = ({ highlyConversations }) => {
-  const { posts, intro } = highlyConversations
+  const { posts, intro, isLoading } = highlyConversations
 
   // const postsByIssue = {}
   // posts.forEach(post => {
@@ -25,7 +25,7 @@ const mapStateToProps = ({ highlyConversations }) => {
   // });
   // console.log(postsByIssue)
 
-  return { posts, intro }
+  return { posts, intro, isLoading }
 }
 
 const mapDispatchToProps = (dispatch) => {

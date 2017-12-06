@@ -1,15 +1,16 @@
 @import '../../styles/variables';
 
 .conversations {
-  margin-top: var(--header-height-mobile);
+  padding-top: var(--header-height-mobile);
+  min-height: 100vh;
   overflow: hidden;
 
   @media (--tablet-portrait) {
-    margin-top: var(--header-height-desktop);
+    padding-top: var(--header-height-desktop);
   }
 
   @media (--desktop-large) {
-    margin-top: var(--header-height-desktop-large);
+    padding-top: var(--header-height-desktop-large);
   }
 
   .intro {
@@ -40,7 +41,12 @@
     }
   }
 
+  &.isLoading .posts {
+    opacity: 0;
+  }
+
   .posts {
+    transition: opacity 400ms;
     background-color: var(--pinkish-grey);
     padding: 20px 0;
 

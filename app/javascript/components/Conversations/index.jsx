@@ -1,8 +1,11 @@
 import React from 'react'
 import styles from './conversations.css'
+import classNames from "classnames/bind"
 
-const Conversations = ({posts, intro}) =>
-  <div className="conversations">
+const cx = classNames.bind(styles)
+
+const Conversations = ({posts, intro, isLoading}) =>
+  <div className={cx("conversations", {isLoading})}>
     <div className="intro">
       <h1>{intro}</h1>
       <p className="issue caps">vol. 1 2017/2018</p>
