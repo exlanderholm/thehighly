@@ -17,6 +17,7 @@ var settings = {
       component: LeftArrow,
       position: 'CenterLeft',
       style: {
+        marginTop: '-64px',
         padding: 20
       }
     },
@@ -24,6 +25,7 @@ var settings = {
       component: RightArrow,
       position: 'CenterRight',
       style: {
+        marginTop: '-64px',
         padding: 20
       }
     }
