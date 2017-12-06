@@ -47,6 +47,7 @@
     @media (--tablet-portrait) {
       font-size: 3em;
       order: 1;
+
       p {
         margin: 0;
       }
@@ -138,11 +139,20 @@
       order: 4;
       width: auto;
       text-align: right;
-
+      
       span {
         display: block;
         margin: 0;
       }
+    }
+  }
+  .close {
+
+    @media (--tablet-portrait) {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
     }
   }
 }

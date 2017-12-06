@@ -23,6 +23,7 @@ import FooterContainer from '../containers/FooterContainer'
 import HeaderContainer from '../containers/HeaderContainer'
 import HomeContainer from '../containers/HomeContainer'
 import NavigationContainer from '../containers/NavigationContainer'
+import PopupContainer from '../containers/PopupContainer'
 import RecommendedDetailContainer from '../containers/RecommendedDetailContainer'
 import PrivacyPolicyContainer from '../containers/PrivacyPolicyContainer'
 import TermsAndConditionsContainer from '../containers/TermsAndConditionsContainer'
@@ -95,6 +96,7 @@ if (typeof fetch === 'function') {
             <FooterContainer />
             <NavigationContainer />
             <WelcomeContainer />
+            <PopupContainer />
           </div>
         </ConnectedRouter>
       </Provider>,

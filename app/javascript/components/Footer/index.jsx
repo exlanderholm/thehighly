@@ -2,9 +2,9 @@ import React from 'react'
 import { Link } from 'react-router-dom'
 import styles from './footer.css'
 
-const Footer = ({backgroundColor}) =>
-  // <footer className="footer" style={{backgroundColor}}>
-  <footer className="footer">
+const Footer = ({ backgroundColor, openPopup }) => (
+
+  <footer className="footer" style={{backgroundColor}}>
 
     <div className="footer__inner">
 
@@ -31,7 +31,15 @@ const Footer = ({backgroundColor}) =>
         <span>&copy; 2017 The Highly</span>
         <span>Please don&rsquo;t steal our stuff.</span>
       </div>
+
+      <button className="splat__icon" onClick={openPopup}>Splat</button>
+
     </div>
+    
   </footer>
+
+)
+
+
 
 export default Footer

@@ -1,0 +1,18 @@
+@import '../../styles/variables';
+
+.popup {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  padding: 2em;
+  background-color: beige;
+  background-size: cover;
+  opacity: 0;
+  pointer-events: none;
+  z-index: 10;
+
+  &.isOpen {
+    opacity: 1;
+    pointer-events: auto;
+  }
+}

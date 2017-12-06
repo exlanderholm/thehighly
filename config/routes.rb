@@ -11,6 +11,8 @@ Rails.application.routes.draw do
     resource :contact_page, only: [:show]
     resource :terms_and_conditions, only: [:show]
     resource :privacy_policy, only: [:show]
+    resource :popup, only: [:show]
+
   end
 
   get "*path", to: "application#index"
