@@ -62,8 +62,8 @@ const HighlyRecommended = ({destinations, destinationsPresentPast, destinationsC
       { destinationsPresentPast.map(destination => <HighlyDestination {...destination} key={destination.id} />) }
       { destinationsComingSoon.map(destination => <HighlyDestination {...destination} key={destination.id} />) }
     </p>
-    <p className="small">
-      Don't see your city? Contact us with your Highly Recommended.
+    <p className="footnote small">
+      Don't see your city? <Link to="/contact">Contact us</Link> with your Highly Recommended.
     </p>
   </div>
 )

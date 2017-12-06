@@ -75,6 +75,13 @@
   .content {
     flex-grow: 1;
   }
+
+  .footnote a {
+    border-bottom: 1px solid red;
+    &:hover {
+      color: red;
+    }
+  }
 }
 
 .conversations {
