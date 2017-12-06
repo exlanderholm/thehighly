@@ -37,8 +37,8 @@
     mix-blend-mode: multiply;
 
     @media (--tablet-landscape) {
-      width: 50vw;
-      height: 20vw;
+      width: 52vw;
+      height: 18vw;
       margin: 0 auto;
     }
   }

@@ -11,7 +11,7 @@
   position: relative;
   max-width: var(--site-width);
   margin: auto;
-  padding: 1rem var(--gutter) 2rem;
+  padding: 1rem var(--gutter);
   display: flex;
   align-items: flex-start;
   flex-flow: row wrap;
@@ -20,7 +20,7 @@
 
   @media (--tablet-portrait) {
     justify-content: space-between;
-    padding: 2em var(--gutter-desktop-large) 3em;
+    padding: 2em var(--gutter-desktop-large);
   }
 
   & > * {
@@ -60,14 +60,19 @@
     }
     @media (--tablet-portrait) {
       max-width: 400px;
+      margin: 1.5em 0;
       display: flex;
       flex-wrap: wrap;
       order: 3;
 
       li {
         flex-basis: 50%;
-        margin: 1em 0;
         padding: 0;
+        margin: 1em 0;
+        
+        @media (--tablet-portrait) {
+          margin: .4em 0;
+        }
       }
     }
 
