@@ -1,15 +1,16 @@
 @import '../../styles/variables';
 
-.conversations-landing {
-  margin-top: var(--header-height-mobile);
+.conversations {
+  padding-top: var(--header-height-mobile);
+  min-height: 100vh;
   overflow: hidden;
 
   @media (--tablet-portrait) {
-    margin-top: var(--header-height-desktop);
+    padding-top: var(--header-height-desktop);
   }
 
   @media (--desktop-large) {
-    margin-top: var(--header-height-desktop-large);
+    padding-top: var(--header-height-desktop-large);
   }
 
   .intro {

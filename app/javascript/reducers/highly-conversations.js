@@ -10,7 +10,8 @@ const initialState = {
     featuredImage: {
       url: ''
     }
-  }
+  },
+  isLoading: true
 }
 
 const highlyConversations = (state = initialState, action) => {
@@ -20,7 +21,8 @@ const highlyConversations = (state = initialState, action) => {
     case GET_HIGHLY_CONVERSATIONS_RECEIVED: {
       return {
         ...state,
-        posts: payload.posts
+        posts: payload.posts,
+        isLoading: false
       }
     }
 
