@@ -10,6 +10,7 @@ import {
   GET_NAVIGATION_LINK,
   GET_PRIVACY_POLICY,
   GET_TERMS_AND_CONDITIONS,
+  GET_POPUP,
   DEACTIVATE_WELCOME_SCREEN,
 
   getAboutPageReceived,
@@ -22,7 +23,8 @@ import {
   getHighlyReportsReceived,
   getNavigationLinkReceived,
   getPrivacyPolicyReceived,
-  getTermsAndConditionsReceived
+  getTermsAndConditionsReceived,
+  getPopupReceived
 } from '../actions'
 
 export default ({ dispatch, getState }) => {
@@ -179,6 +181,17 @@ export default ({ dispatch, getState }) => {
         .then(response => response.json())
         .then(json => {
           dispatch(getTermsAndConditionsReceived(json))
+        }).catch(error => {
+          console.error(error)
+        })
+        break
+      }
+
+      case GET_POPUP: {
+        fetch('/api/popup', { credentials })
+        .then(response => response.json())
+        .then(json => {
+          dispatch(getPopupReceived(json))
         }).catch(error => {
           console.error(error)
         })

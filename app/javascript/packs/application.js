@@ -96,9 +96,10 @@ if (typeof fetch === 'function') {
               <Route path="/terms-conditions" component={TermsAndConditionsContainer} />
               <Route component={My404Component} />
             </Switch>
-            <Footer />
+            <FooterContainer />
             <NavigationContainer />
             <WelcomeContainer />
+            <PopupContainer />
           </div>
         </ConnectedRouter>
       </Provider>,
