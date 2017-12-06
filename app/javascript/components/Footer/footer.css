@@ -1,13 +1,8 @@
 @import '../../styles/variables';
 
 .footer {
-  /* background-color: #939ca9; */
-  /* background-color: #c7cccb; */
-  /* background-color: #bcc0c7; */
-  /* background-color: #b8bbc1; */
-  background-color: #d6d4cb;
   align-items: flex-start;
-  /* border-top: 1px solid var(--border-color); */
+  background-color: #d0cec4;
   box-sizing: border-box;
   font: 500 12px/2.33 var(--font-family-sans-serif);
 }
@@ -69,8 +64,13 @@
 
       li {
         flex-basis: 50%;
+        margin: 1em 0;
         padding: 0;
       }
+    }
+
+    a:hover {
+      color: red;
     }
   }
 
@@ -123,7 +123,7 @@
       text-align: center;
 
       @media (--tablet-portrait) {
-        text-align: left;
+        text-align: right;
       }
     }
   }

@@ -20,7 +20,7 @@ import AboutContainer from '../containers/AboutContainer'
 import ContactContainer from '../containers/ContactContainer'
 import ConversationsContainer from '../containers/ConversationsContainer'
 import ConversationsDetailContainer from '../containers/ConversationsDetailContainer'
-import FooterContainer from '../containers/FooterContainer'
+import Footer from '../components/Footer'
 import HeaderContainer from '../containers/HeaderContainer'
 import HomeContainer from '../containers/HomeContainer'
 import My404Component from '../components/My404Component'
@@ -96,7 +96,7 @@ if (typeof fetch === 'function') {
               <Route path="/terms-conditions" component={TermsAndConditionsContainer} />
               <Route component={My404Component} />
             </Switch>
-            <FooterContainer />
+            <Footer />
             <NavigationContainer />
             <WelcomeContainer />
           </div>
