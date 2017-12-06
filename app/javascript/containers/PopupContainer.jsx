@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
 import { connect } from 'react-redux'
 
-import Popup from '../components/popup'
+import Popup from '../components/Popup'
 
 import {
   getPopup,
