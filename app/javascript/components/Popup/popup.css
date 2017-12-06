@@ -4,15 +4,48 @@
   position: fixed;
   top: 50%;
   left: 50%;
+  width: 94%;
+  height: 94%;
+  transform: translate(-50%, -50%);
   padding: 2em;
-  background-color: beige;
+  background-color: rgb(86, 122, 136);
   background-size: cover;
   opacity: 0;
   pointer-events: none;
   z-index: 10;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  
+  @media (--tablet-landscape) {
+    width: 1000px;
+    height: 600px;
+  }
 
   &.isOpen {
     opacity: 1;
     pointer-events: auto;
+  }
+  
+  &__copy {
+    width: 80%;
+    font-size: 1.4em;
+    text-align: center;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    
+    @media (--tablet-landscape) {
+      width: 66%;
+      font-size: 2.4em;
+    }
+  }
+  .close {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    background: transparent;
+    border-color: transparent;
+    border-right: none;
   }
 }

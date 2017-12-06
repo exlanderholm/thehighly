@@ -4,7 +4,7 @@ import classNames from 'classnames/bind'
 
 const cx = classNames.bind(styles)
 
-const Popup = ({ isOpen, closePopup, backgroundImage, title }) => {
+const Popup = ({ isOpen, closePopup, backgroundImage, title, copy }) => {
   const popupClassNames = {
     popup: true,
     isOpen
@@ -16,15 +16,13 @@ const Popup = ({ isOpen, closePopup, backgroundImage, title }) => {
 
   return (
     <div className={cx(popupClassNames)} style={popupStyles}>
-      <p>The popup</p>
-
       <button className="close" onClick={closePopup}>Close</button>
-
-      <div className="popup__copy">
-
-      </div>
+      {/* <p>{title}</p> */}
+      <div className="popup__copy" dangerouslySetInnerHTML={createMarkupObject(copy)} />
     </div>
   )
 }
+
+const createMarkupObject = __html => ({ __html });
 
 export default Popup
