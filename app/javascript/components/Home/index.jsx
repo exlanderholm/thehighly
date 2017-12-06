@@ -52,7 +52,7 @@ const Home = ({ highlyRecommended, highlyConversations }) =>
 
 const HighlyRecommended = ({destinations, destinationsPresentPast, destinationsComingSoon}) => (
   <div className="content">
-    <blockquote className="intro">
+    <blockquote>
       Your guide to the good good.
       We&rsquo;ve done the research for you —
       here are the finest quality cannabis products of the now,
