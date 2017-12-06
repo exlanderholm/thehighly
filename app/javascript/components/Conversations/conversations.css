@@ -41,7 +41,12 @@
     }
   }
 
+  &.isLoading .posts {
+    opacity: 0;
+  }
+
   .posts {
+    transition: opacity 400ms;
     background-color: var(--pinkish-grey);
     padding: 20px 0;
 
