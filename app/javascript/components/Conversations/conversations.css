@@ -1,6 +1,6 @@
 @import '../../styles/variables';
 
-.conversations {
+.conversations-landing {
   margin-top: var(--header-height-mobile);
   overflow: hidden;
 

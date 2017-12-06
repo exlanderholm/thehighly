@@ -2,7 +2,7 @@ import React from 'react'
 import styles from './conversations.css'
 
 const Conversations = ({posts, intro}) =>
-  <div className="conversations">
+  <div className="conversations-landing">
     <div className="intro">
       <h1>{intro}</h1>
       <p className="issue caps">vol. 1 2017/2018</p>

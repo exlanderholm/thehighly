@@ -17,6 +17,7 @@ var settings = {
       component: LeftArrow,
       position: 'CenterLeft',
       style: {
+        marginTop: '-64px',
         padding: 20
       }
     },
@@ -24,6 +25,7 @@ var settings = {
       component: RightArrow,
       position: 'CenterRight',
       style: {
+        marginTop: '-64px',
         padding: 20
       }
     }
@@ -60,8 +62,8 @@ const HighlyRecommended = ({destinations, destinationsPresentPast, destinationsC
       { destinationsPresentPast.map(destination => <HighlyDestination {...destination} key={destination.id} />) }
       { destinationsComingSoon.map(destination => <HighlyDestination {...destination} key={destination.id} />) }
     </p>
-    <p className="small">
-      Don't see your city? Contact us with your Highly Recommended.
+    <p className="footnote small">
+      Don't see your city? <Link to="/contact">Contact us</Link> with your Highly Recommended.
     </p>
   </div>
 )
@@ -104,7 +106,10 @@ const HighlyConversation = ({tagline, featuredImage, slug, title}) => (
         <img src={`${featuredImage.url}?w=860&h=860`} />
       </Link>
     </div>
-    <div className="tagline excerpt" dangerouslySetInnerHTML={createMarkupObject(tagline)} />
+    <div className="excerpt">
+      <h3 className="title">{title}</h3>
+      <div className="tagline" dangerouslySetInnerHTML={createMarkupObject(tagline)} />
+    </div>
   </div>
 )
 
