@@ -140,7 +140,7 @@
       order: 4;
       width: auto;
       text-align: right;
-      
+
       span {
         display: block;
         margin: 0;
@@ -151,6 +151,7 @@
     background: transparent;
     border-color: transparent;
     border-right: none;
+    cursor: pointer;
     width: 70px;
     height: 70px;
     margin-bottom: 3em;
