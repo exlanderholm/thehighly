@@ -42,8 +42,8 @@ const Recommended = ({
           {bottomIntro}
         </div>
         <nav className="destinations-links">
-          {destinationsPresentPast && destinationsPresentPast.map( (destination) => <Destination {...destination} key={destination.id} /> )}
-          {destinationsComingSoon && destinationsComingSoon.map( (destination) => <Destination {...destination} key={destination.id} /> )}
+          {destinationsPresentPast && destinationsPresentPast.map( (destination) => <DestinationPresentPast {...destination} key={destination.id} /> )}
+          {destinationsComingSoon && destinationsComingSoon.map( (destination) => <DestinationComingSoon {...destination} key={destination.id} /> )}
         </nav>
         <div className="bottom-outro caps">
           {bottomOutro}
@@ -53,9 +53,15 @@ const Recommended = ({
   )
 }
 
-const Destination = ({title, slug}) => {
+const DestinationPresentPast = ({name, slug}) => {
   return (
-    <a href={`/recommended/${slug}`}>{title}</a>
+    <a href={`/recommended/${slug}`}>{name}</a>
+  )
+}
+
+const DestinationComingSoon = ({name}) => {
+  return (
+    <a>{name}</a>
   )
 }
 

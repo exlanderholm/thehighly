@@ -21,6 +21,7 @@
   font: 300 20px/1.43 var(--font-family-heading);
   margin: 1em auto;
   max-width: 976px;
+  text-align: center;
 
   @media (--tablet-portrait) {
     font-size: 30px;
@@ -32,24 +33,57 @@
   font: italic 300 23px/1.29 var(--font-family-heading);
   margin: auto;
   max-width: 1058px;
+  text-align: center;
 
   @media (--tablet-portrait) {
     font-size: 45px;
   }
 
   a {
+    position: relative;
+
     &::after {
       content: " / ";
     }
+
     &:last-child::after {
       content: normal;
     }
-    &:hover {
+
+    &[href]:hover {
       color: red;
       &::after {
         color: black;
       }
     }
+  }
+
+  a:not([href]) {
+
+    &:before {
+      content: '';
+      pointer-events: none;
+      position: absolute;
+      width: 140%;
+      height: 250%;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      background: url('./comingsoon.gif') center no-repeat;
+      background-size: contain;
+      opacity: 0;
+      transition: opacity .2s;
+    }
+
+    &:hover {
+      &:before {
+        opacity: 1;
+        transition: opacity .1s;
+      }
+    }
+
+
+
   }
 }
 
