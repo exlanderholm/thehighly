@@ -43,7 +43,7 @@ const RecommendedDetail = ({
         </div>
       </div>
 
-      <div className="what-to-get" style={{backgroundColor: accentColor}}>
+      <div className="what-to-get">
         <div className="inner">
           <h4 className="section__title caps">What To Get</h4>
           {whatToGetSorted.map( (group, idx) => <ProductGroup {...group} key={idx} />)}
