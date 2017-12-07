@@ -5,6 +5,7 @@
   margin-top: var(--header-height-mobile);
   overflow: hidden;
   padding: 0 var(--gutter);
+  background-color: var(--background-color);
 
   @media (--tablet-portrait) {
     margin-top: var(--header-height-desktop);
@@ -95,6 +96,7 @@
   display: block;
   margin: auto;
   max-width: 100%;
+  mix-blend-mode: multiply;
 }
 
 .bottom-intro,
