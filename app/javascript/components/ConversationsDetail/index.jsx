@@ -20,7 +20,7 @@ const ConversationsDetail = ({
       <div className="hero-wrapper" style={{backgroundColor: excerptBackgroundColor}}>
         <div className="hero">
           <div className="featured-image" style={{backgroundColor: excerptBackgroundColor}}>
-            <img src={featuredImageUrl} alt="Featured Image" />
+            <img src={featuredImageUrl} alt="" />
           </div>
           <div className="intro-content" dangerouslySetInnerHTML={createMarkupObject(excerpt)} />
         </div>
