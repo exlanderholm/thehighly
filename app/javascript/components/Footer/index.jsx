@@ -2,10 +2,9 @@ import React from 'react'
 import { Link } from 'react-router-dom'
 import styles from './footer.css'
 
-const Footer = ({ backgroundColor, openPopup }) => (
+const Footer = ({ openPopup }) => (
 
-  <footer className="footer" style={{backgroundColor}}>
-
+  <footer className="footer">
     <div className="footer__inner">
 
       <blockquote className="group tagline">
@@ -44,11 +43,7 @@ const Footer = ({ backgroundColor, openPopup }) => (
         </svg>
       </button>
     </div>
-
   </footer>
-
 )
-
-
 
 export default Footer

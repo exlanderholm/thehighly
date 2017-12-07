@@ -10,36 +10,8 @@ class FooterContainer extends React.Component {
   }
 }
 
-const mapStateToProps = ({router}) => {
-  const { location } = router
-  const { pathname } = location
-
-  var backgroundColor = ''
-  switch(pathname.split("/")[1]) {
-    case 'about': {
-      backgroundColor = '#efeddd'
-      break
-    }
-    case 'recommended': {
-      backgroundColor = '#F6F2E9'
-      break
-    }
-    case 'conversations': {
-      backgroundColor = '#F4EEE3'
-      break
-    }
-    default: {
-      backgroundColor = 'transparent'
-      break
-    }
-  }
-  if (pathname === "/") {
-    backgroundColor = '#e8ece3'
-  }
-
-  return {
-    backgroundColor
-  }
+const mapStateToProps = () => {
+  return {}
 }
 
 const mapDispatchToProps = (dispatch) => {
