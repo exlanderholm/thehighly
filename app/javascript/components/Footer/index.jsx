@@ -14,8 +14,6 @@ const Footer = ({ openPopup }) => (
       <nav className="group nav caps">
         <Link to="/about">About</Link>
         <br/>
-        <Link to="/philosophy">Philosophy</Link>
-        <br/>
         <Link to="/contact">Contact</Link>
         <br/>
         <a href="https://instagram.com/thehighly_" target="_blank">Instagram</a>
