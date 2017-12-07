@@ -53,9 +53,9 @@ const Recommended = ({
   )
 }
 
-const DestinationPresentPast = ({name, slug}) => {
+const DestinationPresentPast = ({accentColor, name, slug}) => {
   return (
-    <a href={`/recommended/${slug}`}>{name}</a>
+    <span style={{color: accentColor}}><a href={`/recommended/${slug}`}>{name}</a></span>
   )
 }
 
