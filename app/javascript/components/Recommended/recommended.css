@@ -4,17 +4,17 @@
   min-height: 500px;
   margin-top: var(--header-height-mobile);
   overflow: hidden;
-  padding: 0 var(--gutter);
+  padding: 0 var(--gutter) 3em;
   background-color: var(--background-color);
 
   @media (--tablet-portrait) {
     margin-top: var(--header-height-desktop);
-    padding: 0 var(--gutter-desktop);
+    padding: 0 var(--gutter-desktop) 4em;
   }
 
   @media (--desktop-large) {
     margin-top: var(--header-height-desktop-large);
-    padding: 0 var(--gutter-desktop-large);
+    padding: 0 var(--gutter-desktop-large) 5em;
   }
 }
 

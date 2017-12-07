@@ -35,11 +35,6 @@ a {
   @media (--desktop-large) {
     margin: var(--page-margin-desktop-large) auto;
   }
-
-
-  @media (--tablet-portrait) {
-    margin: 14em auto 8em;
-  }
 }
 .recommended-detail {
   padding: var(--page-margin-mobile) 0 0;
@@ -150,7 +145,12 @@ a {
 
 .where-to-go,
 .what-to-get {
+  padding-top: 3em;
   overflow: hidden;
+  
+  @media (--tablet-portrait) {
+    padding-top: 5em;
+  }
 
   .section__title {
     text-align: center;
