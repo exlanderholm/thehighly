@@ -134,7 +134,8 @@ img {
 }
 
 blockquote {
-  font: italic 400 26px/1.33 var(--font-family-heading);
+  font: italic 400 26px var(--font-family-heading);
+  line-height: normal;
   margin: 0;
 
   @media (--tablet-portrait) {
