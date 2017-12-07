@@ -2,7 +2,8 @@
 
 .footer {
   align-items: flex-start;
-  background-color: #d0cec4;
+  /* background-color: #d0cec4; */
+  background-color: #8a8464;
   box-sizing: border-box;
   font: 500 12px/2.33 var(--font-family-sans-serif);
 }
