@@ -138,18 +138,17 @@
     mix-blend-mode: multiply;
   }
 
-  
+
   .excerpt {
     margin: auto;
-    /* max-width: 340px; */
     max-width: 62%;
     min-height: 8em;
     padding: 0 1em;
-    
+
     @media (--tablet-portrait) {
       padding: 0 50px;
     }
-    
+
     @media (--desktop-large) {
       max-width: 500px;
       min-height: 8em;
@@ -173,6 +172,8 @@
     }
 
     .tagline {
+      font: 300 16px var(--font-family-serif);
+      line-height: normal;
 
       p {
         margin-top: 0;
@@ -185,7 +186,7 @@
 
 
 .recommended {
-  
+
   .home & {
     background-color: #654d54;
     color: #f3ecdf;
@@ -233,7 +234,7 @@
     .small {
       a {
         border-bottom: 1px solid red;
-  
+
         &:hover {
           color: red;
         }

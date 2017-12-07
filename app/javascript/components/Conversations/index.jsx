@@ -5,7 +5,7 @@ const Conversations = ({posts, intro}) =>
   <div className="conversations-landing">
     <div className="intro">
       <h1>{intro}</h1>
-      <p className="issue caps">vol. 1 2017/2018</p>
+      <p className="issue caps">vol. 01 2017/2018</p>
     </div>
     <div className="posts">
       <div className="inner">
