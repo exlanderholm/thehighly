@@ -37,6 +37,7 @@ class DestinationsController < ApplicationController
       title: destination.fields[:title],
       slug: destination.slug,
       date: destination.fields[:date],
+      accentColor: destination.fields[:accent_color] ? destination.accent_color : "white",
       excerpt: destination.fields[:excerpt] ? markdown.render(destination.excerpt) : "",
       coordinates: destination.fields[:coordinates],
       mapMessaging: destination.fields[:map_messaging] ? markdown.render(destination.map_messaging) : "",
