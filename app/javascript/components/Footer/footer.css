@@ -29,13 +29,14 @@
   }
 
   .group {
-    margin: 1rem 0;
+    margin: 3rem 0;
     flex-basis: 100%;
     flex-grow: 0;
     flex-shrink: 0;
     text-align: center;
-
+    
     @media (--mobile-landscape) {
+      margin: 1rem 0;
       flex-basis: 50%;
       text-align: left;
     }
@@ -53,10 +54,13 @@
   }
 
   .nav {
-    column-count: 2;
     padding: 0;
     list-style: none;
-
+    
+    @media (--mobile-landscape) {
+      column-count: 2;
+    }
+    
     a {
       display: inline-block;
     }
@@ -123,23 +127,28 @@
       margin: 0;
       padding-top: 0.5em;
       width: 100%;
-      text-align: right;
+
+      @media (--mobile-landscape) {
+        text-align: right;
+      }
     }
   }
 
   .copyright {
     width: 100%;
-
+    margin: 4rem 0 1rem;
+    
     span {
       margin: 0 5px;
+      display: block;
     }
     @media (--mobile-landscape) {
+      margin: 2.5rem 0 1rem;
       order: 4;
       width: auto;
       text-align: right;
 
       span {
-        display: block;
         margin: 0;
       }
     }
