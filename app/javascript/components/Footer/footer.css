@@ -38,7 +38,6 @@
 
   .tagline {
     font-size: 2em;
-    /* font-weight: 300; */
 
     @media (--tablet-portrait) {
       font-size: 3em;
@@ -58,6 +57,7 @@
       display: inline-block;
       padding: 1em;
     }
+
     @media (--tablet-portrait) {
       max-width: 400px;
       margin: 1.5em 0;
@@ -69,7 +69,7 @@
         flex-basis: 50%;
         padding: 0;
         margin: 1em 0;
-        
+
         @media (--tablet-portrait) {
           margin: .4em 0;
         }
@@ -141,6 +141,7 @@
     span {
       margin: 0 5px;
     }
+
     @media (--tablet-portrait) {
       order: 4;
       width: auto;
@@ -152,6 +153,7 @@
       }
     }
   }
+
   .splat__icon {
     background: transparent;
     border-color: transparent;
@@ -164,10 +166,12 @@
     &:focus {
       outline: none;
     }
+
     svg {
       max-width: 100%;
       max-height: 100%;
     }
+
     @media (--tablet-landscape) {
       position: absolute;
       top: 50%;
