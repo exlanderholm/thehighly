@@ -140,25 +140,20 @@
       }
     }
   }
-  .splat__icon {
+  .splat {
     background: transparent;
     border-color: transparent;
     border-right: none;
     cursor: pointer;
-    width: 70px;
-    height: 70px;
-    margin-bottom: 3em;
-    position: fixed;
-    bottom: 0;
-    right: 0;
+    order: 6;
 
-    /* @media (--tablet-landscape) {
+    @media (--tablet-landscape) {
       position: absolute;
       top: 50%;
       left: 50%;
       transform: translate(-50%, -50%);
       margin: 0;
-    } */
+    }
 
     &:focus {
       outline: none;
