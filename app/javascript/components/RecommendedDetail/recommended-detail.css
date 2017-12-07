@@ -19,25 +19,39 @@ a {
     border-bottom: var(--anchor-border-style);
   }
 }
-.recommended-detail {
-  max-width: var(--site-width);
-  min-height: calc(100vh - var(--header-height-mobile) - var(--footer-height-mobile));
+.inner {
   margin: var(--page-margin-mobile) auto;
-  padding: var(--page-margin-mobile) 0;
-  background-color: var(--background-color);
-
+  /* max-width: var(--site-width); */
+  max-width: var(--page-width);
+  padding: 0 var(--gutter);
+  
   @media (--tablet-portrait) {
     min-height: calc(100vh - var(--header-height-desktop) - var(--footer-height-desktop));
     margin: var(--page-margin-tablet) auto;
   }
-
   @media (--tablet-landscape) {
     margin: var(--page-margin-desktop) auto;
-    padding: var(--page-margin-desktop) 0;
   }
-
   @media (--desktop-large) {
     margin: var(--page-margin-desktop-large) auto;
+  }
+  
+  
+  @media (--tablet-portrait) {
+    margin: 14em auto 8em;
+  }
+}
+.recommended-detail {
+  padding: var(--page-margin-mobile) 0;
+  min-height: calc(100vh - var(--header-height-mobile) - var(--footer-height-mobile));
+  background-color: var(--background-color);
+  
+  @media (--tablet-landscape) {
+    padding: var(--page-margin-desktop) 0;
+    min-height: calc(100vh - var(--header-height-desktop) - var(--footer-height-desktop));
+  }
+  @media (--desktop-large) {
+    padding: var(--page-margin-desktop-large) 0;
     min-height: calc(100vh - var(--header-height-desktop-large) - var(--footer-height-desktop-large));
   }
 
@@ -53,25 +67,25 @@ a {
   }
 
   .title {
-    font-size: 34px;
-    line-height: 1;
     text-align: center;
+    font: 300 34px/1 var(--font-family-heading);
+    color: lightblue;
 
     @media (--tablet-portrait) {
-      font-size: 39px;
-    }
-
-    @media (--tablet-landscape) {
       font-size: 44px;
     }
 
-    @media (--desktop-large) {
+    @media (--tablet-landscape) {
       font-size: 55px;
+    }
+
+    @media (--desktop-large) {
+      font-size: 66px;
     }
   }
 
   .recommended-detail__excerpt {
-    font: 18px/1.667 AlrightSans, Impact, serif;
+    font: 400 18px/1.667 var(--font-family-sans-serif);
     margin: 2em auto;
 
     @media (--tablet-portrait) {
@@ -137,14 +151,7 @@ a {
 
 .where-to-go,
 .what-to-get {
-  box-sizing: content-box;
-  margin: 8em auto 4em;
-  max-width: var(--page-width);
-  padding: 0 var(--gutter);
-
-  @media (--tablet-portrait) {
-    margin: 14em auto 8em;
-  }
+  overflow: hidden;
 
   .section__title {
     text-align: center;
@@ -196,6 +203,9 @@ a {
   }
 }
 
+.what-to-get {
+  background-color: lightblue;
+}
 .product__type {
   padding: 1em;
   border-top: 1px solid black;
@@ -213,7 +223,6 @@ a {
 
 
   .product {
-    background-color: var(--background-color);
     position: relative;
     margin: 2em 0;
 
