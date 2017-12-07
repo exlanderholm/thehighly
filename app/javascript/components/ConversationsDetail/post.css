@@ -4,11 +4,11 @@
   background-color: var(--background-color);
   overflow: hidden;
   margin-top: var(--header-height-mobile);
-  
+
   @media (--tablet-portrait) {
     margin-top: var(--header-height-desktop);
   }
-  
+
   @media (--desktop-large) {
     margin-top: var(--header-height-desktop-large);
   }
@@ -126,11 +126,15 @@ a {
 }
 
 .body blockquote {
-  margin: 2em -2em;
+  margin: 2em calc(var(--gutter) / -2);
   text-align: justify;
 
-  @media (--desktop) {
-    margin: 2em -2em;
+  @media (--tablet-portrait) {
+    margin: 2em calc(var(--gutter-desktop) / -2);
+  }
+
+  @media (--desktop-large) {
+    margin: 2em calc(var(--gutter-desktop-large) / -2);
   }
 
   & > :first-child::before  {
