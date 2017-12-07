@@ -83,7 +83,7 @@
       overflow: hidden;
       list-style: none;
       margin: 0;
-      background: #f6f2e9;
+      background-color: var(--background-color);
       /* transition: .1s height; */
 
       @media (--tablet-landscape) {

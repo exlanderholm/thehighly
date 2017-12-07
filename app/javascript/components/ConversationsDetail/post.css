@@ -1,7 +1,7 @@
 @import '../../styles/variables';
 
 .post {
-  background: #f4eee3;
+  background-color: var(--background-color);
   overflow: hidden;
   margin-top: var(--header-height-mobile);
 
@@ -34,7 +34,7 @@
   }
 
   .featured-image {
-    background-color: var(--background-color-alt);
+    /* background-color: var(--background-color-alt); */
     flex-basis: 50%;
     position: relative;
 

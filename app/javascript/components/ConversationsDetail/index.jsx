@@ -16,7 +16,8 @@ const ConversationsDetail = ({
   const featuredImageUrl =  `${url}?w=1200&h=1200`
 
   return (
-    <div className="post" style={{backgroundColor: postBackgroundColor}}>
+    // <div className="post" style={{backgroundColor: postBackgroundColor}}>
+    <div className="post">
       <div className="hero-wrapper" style={{backgroundColor: excerptBackgroundColor}}>
         <div className="hero">
           <div className="featured-image" style={{backgroundColor: excerptBackgroundColor}}>
