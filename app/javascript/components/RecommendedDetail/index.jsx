@@ -10,14 +10,15 @@ const RecommendedDetail = ({
   coordinates,
   mapMessaging,
   whereToGo,
-  whatToGet
+  whatToGet,
+  accentColor
 }) => {
   const whatToGetSorted = sortWtg({whatToGet})
   return (
     <div className="recommended-detail">
 
       <div className="recommended-detail__top">
-        <h1 className="title">{title}</h1>
+        <h1 className="title" style={{color: accentColor}}>{title}</h1>
         <div className="recommended-detail__excerpt" dangerouslySetInnerHTML={createMarkupObject(excerpt)} />
       </div>
 
@@ -42,7 +43,7 @@ const RecommendedDetail = ({
         </div>
       </div>
 
-      <div className="what-to-get">
+      <div className="what-to-get" style={{backgroundColor: accentColor}}>
         <div className="inner">
           <h4 className="section__title caps">What To Get</h4>
           {whatToGetSorted.map( (group, idx) => <ProductGroup {...group} key={idx} />)}

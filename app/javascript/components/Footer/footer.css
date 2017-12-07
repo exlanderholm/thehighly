@@ -153,8 +153,14 @@
       position: absolute;
       top: 50%;
       left: 50%;
-      transform: translate(-50%, -50%);
       margin: 0;
+      transform: translate(-50%, -50%) scale(.6, .6);
+      transition: transform 0.3s;
+      
+      &:hover {
+        transform: translate(-50%, -50%) scale(.8, .8);
+        transition: transform 0.1s;
+      }
     }
 
     &:focus {
