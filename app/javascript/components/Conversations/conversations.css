@@ -41,7 +41,7 @@
   }
 
   .posts {
-    background-color: var(--pinkish-grey);
+    background-color: var(--posts-accent-color);
     padding: 20px 0;
 
     .inner {

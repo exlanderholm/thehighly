@@ -5,7 +5,7 @@ import { InfoBox } from "react-google-maps/lib/components/addons/InfoBox"
 
 const infoBoxStyles = {
   alignItems: 'center',
-  backgroundColor: 'white',
+  backgroundColor: '#c7b99c',
   borderColor: 'black',
   borderRadius: '100px',
   borderStyle: 'solid',
@@ -44,7 +44,25 @@ const MapContainer = ({isMarkerShown, whereToGo, coordinates, defaultZoom}) => {
         "elementType": "labels.text.fill",
         "stylers": [
           {
-            "color": "#444444"
+            "color": "#a09378"
+          }
+        ]
+      },
+      {
+        "featureType": "transit",
+        "elementType": "geometry",
+        "stylers": [
+          {
+            "color": "#442b12"
+          }
+        ]
+      },
+      {
+        "featureType": "road",
+        "elementType": "geometry",
+        "stylers": [
+          {
+            "color": "#442b12"
           }
         ]
       },
@@ -107,7 +125,7 @@ const MapContainer = ({isMarkerShown, whereToGo, coordinates, defaultZoom}) => {
         "elementType": "all",
         "stylers": [
           {
-            "color": "#d6d4cb"
+            "color": "#c7b99c"
           },
           {
             "visibility": "on"
@@ -191,7 +209,7 @@ const MapContainer = ({isMarkerShown, whereToGo, coordinates, defaultZoom}) => {
         "elementType": "all",
         "stylers": [
           {
-            "color": "#f6f2e9"
+            "color": "#a09378"
           },
           {
             "visibility": "on"
