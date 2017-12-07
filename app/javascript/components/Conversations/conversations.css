@@ -104,6 +104,7 @@
   }
 
   .tagline {
-    font: 300 16px/1.31 var(--font-family-serif);
+    font: 300 16px var(--font-family-serif);
+    line-height: normal;
   }
 }

@@ -15,10 +15,11 @@ const Popup = ({ isOpen, closePopup, backgroundImage, title, copy }) => {
   }
 
   return (
-    <div className={cx(popupClassNames)} style={popupStyles} onClick={closePopup}>
-      <button className="close caps" onClick={closePopup}>Close</button>
-      {/* <p>{title}</p> */}
-      <div className="popup__copy" dangerouslySetInnerHTML={createMarkupObject(copy)} />
+    <div className={cx(popupClassNames)} onClick={closePopup}>
+      <div className="popup__inner" style={popupStyles}>
+        <button className="close caps" onClick={closePopup}>Close</button>
+        <div className="popup__copy" dangerouslySetInnerHTML={createMarkupObject(copy)} />
+      </div>
     </div>
   )
 }
