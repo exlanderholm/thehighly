@@ -5,7 +5,7 @@ import {
 } from "../actions"
 
 const initialState = {
-  isOpen: false,
+  isOpen: true,
   backgroundImage: {
     url: ""
   },
