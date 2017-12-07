@@ -3,14 +3,16 @@
 @custom-media --tablet-portrait (min-width: 768px);
 @custom-media --tablet-landscape (min-width: 1024px);
 @custom-media --desktop (min-width: 1280px);
-@custom-media --desktop-large (min-width: 1440px);
+/* @custom-media --desktop-large (min-width: 1440px); */
+@custom-media --desktop-large (min-width: 1680px);
 
 :root {
   --anchor-border-style: 1px solid red;
   --anchor-hero-border-style: 2px solid red;
 
   --border-color: #8E9093;
-  --background-color: #F6F2E9;
+  /* --background-color: #F6F2E9; */
+  --background-color: #c7b99c;
   --background-color-alt: #e9e9df;
 
   --pinkish-grey: #dfccc8;

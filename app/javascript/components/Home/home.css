@@ -82,7 +82,8 @@
 }
 
 .conversations {
-  background-color: #f7f2e8;
+  /* background-color: #f7f2e8; */
+  background-color: #c7b99c;
 
   @media (--tablet-portrait) {
     order: -1;
@@ -185,8 +186,10 @@
 .recommended {
 
   .home & {
-    background-color: #654d54;
-    color: #f3ecdf;
+    /* background-color: #654d54; */
+    background-color: #4c5161;
+    /* color: #f3ecdf; */
+    color: #c7b99c;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
   }
