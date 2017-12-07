@@ -7,14 +7,11 @@
 
   @media (--tablet-portrait) {
     display: flex;
+    min-height: calc(100vh - 377px);
   }
 
   @media (--tablet-landscape) {
-    min-height: calc(100vh - 445px);
-  }
-
-  @media (--desktop-large) {
-    min-height: calc(100vh - 475px);
+    min-height: calc(100vh - 275px);
   }
 }
 
