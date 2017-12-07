@@ -39,19 +39,23 @@
     font-size: 45px;
   }
 
-  a {
-    position: relative;
-
+  span {
     &::after {
+      color: black;
       content: " / ";
     }
 
     &:last-child::after {
       content: normal;
     }
+  }
+
+  a {
+    color: black;
+    position: relative;
 
     &[href]:hover {
-      color: red;
+      color: inherit;
       &::after {
         color: black;
       }
