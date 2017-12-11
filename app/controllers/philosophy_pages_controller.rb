@@ -7,9 +7,9 @@ class PhilosophyPagesController < ApplicationController
     .first
 
     if philosophy_page.fields.keys
-      render json: {aboutPage: tidy_section(philosophy_page)}
+      render json: {philosophy: tidy_section(philosophy_page)}
     else
-      render json: {aboutPage: null}
+      render json: {philosophy: null}
     end
   end
 
@@ -17,9 +17,9 @@ class PhilosophyPagesController < ApplicationController
     {
       id: section.id,
       title: section.title,
-      body: section.body ? markdown.render(section.body) : "",
-      sections: Array(section.sections).map { |s| tidy_section(s) },
-      bottomOutro: section.bottomOutro
+      body: section.fields[:body] ? markdown.render(section.body) : nil,
+      sections: Array(section.fields[:sections]).map { |s| tidy_section(s) },
+      bottomOutro: section.fields[:bottom_outro] ? markdown.render(section.bottom_outro) : nil
     }
   end
 

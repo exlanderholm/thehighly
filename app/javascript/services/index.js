@@ -10,6 +10,7 @@ import {
   GET_NAVIGATION_LINK,
   GET_PRIVACY_POLICY,
   GET_TERMS_AND_CONDITIONS,
+  GET_PHILOSOPHY,
   GET_POPUP,
   DEACTIVATE_WELCOME_SCREEN,
 
@@ -24,6 +25,7 @@ import {
   getNavigationLinkReceived,
   getPrivacyPolicyReceived,
   getTermsAndConditionsReceived,
+  getPhilosophyReceived,
   getPopupReceived
 } from '../actions'
 
@@ -181,6 +183,19 @@ export default ({ dispatch, getState }) => {
         .then(response => response.json())
         .then(json => {
           dispatch(getTermsAndConditionsReceived(json))
+        }).catch(error => {
+          console.error(error)
+        })
+        break
+      }
+
+      case GET_PHILOSOPHY: {
+        fetch('/api/philosophy_page', { credentials })
+        .then(response => response.json())
+        .then(json => {
+          console.log({json})
+          console.log('GET_PHILOSOPHY_SERVICE')
+          dispatch(getPhilosophyReceived(json))
         }).catch(error => {
           console.error(error)
         })

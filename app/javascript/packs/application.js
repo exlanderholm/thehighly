@@ -29,6 +29,7 @@ import PrivacyPolicyContainer from '../containers/PrivacyPolicyContainer'
 import RecommendedContainer from '../containers/RecommendedContainer'
 import RecommendedDetailContainer from '../containers/RecommendedDetailContainer'
 import TermsAndConditionsContainer from '../containers/TermsAndConditionsContainer'
+import PhilosophyContainer from '../containers/PhilosophyContainer'
 import WelcomeContainer from '../containers/WelcomeContainer'
 import PopupContainer from '../containers/PopupContainer'
 
@@ -95,6 +96,7 @@ if (typeof fetch === 'function') {
               <Route path="/recommended/:id" component={RecommendedDetailContainer} />
               <Route path="/privacy-policy" component={PrivacyPolicyContainer} />
               <Route path="/terms-conditions" component={TermsAndConditionsContainer} />
+              <Route path="/philosophy" component={PhilosophyContainer} />
               <Route component={My404Component} />
             </Switch>
             <FooterContainer />
