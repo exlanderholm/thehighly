@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
 import { connect } from 'react-redux'
 import { getPhilosophy } from '../actions'
-import Philosophy from '../components/philosophy'
+import Philosophy from '../components/Philosophy'
 
 class PhilosophyContainer extends Component {
   componentDidMount() {
