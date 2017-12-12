@@ -4,9 +4,13 @@
 
   .main-title {
     font-family: var(--font-family-heading);
-    font-size: 64px;
+    font-size: 52px;
     font-weight: 300;
     text-align: center;
+
+    @media (--tablet-portrait) {
+      font-size: 64px;
+    }
   }
 
   .philosophy__body {
@@ -42,13 +46,19 @@
   border-bottom: 1px solid black;
 
   .title {
-    font: 57px var(--font-family-heading);
-    line-height: 2;
+    font: 37px var(--font-family-heading);
+    line-height: 1;
     margin: 0;
     text-align: left;
 
+    @media (--tablet-portrait) {
+      font-size: 57px;
+    }
+
     label {
       cursor: pointer;
+      display: block;
+      padding: 0.50em 0;
     }
 
   }
@@ -56,6 +66,11 @@
   &__content {
     margin: auto;
     max-width: 768px;
+    padding: 0 0 0 var(--gutter);
+
+    @media (--tablet-portrait) {
+      padding: 0;
+    }
   }
 }
 
@@ -72,7 +87,9 @@
 }
 
 .philosophy-section__body {
-  font-size: 24px;
+  @media (--tablet-portrait) {
+    font-size: 24px;
+  }
 
   a {
     border-bottom: 1px solid red;
@@ -97,7 +114,9 @@
 }
 
 .philosophy-subsection__body {
-  font-size: 24px;
+  @media (--tablet-portrait) {
+    font-size: 24px;
+  }
 
   a {
     border-bottom: 1px solid red;
