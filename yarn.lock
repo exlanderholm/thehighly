@@ -1688,6 +1688,12 @@ domain-browser@^1.1.1:
   version "1.1.7"
   resolved "https://registry.yarnpkg.com/domain-browser/-/domain-browser-1.1.7.tgz#867aa4b093faa05f1de08c06f4d7b21fdf8698bc"
 
+dot-prop@^4.1.1:
+  version "4.2.0"
+  resolved "https://registry.yarnpkg.com/dot-prop/-/dot-prop-4.2.0.tgz#1f19e0c2e1aa0e32797c49799f2837ac6af69c57"
+  dependencies:
+    is-obj "^1.0.0"
+
 ecc-jsbn@~0.1.1:
   version "0.1.1"
   resolved "https://registry.yarnpkg.com/ecc-jsbn/-/ecc-jsbn-0.1.1.tgz#0fc73a9ed5f0d53c38193398523ef7e543777505"
@@ -2694,6 +2700,10 @@ is-number@^3.0.0:
   resolved "https://registry.yarnpkg.com/is-number/-/is-number-3.0.0.tgz#24fd6201a4782cf50561c810276afc7d12d71195"
   dependencies:
     kind-of "^3.0.2"
+
+is-obj@^1.0.0:
+  version "1.0.1"
+  resolved "https://registry.yarnpkg.com/is-obj/-/is-obj-1.0.1.tgz#3e4729ac1f5fde025cd7d83a896dab9f4f67db0f"
 
 is-path-cwd@^1.0.0:
   version "1.0.0"
@@ -4045,6 +4055,22 @@ postcss-modules-values@^1.1.0:
     icss-replace-symbols "^1.1.0"
     postcss "^6.0.1"
 
+postcss-nested-ancestors@^1.0.0:
+  version "1.0.0"
+  resolved "https://registry.yarnpkg.com/postcss-nested-ancestors/-/postcss-nested-ancestors-1.0.0.tgz#b7e2e2e4aebbbc1456a9adf9283f6ca5c3a61de3"
+  dependencies:
+    escape-string-regexp "^1.0.5"
+    object-assign "^4.1.0"
+    postcss "^5.0.21"
+    postcss-resolve-nested-selector "^0.1.1"
+
+postcss-nested@^3.0.0:
+  version "3.0.0"
+  resolved "https://registry.yarnpkg.com/postcss-nested/-/postcss-nested-3.0.0.tgz#cde40bd07a078565f3df72e2dc2665871c724852"
+  dependencies:
+    postcss "^6.0.14"
+    postcss-selector-parser "^3.1.1"
+
 postcss-nesting@^4.0.1:
   version "4.2.1"
   resolved "https://registry.yarnpkg.com/postcss-nesting/-/postcss-nesting-4.2.1.tgz#0483bce338b3f0828ced90ff530b29b98b00300d"
@@ -4113,6 +4139,10 @@ postcss-replace-overflow-wrap@^2.0.0:
   dependencies:
     postcss "^6.0.1"
 
+postcss-resolve-nested-selector@^0.1.1:
+  version "0.1.1"
+  resolved "https://registry.yarnpkg.com/postcss-resolve-nested-selector/-/postcss-resolve-nested-selector-0.1.1.tgz#29ccbc7c37dedfac304e9fff0bf1596b3f6a0e4e"
+
 postcss-sass@^0.2.0:
   version "0.2.0"
   resolved "https://registry.yarnpkg.com/postcss-sass/-/postcss-sass-0.2.0.tgz#e55516441e9526ba4b380a730d3a02e9eaa78c7a"
@@ -4145,6 +4175,14 @@ postcss-selector-parser@^2.0.0, postcss-selector-parser@^2.2.2, postcss-selector
   resolved "https://registry.yarnpkg.com/postcss-selector-parser/-/postcss-selector-parser-2.2.3.tgz#f9437788606c3c9acee16ffe8d8b16297f27bb90"
   dependencies:
     flatten "^1.0.2"
+    indexes-of "^1.0.1"
+    uniq "^1.0.1"
+
+postcss-selector-parser@^3.1.1:
+  version "3.1.1"
+  resolved "https://registry.yarnpkg.com/postcss-selector-parser/-/postcss-selector-parser-3.1.1.tgz#4f875f4afb0c96573d5cf4d74011aee250a7e865"
+  dependencies:
+    dot-prop "^4.1.1"
     indexes-of "^1.0.1"
     uniq "^1.0.1"
 
@@ -4193,7 +4231,7 @@ postcss-zindex@^2.0.1:
     postcss "^5.0.4"
     uniqs "^2.0.0"
 
-postcss@^5.0.10, postcss@^5.0.11, postcss@^5.0.12, postcss@^5.0.13, postcss@^5.0.14, postcss@^5.0.16, postcss@^5.0.2, postcss@^5.0.4, postcss@^5.0.5, postcss@^5.0.6, postcss@^5.0.8, postcss@^5.2.16:
+postcss@^5.0.10, postcss@^5.0.11, postcss@^5.0.12, postcss@^5.0.13, postcss@^5.0.14, postcss@^5.0.16, postcss@^5.0.2, postcss@^5.0.21, postcss@^5.0.4, postcss@^5.0.5, postcss@^5.0.6, postcss@^5.0.8, postcss@^5.2.16:
   version "5.2.18"
   resolved "https://registry.yarnpkg.com/postcss/-/postcss-5.2.18.tgz#badfa1497d46244f6390f58b319830d9107853c5"
   dependencies:

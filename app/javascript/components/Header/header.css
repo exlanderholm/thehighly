@@ -56,7 +56,7 @@
 
 .header__inner {
 
-  .nav-item {
+  & .nav-item {
     display: none;
     flex-basis: 50%;
     cursor: default;
@@ -71,10 +71,10 @@
     &.recommended {
       text-align: right;
     }
-    a:hover {
+    & a:hover {
       color: red;
     }
-    span {
+    & span {
       /* padding: .5em; */
       /* font-size: .8em; */
     }
