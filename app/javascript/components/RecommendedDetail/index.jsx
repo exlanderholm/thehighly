@@ -31,6 +31,7 @@ const RecommendedDetail = ({
           mapElement={<div style={{ height: `550px` }} />}
           whereToGo={whereToGo}
           coordinates={coordinates}
+          accentColor={accentColor}
         />}
       </div>
 

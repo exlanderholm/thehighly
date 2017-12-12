@@ -17,7 +17,6 @@
 .hero {
   margin-left: auto;
   margin-right: auto;
-  max-width: var(--site-width);
   background-color: var(--posts-accent-color);
   display: flex;
   flex-direction: column;
@@ -35,7 +34,6 @@
   }
 
   .featured-image {
-    /* background-color: var(--background-color-alt); */
     flex-basis: 50%;
     position: relative;
 
@@ -46,6 +44,8 @@
       width: 100%;
       height: 100%;
       mix-blend-mode: multiply;
+      margin-left: auto;
+      max-width: 720px;
     }
   }
   .intro-content {
@@ -55,6 +55,7 @@
     font: 17px/28px var(--font-family-sans-serif);
     margin: var(--gutter) 0;
     padding: 0 var(--gutter);
+    max-width: 720px;
 
     @media (--tablet-portrait) {
       font: 14px/24px var(--font-family-sans-serif);

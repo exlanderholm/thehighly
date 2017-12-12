@@ -106,17 +106,13 @@ a {
   }
 
   .map-container {
-    border-width: 1px 0;
-    border-color: black;
-    border-style: solid;
     margin-top: 5em;
-    /* -webkit-filter: grayscale(100%); */
-    /* mix-blend-mode: multiply; */
 
     @media (--tablet-landscape) {
       border-width: 1px;
       margin: 5em 2rem 0;
     }
+
     @media (--desktop-large) {
       width: 1400px;
       margin: 5em auto 0;
@@ -155,11 +151,11 @@ a {
 .where-to-go,
 .what-to-get {
   margin: 3em 0;
-  
+
   @media (--tablet-portrait) {
     margin: 5em 0;
   }
-  
+
   @media (--desktop) {
     margin: 7em 0;
   }

@@ -11,10 +11,11 @@
   --anchor-hero-border-style: 2px solid red;
 
   --border-color: #8E9093;
-  /* --background-color: #F6F2E9; */
-  --background-color: #c7b99c;
-  --posts-accent-color: #c1a79f;
+  --background-color: #f6f1e8;
+  --posts-accent-color: #dfccc8;
+  --recommended-accent-color: #f7f3ec;
   --background-color-alt: #e9e9df;
+  --footer-background-color: #e0ded5;
 
   --pinkish-grey: #dfccc8;
 
