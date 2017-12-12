@@ -16,7 +16,6 @@
 }
 
 .home {
-
   .conversations,
   .recommended {
     display: flex;
@@ -82,7 +81,6 @@
 }
 
 .conversations {
-  /* background-color: #f7f2e8; */
   background-color: #c7b99c;
 
   @media (--tablet-portrait) {
@@ -101,7 +99,6 @@
 }
 
 .conversation {
-
   @media (--tablet-portrait) {
     display: flex;
     flex-direction: column;
@@ -178,13 +175,9 @@
       }
     }
   }
-
-
 }
 
-
 .recommended {
-
   .home & {
     /* background-color: #654d54; */
     background-color: #4c5161;
@@ -268,7 +261,7 @@
       position: relative;
       color: #d0bfbf;
 
-      &:before {
+      &::before {
         content: '';
         position: absolute;
         width: 140%;
@@ -276,7 +269,7 @@
         top: 50%;
         left: 50%;
         transform: translate(-50%, -50%);
-        background: url('./comingsoon.gif') center no-repeat;
+        background: url('../../images/comingsoon.gif') center no-repeat;
         background-size: contain;
         opacity: 0;
         pointer-events: none;

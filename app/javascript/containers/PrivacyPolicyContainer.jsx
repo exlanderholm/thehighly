@@ -3,7 +3,7 @@ import { connect } from 'react-redux'
 import { getPrivacyPolicy } from '../actions'
 import PrivacyPolicy from '../components/PrivacyPolicy'
 
-class PrivacyPolicyContainer extends React.Component {
+class PrivacyPolicyContainer extends Component {
   componentDidMount() {
     this.props.getPrivacyPolicy()
   }

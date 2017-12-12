@@ -36,6 +36,9 @@ export const GET_PRIVACY_POLICY_RECEIVED = 'GET_PRIVACY_POLICY_RECEIVED'
 export const GET_TERMS_AND_CONDITIONS = 'GET_TERMS_AND_CONDITIONS'
 export const GET_TERMS_AND_CONDITIONS_RECEIVED = 'GET_TERMS_AND_CONDITIONS_RECEIVED'
 
+export const GET_PHILOSOPHY = 'GET_PHILOSOPHY'
+export const GET_PHILOSOPHY_RECEIVED = 'GET_PHILOSOPHY_RECEIVED'
+
 export const OPEN_POPUP = 'OPEN_POPUP'
 export const CLOSE_POPUP = 'CLOSE_POPUP'
 export const GET_POPUP = 'GET_POPUP'
@@ -232,6 +235,21 @@ export const getTermsAndConditionsReceived = ({termsAndConditions}) => {
     type: GET_TERMS_AND_CONDITIONS_RECEIVED,
     payload: {
       termsAndConditions
+    }
+  }
+}
+
+export const getPhilosophy = () => {
+  return {
+    type: GET_PHILOSOPHY
+  }
+}
+
+export const getPhilosophyReceived = ({philosophy}) => {
+  return {
+    type: GET_PHILOSOPHY_RECEIVED,
+    payload: {
+      philosophy
     }
   }
 }

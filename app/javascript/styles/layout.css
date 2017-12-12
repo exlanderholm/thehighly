@@ -1,7 +1,7 @@
 @import './variables';
 
 :root {
-  font: normal 16px/1.667 HarrietText, serif;
+  font: normal 16px/1.5 HarrietText, serif;
   text-size-adjust: none;
 }
 
@@ -24,6 +24,14 @@ body {
   font-weight: 300;
   src: url('../fonts/harrietdisplay-lightitalic.woff') format("woff");
 }
+
+/* harrietdisplay-regular.woff */
+@font-face {
+  font-family: HarrietDisplay;
+  font-weight: 400;
+  src: url('../fonts/harrietdisplay-regular.woff') format("woff");
+}
+
 /* harrietdisplay-italic.woff */
 @font-face {
   font-family: HarrietDisplay;
@@ -59,6 +67,14 @@ body {
   font-family: HarrietText;
   font-weight: normal;
   src: url('../fonts/harriettext-regular.woff') format("woff");
+}
+
+/* harriettext-regularitalic.woff */
+@font-face {
+  font-family: HarrietText;
+  font-style: italic;
+  font-weight: normal;
+  src: url('../fonts/harriettext-regularitalic.woff') format("woff");
 }
 
 /* harriettext-bold.woff */
@@ -145,4 +161,27 @@ blockquote {
   @media (--desktop) {
     font-size: 44px;
   }
+}
+
+.wrapper {
+  min-height: calc(100vh - var(--header-height-mobile) - var(--footer-height-mobile));
+  margin-top: var(--header-height-mobile);
+  overflow: hidden;
+
+  @media (--tablet-portrait) {
+    min-height: calc(100vh - var(--header-height-desktop) - var(--footer-height-desktop));
+    margin-top: var(--header-height-desktop);
+  }
+
+  @media (--desktop-large) {
+    min-height: calc(100vh - var(--header-height-desktop-large) - var(--footer-height-desktop-large));
+    margin-top: var(--header-height-desktop-large);
+  }
+}
+
+.wrapper__inner {
+  box-sizing: content-box;
+  margin: auto;
+  max-width: var(--site-width);
+  padding: 0 var(--gutter);
 }

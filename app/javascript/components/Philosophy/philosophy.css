@@ -1,0 +1,131 @@
+@import '../../styles/variables';
+
+.philosophy-container {
+
+  .main-title {
+    font-family: var(--font-family-heading);
+    font-size: 52px;
+    font-weight: 300;
+    text-align: center;
+
+    @media (--tablet-portrait) {
+      font-size: 64px;
+    }
+  }
+
+  .philosophy__body {
+    font: 24px/1.33 var(--font-family-serif);
+    margin: auto;
+    max-width: 768px;
+    text-align: left;
+  }
+
+  .sections {
+    border-top: 1px solid black;
+    max-width: 1150px;
+    margin: 0 auto 173px;
+  }
+
+  blockquote {
+    margin: 2em calc(var(--gutter) / -2);
+    text-align: justify;
+
+    @media (--tablet-portrait) {
+      margin: 2em calc(var(--gutter-desktop) / -2);
+    }
+
+    @media (--desktop-large) {
+      margin: 2em calc(var(--gutter-desktop-large) / -2);
+    }
+  }
+
+
+}
+
+.philosophy-section {
+  border-bottom: 1px solid black;
+
+  .title {
+    font: 37px var(--font-family-heading);
+    line-height: 1;
+    margin: 0;
+    text-align: left;
+
+    @media (--tablet-portrait) {
+      font-size: 57px;
+    }
+
+    label {
+      cursor: pointer;
+      display: block;
+      padding: 0.50em 0;
+    }
+
+  }
+
+  &__content {
+    margin: auto;
+    max-width: 768px;
+    padding: 0 0 0 var(--gutter);
+
+    @media (--tablet-portrait) {
+      padding: 0;
+    }
+  }
+}
+
+.philosophy-section__content {
+  display: none;
+}
+
+.philosophy-section__checkbox {
+  display: none;
+}
+
+.philosophy-section__checkbox:checked + .philosophy-section__content {
+  display: block;
+}
+
+.philosophy-section__body {
+  @media (--tablet-portrait) {
+    font-size: 24px;
+  }
+
+  a {
+    border-bottom: 1px solid red;
+    &:hover {
+      color: red;
+    }
+  }
+}
+
+.philosophy-section__bottom-outro {
+}
+
+.philosophy-subsection {
+  border-top: 1px solid black;
+  margin: 5em 0;
+}
+
+.philosophy-subsection__title {
+  font: bold 36px var(--font-family-heading);
+  line-height: normal;
+  margin: 1em 0;
+}
+
+.philosophy-subsection__body {
+  @media (--tablet-portrait) {
+    font-size: 24px;
+  }
+
+  a {
+    border-bottom: 1px solid red;
+    &:hover {
+      color: red;
+    }
+  }
+}
+
+.philosophy-subsection__bottom-outro {
+}
+

@@ -2,7 +2,6 @@
 
 .footer {
   align-items: flex-start;
-  /* background-color: #d0cec4; */
   background-color: #8a8464;
   box-sizing: border-box;
   font: 500 12px/2.33 var(--font-family-sans-serif);
@@ -34,7 +33,7 @@
     flex-grow: 0;
     flex-shrink: 0;
     text-align: center;
-    
+
     @media (--mobile-landscape) {
       margin: 1rem 0;
       flex-basis: 50%;
@@ -56,11 +55,11 @@
   .nav {
     padding: 0;
     list-style: none;
-    
+
     @media (--mobile-landscape) {
       column-count: 2;
     }
-    
+
     a {
       display: inline-block;
     }
@@ -137,7 +136,7 @@
   .copyright {
     width: 100%;
     margin: 4rem 0 1rem;
-    
+
     span {
       margin: 0 5px;
       display: block;
@@ -168,7 +167,7 @@
       margin: 0;
       transform: translate(-50%, -50%) scale(.6, .6);
       transition: transform 0.3s;
-      
+
       &:hover {
         transform: translate(-50%, -50%) scale(.8, .8);
         transition: transform 0.1s;

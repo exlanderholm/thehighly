@@ -5,6 +5,7 @@ import highlyRecommended from './highly-recommended'
 import highlyConversations from './highly-conversations'
 import aboutPage from './about-page'
 import contactPage from './contact-page'
+import philosophy from './philosophy'
 import privacyPolicy from './privacy-policy'
 import termsAndConditions from './terms-and-conditions'
 import welcome from './welcome'
@@ -19,6 +20,7 @@ const rootReducer = combineReducers({
   highlyConversations,
   aboutPage,
   contactPage,
+  philosophy,
   privacyPolicy,
   termsAndConditions,
   welcome,
