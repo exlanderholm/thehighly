@@ -52,12 +52,13 @@ const Home = ({ highlyRecommended, highlyConversations }) =>
 
 const HighlyRecommended = ({destinations, destinationsPresentPast, destinationsComingSoon}) => (
   <div className="content">
+
     <blockquote>
-      Your guide to the good good.
-      We&rsquo;ve done the research for you —
-      here are the finest quality cannabis products of the now,
-      and where to get them.
+      <p>We've uncovered the superior legal cannabis.</p>
+
+      <p>Where to go, what to get, and why it's so good.</p>
     </blockquote>
+
     <p className="destinations caps">
       { destinationsPresentPast.map(destination => <HighlyDestination {...destination} key={destination.id} />) }
       { destinationsComingSoon.map(destination => <HighlyDestination {...destination} key={destination.id} />) }

@@ -81,7 +81,7 @@
 }
 
 .conversations {
-  background-color: #c7b99c;
+  background-color: var(--posts-accent-color);
 
   @media (--tablet-portrait) {
     order: -1;
@@ -109,7 +109,8 @@
     width: 65vw;
     height: 65vw;
     margin: 0 auto;
-    background-color: var(--background-color);
+    background-color: var(--posts-accent-color);
+
 
     @media (--tablet-portrait) {
       width: 25vw;
@@ -179,15 +180,16 @@
 
 .recommended {
   .home & {
-    /* background-color: #654d54; */
-    background-color: #4c5161;
-    /* color: #f3ecdf; */
-    color: #c7b99c;
+    background-color: var(--recommended-accent-color);
+    color: black;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
   }
 
   .content {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
     padding: 0 var(--gutter);
 
     @media (--tablet-portrait) {
@@ -223,7 +225,16 @@
         padding-bottom: 1em;
         font-size: 47px;
       }
+
+      p:first-child {
+        margin-top: 0;
+      }
+
+      p:last-child {
+        margin-bottom: 0;
+      }
     }
+
     .small {
       a {
         border-bottom: 1px solid red;

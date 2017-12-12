@@ -2,7 +2,7 @@
 
 .footer {
   align-items: flex-start;
-  background-color: #8a8464;
+  background-color: var(--footer-background-color);
   box-sizing: border-box;
   font: 500 12px/2.33 var(--font-family-sans-serif);
 }
