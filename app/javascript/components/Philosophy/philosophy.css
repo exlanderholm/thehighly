@@ -5,7 +5,7 @@
   .main-title {
     font-family: var(--font-family-heading);
     font-size: 52px;
-    font-weight: 300;
+    font-weight: 400;
     text-align: center;
 
     @media (--tablet-portrait) {
@@ -46,7 +46,7 @@
   border-bottom: 1px solid black;
 
   .title {
-    font: 300 37px var(--font-family-heading);
+    font: 400 37px var(--font-family-heading);
     line-height: 1;
     margin: 0;
     text-align: left;
@@ -108,7 +108,7 @@
 }
 
 .philosophy-subsection__title {
-  font: 300 36px var(--font-family-heading);
+  font: 400 36px var(--font-family-heading);
   line-height: normal;
   margin: 1em 0;
 }
