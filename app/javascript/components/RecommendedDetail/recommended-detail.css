@@ -227,6 +227,7 @@ a {
 
 
   .product {
+    background-color: var(--background-color);
     position: relative;
     margin: 2em 0;
 
