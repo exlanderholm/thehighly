@@ -6,6 +6,9 @@ export const TOGGLE_NAVIGATION = 'TOGGLE_NAVIGATION'
 export const GET_NAVIGATION_LINK = 'GET_NAVIGATION_LINK'
 export const GET_NAVIGATION_LINK_RECEIVED = 'GET_NAVIGATION_LINK_RECEIVED'
 
+export const GET_HOME_PAGE = 'GET_HOME_PAGE'
+export const GET_HOME_PAGE_RECEIVED = 'GET_HOME_PAGE_RECEIVED'
+
 export const GET_HIGHLY_RECOMMENDED_LANDING = 'GET_HIGHLY_RECOMMENDED_LANDING'
 export const GET_HIGHLY_RECOMMENDED_LANDING_RECEIVED = 'GET_HIGHLY_RECOMMENDED_LANDING_RECEIVED'
 
@@ -79,6 +82,21 @@ export const getNavigationLinkReceived = ({navigationLink}) => {
     type: GET_NAVIGATION_LINK_RECEIVED,
     payload: {
       navigationLink
+    }
+  }
+}
+
+export const getHomePage = () => {
+  return {
+    type: GET_HOME_PAGE
+  }
+}
+
+export const getHomePageReceived = ({homePage}) => {
+  return {
+    type: GET_HOME_PAGE_RECEIVED,
+    payload: {
+      homePage
     }
   }
 }

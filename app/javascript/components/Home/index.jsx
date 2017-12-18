@@ -33,13 +33,13 @@ var settings = {
   wrapAround: true
 }
 
-const Home = ({ highlyRecommended, highlyConversations }) =>
+const Home = ({ highlyRecommended, highlyConversations, home }) =>
   <div className="home">
     <div className="recommended">
       <div className="top">
         <h4 className="caps"><Link to={`/recommended`}>Highly Recommended</Link></h4>
       </div>
-      <HighlyRecommended {...highlyRecommended} />
+      {highlyRecommended && home && <HighlyRecommended {...highlyRecommended} {...home} />}
     </div>
     <div className="conversations">
       <div className="top">
@@ -50,14 +50,10 @@ const Home = ({ highlyRecommended, highlyConversations }) =>
   </div>
 
 
-const HighlyRecommended = ({destinations, destinationsPresentPast, destinationsComingSoon}) => (
+const HighlyRecommended = ({destinations, destinationsPresentPast, destinationsComingSoon, body}) => (
   <div className="content">
 
-    <blockquote>
-      <p>We've uncovered the superior legal cannabis.</p>
-
-      <p>Where to go, what to get, and why it's so good.</p>
-    </blockquote>
+    <div dangerouslySetInnerHTML={createMarkupObject(body)} />
 
     <p className="destinations caps">
       { destinationsPresentPast.map(destination => <HighlyDestination {...destination} key={destination.id} />) }

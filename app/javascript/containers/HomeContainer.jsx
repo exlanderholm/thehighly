@@ -4,13 +4,15 @@ import Home from '../components/Home'
 
 import {
   getHighlyRecommended,
-  getHighlyConversations
+  getHighlyConversations,
+  getHomePage
 } from '../actions'
 
 class HomeContainer extends React.Component {
   componentDidMount() {
-    this.props.getHighlyRecommended();
-    this.props.getHighlyConversations();
+    this.props.getHighlyRecommended()
+    this.props.getHighlyConversations()
+    this.props.getHomePage()
   }
 
   render() {
@@ -20,19 +22,20 @@ class HomeContainer extends React.Component {
 
 const mapStateToProps = (state) => {
 
-  const { highlyRecommended, highlyConversations, highlyReports } = state
+  const { highlyRecommended, highlyConversations, home } = state
 
   return {
     highlyRecommended,
-    highlyConversations
+    highlyConversations,
+    home
   };
 };
 
 const mapDispatchToProps = (dispatch) => {
   return {
-    getHighlyRecommended: () => dispatch(getHighlyRecommended()),
     getHighlyConversations: () => dispatch(getHighlyConversations()),
-    getHighlyReports: () =>  dispatch(getHighlyReports())
+    getHighlyRecommended: () => dispatch(getHighlyRecommended()),
+    getHomePage: () => dispatch(getHomePage())
   }
 }
 
