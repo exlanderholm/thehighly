@@ -163,6 +163,15 @@ blockquote {
   }
 }
 
+::selection {
+  background: red;
+  color: white
+}
+::-moz-selection {
+  background: red;
+  color: hsl(0,0%,50%)
+}
+
 .wrapper {
   min-height: calc(100vh - var(--header-height-mobile) - var(--footer-height-mobile));
   margin-top: var(--header-height-mobile);

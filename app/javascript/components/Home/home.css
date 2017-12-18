@@ -235,6 +235,14 @@
       }
     }
 
+    h2 {
+      font-family: var(--font-family-heading);
+    }
+
+    h3 {
+      font-family: var(--font-family-heading);
+    }
+
     .small {
       a {
         border-bottom: 1px solid red;
