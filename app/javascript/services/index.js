@@ -1,4 +1,5 @@
 import {
+  DEACTIVATE_WELCOME_SCREEN,
   GET_ABOUT_PAGE,
   GET_CONTACT_PAGE,
   GET_HIGHLY_CONVERSATIONS,
@@ -7,26 +8,27 @@ import {
   GET_HIGHLY_RECOMMENDED_DETAIL,
   GET_HIGHLY_RECOMMENDED_LANDING,
   GET_HIGHLY_REPORTS,
+  GET_HOME_PAGE,
   GET_NAVIGATION_LINK,
-  GET_PRIVACY_POLICY,
-  GET_TERMS_AND_CONDITIONS,
   GET_PHILOSOPHY,
   GET_POPUP,
-  DEACTIVATE_WELCOME_SCREEN,
+  GET_PRIVACY_POLICY,
+  GET_TERMS_AND_CONDITIONS,
 
   getAboutPageReceived,
   getContactPageReceived,
+  getHighlyConversationsDetailReceived,
+  getHighlyConversationsReceived,
   getHighlyRecommendedDetailReceived,
   getHighlyRecommendedLandingReceived,
   getHighlyRecommendedReceived,
-  getHighlyConversationsDetailReceived,
-  getHighlyConversationsReceived,
   getHighlyReportsReceived,
+  getHomePageReceived,
   getNavigationLinkReceived,
-  getPrivacyPolicyReceived,
-  getTermsAndConditionsReceived,
   getPhilosophyReceived,
-  getPopupReceived
+  getPopupReceived,
+  getPrivacyPolicyReceived,
+  getTermsAndConditionsReceived
 } from '../actions'
 
 export default ({ dispatch, getState }) => {
@@ -36,42 +38,55 @@ export default ({ dispatch, getState }) => {
     const credentials = 'same-origin'
 
     switch (type) {
-      case GET_NAVIGATION_LINK: {
-        const { slug } = payload;
-        switch (slug) {
-          case 'conversations': {
-            fetch('/api/posts', { credentials })
-            .then(response => response.json())
-            .then(json => {
-              const post = json.posts[0]
-              const section = 'conversations'
-              const { slug } = post
-              const href = `/conversations/${slug}`
-              const navigationLink = { section, href }
-              dispatch(getNavigationLinkReceived({navigationLink}))
-            }).catch(error => {
-              console.error(error)
-            })
+      case DEACTIVATE_WELCOME_SCREEN: {
 
-            break
-          }
-          case 'recommended': {
-            fetch('/api/destinations', { credentials })
-            .then(response => response.json())
-            .then(json => {
-              const destination = json.destinationsPresentPast[0]
-              const section = 'recommended'
-              const { slug } = destination
-              const href = `/recommended/${slug}`
-              const navigationLink = { section, href }
-              dispatch(getNavigationLinkReceived({navigationLink}))
-            }).catch(error => {
-              console.error(error)
-            })
+        localStorage.setItem('isOlderThan21', true)
+        break
+      }
 
-            break
-          }
-        }
+      case GET_ABOUT_PAGE: {
+        fetch('/api/about_page', { credentials })
+        .then(response => response.json())
+        .then(json => {
+          dispatch(getAboutPageReceived(json))
+        }).catch(error => {
+          console.error(error)
+        })
+        break
+      }
+
+      case GET_CONTACT_PAGE: {
+        fetch('/api/contact_page', { credentials })
+        .then(response => response.json())
+        .then(json => {
+          dispatch(getContactPageReceived(json))
+        }).catch(error => {
+          console.error(error)
+        })
+        break
+      }
+
+      case GET_HIGHLY_CONVERSATIONS: {
+        fetch('/api/categories/highly-conversations', { credentials })
+        .then(response => response.json())
+        .then(json => {
+          dispatch(getHighlyConversationsReceived(json))
+        }).catch(error => {
+          console.error(error)
+        })
+        break
+      }
+
+      case GET_HIGHLY_CONVERSATIONS_DETAIL: {
+        const { id } = payload
+
+        fetch(`/api/posts/${id}`, { credentials })
+        .then(response => response.json())
+        .then(json => {
+          dispatch(getHighlyConversationsDetailReceived(json))
+        }).catch(error => {
+          console.error(error)
+        })
         break
       }
 
@@ -110,30 +125,6 @@ export default ({ dispatch, getState }) => {
         break
       }
 
-      case GET_HIGHLY_CONVERSATIONS: {
-        fetch('/api/categories/highly-conversations', { credentials })
-        .then(response => response.json())
-        .then(json => {
-          dispatch(getHighlyConversationsReceived(json))
-        }).catch(error => {
-          console.error(error)
-        })
-        break
-      }
-
-      case GET_HIGHLY_CONVERSATIONS_DETAIL: {
-        const { id } = payload
-
-        fetch(`/api/posts/${id}`, { credentials })
-        .then(response => response.json())
-        .then(json => {
-          dispatch(getHighlyConversationsDetailReceived(json))
-        }).catch(error => {
-          console.error(error)
-        })
-        break
-      }
-
       case GET_HIGHLY_REPORTS: {
         fetch('/api/categories/highly-reports', { credentials })
         .then(response => response.json())
@@ -145,25 +136,53 @@ export default ({ dispatch, getState }) => {
         break
       }
 
-      case GET_ABOUT_PAGE: {
-        fetch('/api/about_page', { credentials })
+      case GET_HOME_PAGE: {
+        fetch('/api/home_page', { credentials })
         .then(response => response.json())
         .then(json => {
-          dispatch(getAboutPageReceived(json))
+          dispatch(getHomePageReceived(json))
         }).catch(error => {
           console.error(error)
         })
         break
       }
 
-      case GET_CONTACT_PAGE: {
-        fetch('/api/contact_page', { credentials })
-        .then(response => response.json())
-        .then(json => {
-          dispatch(getContactPageReceived(json))
-        }).catch(error => {
-          console.error(error)
-        })
+      case GET_NAVIGATION_LINK: {
+        const { slug } = payload;
+        switch (slug) {
+          case 'conversations': {
+            fetch('/api/posts', { credentials })
+            .then(response => response.json())
+            .then(json => {
+              const post = json.posts[0]
+              const section = 'conversations'
+              const { slug } = post
+              const href = `/conversations/${slug}`
+              const navigationLink = { section, href }
+              dispatch(getNavigationLinkReceived({navigationLink}))
+            }).catch(error => {
+              console.error(error)
+            })
+
+            break
+          }
+          case 'recommended': {
+            fetch('/api/destinations', { credentials })
+            .then(response => response.json())
+            .then(json => {
+              const destination = json.destinationsPresentPast[0]
+              const section = 'recommended'
+              const { slug } = destination
+              const href = `/recommended/${slug}`
+              const navigationLink = { section, href }
+              dispatch(getNavigationLinkReceived({navigationLink}))
+            }).catch(error => {
+              console.error(error)
+            })
+
+            break
+          }
+        }
         break
       }
 
@@ -213,10 +232,6 @@ export default ({ dispatch, getState }) => {
         break
       }
 
-      case DEACTIVATE_WELCOME_SCREEN: {
-        localStorage.setItem('isOlderThan21', true)
-        break
-      }
     }
     return next(action)
   }
