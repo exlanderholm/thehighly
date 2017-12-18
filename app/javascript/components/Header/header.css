@@ -117,7 +117,7 @@
   .menu-button-area {
     width: var(--gutter-desktop);
 
-    @media (--tablet-portrait) {
+    @media (--tablet-landscape) {
       display: none;
       text-align: center;
       width: var(--gutter-desktop-large);

@@ -6,11 +6,9 @@
   overflow: visible;
 
   @media (--tablet-portrait) {
-    height: 34px;
-  }
-  @media (--tablet-landscape) {
     height: 44px;
   }
+
   @media (--desktop-large) {
     height: 55px;
   }
