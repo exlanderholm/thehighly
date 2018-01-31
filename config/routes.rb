@@ -20,3 +20,5 @@ Rails.application.routes.draw do
   get "*path", to: "application#index"
 
 end
+
+get 'sitemap.xml', :to => 'sitemap#index', :defaults => {:format => 'xml'}
