@@ -20,6 +20,13 @@ class AboutPagesController < ApplicationController
       content: about_page.fields[:content] ? markdown.render(about_page.content) : "",
     }
   end
+    def default_meta_tags
+  {
+    title:       'The Highly',
+    description: 'A guide to the good good',
+    
+  }
+end
 
   def markdown
     Redcarpet::Markdown.new(Redcarpet::Render::HTML)
