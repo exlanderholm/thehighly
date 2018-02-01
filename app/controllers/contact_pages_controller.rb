@@ -19,13 +19,7 @@ class ContactPagesController < ApplicationController
     }
   end
   
-  def default_meta_tags(contact_psge)
-  {
-    title:       'Contact | Cannabis | Medical Cannabis Dispensary in Bay Area',
-    description: 'The Highly- Medical Cannabis Dispensary in Bay Area professionals dedicated to provide the best guide about Where to go, What to get, Why it's good. Contact our highly qualified and intelligent team of professional for all your Cannabis queries. We help you find the best around the world. ',
-    
-  }
-end
+  
 
   def markdown
     Redcarpet::Markdown.new(Redcarpet::Render::HTML)
