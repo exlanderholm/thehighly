@@ -8,8 +8,8 @@ class DestinationsController < ApplicationController
     end
 
     today = Date.today
-    destinations_coming_soon = destinations.select { |item| item[:date] > today}
-    destinations_present_past = destinations.select { |item| item[:date] <= today}
+    destinations_coming_soon = destinations.select { |item| item[:date] && item[:date] > today}
+    destinations_present_past = destinations.select { |item| item[:date] && item[:date] <= today}
 
     render json: {
       destinations: destinations,
