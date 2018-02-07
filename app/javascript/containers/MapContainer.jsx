@@ -369,7 +369,7 @@ const MapContainer = ({isMarkerShown, whereToGo, coordinates, defaultZoom, accen
                 {title}
               </div>
               <div style={{textAlign: 'center'}}>
-                <svg viewBox="0 0 22 18" width="22" height="18" xmlns="http://www.w3.org/2000/svg">
+                <svg viewBox="0 0 22 18" width="22" height="18">
                   <polygon points="0,0 22,0 11,18" style={{fill: accentColor}} />
                 </svg>
               </div>
