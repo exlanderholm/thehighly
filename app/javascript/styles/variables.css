@@ -47,5 +47,5 @@
 
   --box-shadow: 0 2px 10px hsla(0, 0%, 0%, .2);
 
-  --background-image-down-arrow: url("data:image/svg+xml,<svg width='10' height='5' viewBox='0 0 10 5' xmlns='http://www.w3.org/2000/svg'><path d='M9.243 0L5 4.243.757 0' stroke='#4990E2' fill='none' /></svg>")
+  --background-image-down-arrow: url("data:image/svg+xml,<svg width='10' height='5' viewBox='0 0 10 5'><path d='M9.243 0L5 4.243.757 0' stroke='#4990E2' fill='none' /></svg>")
 }
