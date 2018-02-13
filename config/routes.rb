@@ -17,6 +17,9 @@ Rails.application.routes.draw do
     resource :popup, only: [:show]
   end
 
+  get '/sitemap', to: 'sitemaps#index'
+
   get "*path", to: "application#index"
+
 
 end
