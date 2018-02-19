@@ -22,7 +22,7 @@ class PostsController < ApplicationController
     @og_type = 'article'
     @og_title = @post[:title]
     @og_description = @post[:tagline]
-    @og_image = @post[:featuredImage][:url]
+    @og_image = 'https:' + @post[:featuredImage][:url]
 
     respond_to do |format|
       format.html { render "application/index" }
