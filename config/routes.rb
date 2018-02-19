@@ -17,9 +17,11 @@ Rails.application.routes.draw do
     resource :popup, only: [:show]
   end
 
+  get 'conversations/:id', to: 'posts#show'
+
   get '/sitemap', to: 'sitemaps#index'
 
-  get "*path", to: "application#index"
+  # get "*path", to: "application#index"
 
 
 end

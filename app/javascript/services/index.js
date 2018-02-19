@@ -45,7 +45,7 @@ export default ({ dispatch, getState }) => {
       }
 
       case GET_ABOUT_PAGE: {
-        fetch('/api/about_page', { credentials })
+        fetch('/api/about_page.json', { credentials })
         .then(response => response.json())
         .then(json => {
           dispatch(getAboutPageReceived(json))
@@ -56,7 +56,7 @@ export default ({ dispatch, getState }) => {
       }
 
       case GET_CONTACT_PAGE: {
-        fetch('/api/contact_page', { credentials })
+        fetch('/api/contact_page.json', { credentials })
         .then(response => response.json())
         .then(json => {
           dispatch(getContactPageReceived(json))
@@ -67,7 +67,7 @@ export default ({ dispatch, getState }) => {
       }
 
       case GET_HIGHLY_CONVERSATIONS: {
-        fetch('/api/categories/highly-conversations', { credentials })
+        fetch('/api/categories/highly-conversations.json', { credentials })
         .then(response => response.json())
         .then(json => {
           dispatch(getHighlyConversationsReceived(json))
@@ -80,7 +80,7 @@ export default ({ dispatch, getState }) => {
       case GET_HIGHLY_CONVERSATIONS_DETAIL: {
         const { id } = payload
 
-        fetch(`/api/posts/${id}`, { credentials })
+        fetch(`/api/posts/${id}.json`, { credentials })
         .then(response => response.json())
         .then(json => {
           dispatch(getHighlyConversationsDetailReceived(json))
@@ -91,7 +91,7 @@ export default ({ dispatch, getState }) => {
       }
 
       case GET_HIGHLY_RECOMMENDED: {
-        fetch('/api/destinations', { credentials })
+        fetch('/api/destinations.json', { credentials })
         .then(response => response.json())
         .then(json => {
           dispatch(getHighlyRecommendedReceived(json))
@@ -104,7 +104,7 @@ export default ({ dispatch, getState }) => {
       case GET_HIGHLY_RECOMMENDED_DETAIL: {
         const { id } = payload
 
-        fetch(`/api/destinations/${id}`, { credentials })
+        fetch(`/api/destinations/${id}.json`, { credentials })
         .then(response => response.json())
         .then(json => {
           dispatch(getHighlyRecommendedDetailReceived(json))
@@ -115,7 +115,7 @@ export default ({ dispatch, getState }) => {
       }
 
       case GET_HIGHLY_RECOMMENDED_LANDING: {
-        fetch(`/api/recommended_landing`, { credentials })
+        fetch(`/api/recommended_landing.json`, { credentials })
         .then(response => response.json())
         .then(json => {
           dispatch(getHighlyRecommendedLandingReceived(json))
@@ -126,7 +126,7 @@ export default ({ dispatch, getState }) => {
       }
 
       case GET_HIGHLY_REPORTS: {
-        fetch('/api/categories/highly-reports', { credentials })
+        fetch('/api/categories/highly-reports.json', { credentials })
         .then(response => response.json())
         .then(json => {
           dispatch(getHighlyReportsReceived(json))
@@ -137,7 +137,7 @@ export default ({ dispatch, getState }) => {
       }
 
       case GET_HOME_PAGE: {
-        fetch('/api/home_page', { credentials })
+        fetch('/api/home_page.json', { credentials })
         .then(response => response.json())
         .then(json => {
           dispatch(getHomePageReceived(json))
@@ -151,7 +151,7 @@ export default ({ dispatch, getState }) => {
         const { slug } = payload;
         switch (slug) {
           case 'conversations': {
-            fetch('/api/posts', { credentials })
+            fetch('/api/posts.json', { credentials })
             .then(response => response.json())
             .then(json => {
               const post = json.posts[0]
@@ -167,7 +167,7 @@ export default ({ dispatch, getState }) => {
             break
           }
           case 'recommended': {
-            fetch('/api/destinations', { credentials })
+            fetch('/api/destinations.json', { credentials })
             .then(response => response.json())
             .then(json => {
               const destination = json.destinationsPresentPast[0]
@@ -187,7 +187,7 @@ export default ({ dispatch, getState }) => {
       }
 
       case GET_PRIVACY_POLICY: {
-        fetch('/api/privacy_policy', { credentials })
+        fetch('/api/privacy_policy.json', { credentials })
         .then(response => response.json())
         .then(json => {
           dispatch(getPrivacyPolicyReceived(json))
@@ -198,7 +198,7 @@ export default ({ dispatch, getState }) => {
       }
 
       case GET_TERMS_AND_CONDITIONS: {
-        fetch('/api/terms_and_conditions', { credentials })
+        fetch('/api/terms_and_conditions.json', { credentials })
         .then(response => response.json())
         .then(json => {
           dispatch(getTermsAndConditionsReceived(json))
@@ -209,7 +209,7 @@ export default ({ dispatch, getState }) => {
       }
 
       case GET_PHILOSOPHY: {
-        fetch('/api/philosophy_page', { credentials })
+        fetch('/api/philosophy_page.json', { credentials })
         .then(response => response.json())
         .then(json => {
           console.log({json})
@@ -222,7 +222,7 @@ export default ({ dispatch, getState }) => {
       }
 
       case GET_POPUP: {
-        fetch('/api/popup', { credentials })
+        fetch('/api/popup.json', { credentials })
         .then(response => response.json())
         .then(json => {
           dispatch(getPopupReceived(json))
