@@ -16,10 +16,17 @@ class PostsController < ApplicationController
     .entries(content_type: "post", "fields.slug": params[:id], include: 2)
     .first
 
-    if post.fields.keys
-      render json: {post: tidy_post(post)}
-    else
-      render json: {post: null}
+    @post = tidy_post(post)
+
+    @og_url = request.original_url
+    @og_type = 'article'
+    @og_title = @post[:title]
+    @og_description = @post[:tagline]
+    @og_image = 'https:' + @post[:featuredImage][:url]
+
+    respond_to do |format|
+      format.html { render "application/index" }
+      format.json { render json: { post: @post } }
     end
   end
 
