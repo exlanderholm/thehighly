@@ -1,5 +1,5 @@
 plugins:
-  postcss-smart-import: {}
+  postcss-import: {}
   postcss-cssnext: {}
   postcss-nested-ancestors: {}
   postcss-nested: {}
