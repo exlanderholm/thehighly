@@ -6,7 +6,6 @@ Rails.application.routes.draw do
     resources :posts, only: [:index, :show]
     resources :destinations, only: [:index, :show]
     resources :categories, only: [:show]
-
     resource :home_page, only: [:show]
     resource :recommended_landing, only: [:show]
     resource :about_page, only: [:show]
@@ -21,7 +20,5 @@ Rails.application.routes.draw do
 
   get '/sitemap', to: 'sitemaps#index'
 
-  # get "*path", to: "application#index"
-
-
+  get "*path", to: "application#index"
 end
