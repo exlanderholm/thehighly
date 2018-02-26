@@ -23,10 +23,11 @@ class DestinationsController < ApplicationController
     .entries(content_type: "destination", "fields.slug": params[:id], include: 2)
     .first
 
-    if destination.fields.keys
-      render json: {destination: tidy_destination(destination)}
-    else
-      render json: {destination: null}
+    @destination = tidy_destination(destination)
+
+    respond_to do |format|
+      format.html { render "application/index" }
+      format.json { render json: { destination: @destination } }
     end
   end
 
@@ -43,6 +44,8 @@ class DestinationsController < ApplicationController
       mapMessaging: destination.fields[:map_messaging] ? markdown.render(destination.map_messaging) : "",
       whereToGo: Array(destination.fields[:where_to_go]).map { |wtg| tidy_where_to_go(wtg) },
       whatToGet: Array(destination.fields[:what_to_get]).map { |wtg| tidy_what_to_get(wtg) },
+      metaTitle: destination.fields[:meta_title] ? destination.meta_title : nil ,
+      metaDescription: destination.fields[:meta_description] ? destination.meta_description : nil,
     }
   end
 

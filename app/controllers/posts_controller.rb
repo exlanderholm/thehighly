@@ -44,7 +44,9 @@ class PostsController < ApplicationController
       category: post.fields[:category] ? tidy_category(post.category) : {},
       issue: post.fields[:issue] ? tidy_issue(post.issue) : {},
       excerptBackgroundColor: post.fields[:excerpt_background_color] ? post.excerpt_background_color : "transparent",
-      postBackgroundColor: post.fields[:post_background_color] ? post.post_background_color : "#f4eee3"
+      postBackgroundColor: post.fields[:post_background_color] ? post.post_background_color : "#f4eee3",
+      metaTitle: post.fields[:meta_title] ? post.meta_title : nil ,
+      metaDescription: post.fields[:meta_description] ? post.meta_description : nil
     }
   end
 

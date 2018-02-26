@@ -1,0 +1,11 @@
+<% content_for :title do %><%= @destination[:title] %> - The Highly<% end %>
+
+<% if @destination[:metaTitle] %>
+  <%= content_for :meta_title do %><%= @destination[:metaTitle] %> - The Highly<% end %>
+<%end %>
+
+<% if @destination[:metaDescription] %>
+  <%= content_for :meta_description do %><%= @destination[:metaDescription] %><% end %>
+<% end %>
+
+<%= render template: "layouts/application" %>
