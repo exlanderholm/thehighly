@@ -1,0 +1,11 @@
+<% content_for :title do %><%= @philosophy_page[:title] %> - The Highly<% end %>
+
+<% if @philosophy_page[:metaTitle] %>
+  <%= content_for :meta_title do %><%= @philosophy_page[:metaTitle] %> - The Highly<% end %>
+<%end %>
+
+<% if @philosophy_page[:metaDescription] %>
+  <%= content_for :meta_description do %><%= @philosophy_page[:metaDescription] %><% end %>
+<% end %>
+
+<%= render template: "layouts/application" %>

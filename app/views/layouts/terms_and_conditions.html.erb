@@ -1,0 +1,11 @@
+<% content_for :title do %><%= @termsAndConditions[:title] %> - The Highly<% end %>
+
+<% if @termsAndConditions[:metaTitle] %>
+  <%= content_for :meta_title do %><%= @termsAndConditions[:metaTitle] %> - The Highly<% end %>
+<%end %>
+
+<% if @termsAndConditions[:metaDescription] %>
+  <%= content_for :meta_description do %><%= @termsAndConditions[:metaDescription] %><% end %>
+<% end %>
+
+<%= render template: "layouts/application" %>

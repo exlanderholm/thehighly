@@ -5,12 +5,14 @@ class PhilosophyPagesController < ApplicationController
     philosophy_page = contentful
     .entries(content_type: "philosophyPage", include: 2)
     .first
-
-    if philosophy_page.fields.keys
-      render json: {philosophy: tidy_section(philosophy_page)}
-    else
-      render json: {philosophy: null}
-    end
+    
+    @philosophy_page = tidy_section(philosophy_page)
+    
+    respond_to do |format|
+      format.html { render "application/index" }
+      format.json { render json: { philosophy: @philosophy_page } }
+    end    
+    
   end
 
   def tidy_section(section)
@@ -19,7 +21,9 @@ class PhilosophyPagesController < ApplicationController
       title: section.title,
       body: section.fields[:body] ? markdown.render(section.body) : nil,
       sections: Array(section.fields[:sections]).map { |s| tidy_section(s) },
-      bottomOutro: section.fields[:bottom_outro] ? markdown.render(section.bottom_outro) : nil
+      bottomOutro: section.fields[:bottom_outro] ? markdown.render(section.bottom_outro) : nil,
+      metaTitle: section.fields[:meta_title] ? section.meta_title : nil ,
+      metaDescription: section.fields[:meta_description] ? section.meta_description : nil
     }
   end
 

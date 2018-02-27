@@ -1,0 +1,11 @@
+<% content_for :title do %><%= @recommendedLanding[:title] %> - The Highly<% end %>
+
+<% if @recommendedLanding[:metaTitle] %>
+  <%= content_for :meta_title do %><%= @recommendedLanding[:metaTitle] %> - The Highly<% end %>
+<%end %>
+
+<% if @recommendedLanding[:metaDescription] %>
+  <%= content_for :meta_description do %><%= @recommendedLanding[:metaDescription] %><% end %>
+<% end %>
+
+<%= render template: "layouts/application" %>

@@ -4,11 +4,12 @@ class ContactPagesController < ApplicationController
     .entries(content_type: "contactPage", include: 2)
     .first
 
-    if contact_page.fields.keys
-      render json: {contactPage: tidy_contact_page(contact_page)}
-    else
-      render json: {contactPage: null}
-    end
+    @contactPage = tidy_contact_page(contact_page)
+    
+    respond_to do |format|
+      format.html { render "application/index" }
+      format.json { render json: { contactPage: @contactPage } }
+    end    
   end
 
   def tidy_contact_page(contact_page)
@@ -16,6 +17,8 @@ class ContactPagesController < ApplicationController
       id: contact_page.id,
       title: contact_page.fields[:title],
       body: contact_page.fields[:body] ? markdown.render(contact_page.body) : "",
+      metaTitle: contact_page.fields[:meta_title] ? contact_page.meta_title : nil ,
+      metaDescription: contact_page.fields[:meta_description] ? contact_page.meta_description : nil
     }
   end
   
