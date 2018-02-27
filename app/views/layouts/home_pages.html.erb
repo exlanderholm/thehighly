@@ -1,0 +1,11 @@
+<% content_for :title do %><%= @homePage[:title] %> - The Highly<% end %>
+
+<% if @homePage[:metaTitle] %>
+  <%= content_for :meta_title do %><%= @homePage[:metaTitle] %> - The Highly<% end %>
+<%end %>
+
+<% if @homePage[:metaDescription] %>
+  <%= content_for :meta_description do %><%= @homePage[:metaDescription] %><% end %>
+<% end %>
+
+<%= render template: "layouts/application" %>
