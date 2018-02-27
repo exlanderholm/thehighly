@@ -1,0 +1,11 @@
+<% content_for :title do %><%= @privacyPolicy[:title] %> - The Highly<% end %>
+
+<% if @privacyPolicy[:metaTitle] %>
+  <%= content_for :meta_title do %><%= @privacyPolicy[:metaTitle] %> - The Highly<% end %>
+<%end %>
+
+<% if @privacyPolicy[:metaDescription] %>
+  <%= content_for :meta_description do %><%= @privacyPolicy[:metaDescription] %><% end %>
+<% end %>
+
+<%= render template: "layouts/application" %>

@@ -17,6 +17,12 @@ Rails.application.routes.draw do
   end
 
   get 'conversations/:id', to: 'posts#show'
+  get '/about', to: 'about_pages#show'
+  get '/philosophy', to: 'philosophy_pages#show'
+  get '/contact', to: 'contact_pages#show'
+  get '/privacy-policy', to: 'privacy_policies#show'
+  get '/terms-conditions', to: 'terms_and_conditions#show'
+  get 'recommended', to: 'recommended_landings#show'
   get 'recommended/:id', to: 'destinations#show'
 
   get '/sitemap', to: 'sitemaps#index'

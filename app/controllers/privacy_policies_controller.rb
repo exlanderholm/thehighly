@@ -4,11 +4,13 @@ class PrivacyPoliciesController < ApplicationController
     .entries(content_type: "privacyPolicy", include: 2)
     .first
 
-    if privacy_policy.fields.keys
-      render json: {privacyPolicy: tidy_privacy_policy(privacy_policy)}
-    else
-      render json: {privacyPolicy: null}
-    end
+    @privacyPolicy = tidy_privacy_policy(privacy_policy)
+    
+    respond_to do |format|
+      format.html { render "application/index" }
+      format.json { render json: { privacyPolicy: @privacyPolicy } }
+    end    
+
   end
 
   def tidy_privacy_policy(privacy_policy)
@@ -16,6 +18,8 @@ class PrivacyPoliciesController < ApplicationController
       id: privacy_policy.id,
       title: privacy_policy.fields[:title],
       body: privacy_policy.fields[:body] ? markdown.render(privacy_policy.body) : "",
+      metaTitle: privacy_policy.fields[:meta_title] ? privacy_policy.meta_title : nil ,
+      metaDescription: privacy_policy.fields[:meta_description] ? privacy_policy.meta_description : nil
     }
   end
 
