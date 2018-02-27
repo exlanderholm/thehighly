@@ -1,10 +1,25 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>The Highly</title>
+    <% if content_for? :title %>
+      <title><%= yield :title %></title>
+    <% else %>
+      <title>The Highly: A Guide to the Good Good</title>
+    <% end %>
     <%= csrf_meta_tags %>
     <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-    <meta name="description" content="A guide to the good good">
+
+    <% if content_for? :meta_title %>
+      <meta name="title" content="<%= yield :meta_title %>">
+    <% else %>
+      <meta name="title" content="The Highly: A Guide to the Good Good">
+    <% end %>
+
+    <% if content_for? :meta_description %>
+      <meta name="description" content="<%= yield :meta_description %>">
+    <% else %>
+      <meta name="description" content="A guide for quality-minded cannabis seekers. Where to go. What to get. Why it's good.">
+    <% end %>
 
     <meta name="msvalidate.01" content="B8642FBDC21180A0750369FBB35B6C99" />
 
@@ -27,6 +42,7 @@
     <meta name="geo.placename" content="New Jersey, Philadelphia, Phoenix, Tucson, United States">
 
     <%= render partial: 'open_graph' %>
+
 
     <%= favicon_link_tag asset_path('favicon.png'), :rel => 'icon', :type =>  'image/png' %>
 

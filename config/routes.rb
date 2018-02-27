@@ -17,6 +17,7 @@ Rails.application.routes.draw do
   end
 
   get 'conversations/:id', to: 'posts#show'
+  get 'recommended/:id', to: 'destinations#show'
 
   get '/sitemap', to: 'sitemaps#index'
 
